@@ -1,0 +1,41 @@
+{
+  "brand": {
+    "name": "Ivan Sytnik",
+    "studio": "Unabhängiges Web-Studio",
+    "tagline": "Frontend-Entwicklung auf Studio-Niveau."
+  },
+  "welcome": {
+    "title": "Das Gerüst läuft.",
+    "description": "Wenn diese Seite im hellen und dunklen Modus angezeigt wird und du zwischen en / de / uk / ru wechseln kannst, funktioniert das Fundament. Bereit für das nächste Paket."
+  },
+  "nav": {
+    "projects": "Projekte",
+    "services": "Leistungen",
+    "process": "Prozess",
+    "contact": "Kontakt",
+    "cta": "Projekt starten",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "menuTitle": "Menü"
+  },
+  "theme": {
+    "label": "Theme",
+    "light": "Hell",
+    "dark": "Dunkel",
+    "system": "System",
+    "toggle": "Theme umschalten"
+  },
+  "language": {
+    "label": "Sprache",
+    "en": "English",
+    "de": "Deutsch",
+    "uk": "Українська",
+    "ru": "Русский"
+  },
+  "footer": {
+    "rights": "Alle Rechte vorbehalten.",
+    "sections": "Bereiche",
+    "social": "Anderswo",
+    "builtWith": "Mit Next.js gebaut, auf Vercel bereitgestellt."
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "brand": {
+    "name": "Ivan Sytnik",
+    "studio": "Independent Web Studio",
+    "tagline": "Frontend development with studio-level craft."
+  },
+  "welcome": {
+    "title": "Skeleton is up.",
+    "description": "If you can see this page in light and dark modes and switch between en / de / uk / ru, the foundation works. Ready for the next pack."
+  },
+  "nav": {
+    "projects": "Projects",
+    "services": "Services",
+    "process": "Process",
+    "contact": "Contact",
+    "cta": "Start a project",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "menuTitle": "Menu"
+  },
+  "theme": {
+    "label": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "toggle": "Toggle theme"
+  },
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "de": "Deutsch",
+    "uk": "Українська",
+    "ru": "Русский"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "sections": "Sections",
+    "social": "Elsewhere",
+    "builtWith": "Built with Next.js, deployed on Vercel."
+  }
+}
