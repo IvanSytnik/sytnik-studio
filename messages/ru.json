@@ -37,5 +37,35 @@
     "sections": "Разделы",
     "social": "Где ещё",
     "builtWith": "Сделано на Next.js, развёрнуто на Vercel."
+  },
+  "projects": {
+    "status": {
+      "live": "Работает",
+      "delivered": "Передан клиенту",
+      "pre-launch": "До запуска"
+    },
+    "kind": {
+      "product": "Продукт",
+      "client": "Клиентский проект"
+    }
+  },
+  "services": {
+    "items": {
+      "landing-pages": {
+        "label": "Лендинги"
+      },
+      "business-websites": {
+        "label": "Сайты для бизнеса"
+      },
+      "crm-systems": {
+        "label": "CRM и системы бронирования"
+      },
+      "ai-integrations": {
+        "label": "AI-интеграции"
+      },
+      "bots-automation": {
+        "label": "Боты и автоматизация"
+      }
+    }
   }
 }

@@ -33,7 +33,7 @@ Order is deliberate: data before UI that depends on it; legal before indexing.
 
 | # | Pack | Key deliverables | Depends on |
 |---|---|---|---|
-| 4 | **Projects data layer + housekeeping** | `src/features/projects/` types + registry (`slug`, `tier: flagship \| compact`, `status: live \| delivered \| pre-launch \| demo-video`, links, stack, cover asset paths), EN content keys, asset folder convention `public/projects/<slug>/`, fixes 1–5 above | — |
+| 4 ✅ | **Projects data layer** | Typed registry + queries, EN case copy, EN fallback for other locales, client message scoping, brand social links | — |
 | 5 | **Hero** | Headline, value prop, 2 CTAs (Start a project / See work), photo slot, honest stat cards derived from the registry (project count, locales shipped, etc.) | 4 |
 | 6 | **Featured Projects section** | Flagship cards (large, image, status badge, 3 tags, "Read case study") + compact "Client work" grid; Server Components only; `next/image` | 4 |
 | 7 | **Case study pages** `/projects/[slug]` | Template: context → problem → what I built → engineering highlights → result → stack → links; `generateStaticParams`, per-page metadata, OG image, JSON-LD (`CreativeWork`), sitemap entries, prev/next navigation, CTA to contact | 4, 6 |
@@ -72,8 +72,8 @@ Code is not the bottleneck — content is. Each project needs, before Pack 7:
 
 ## 5. Open questions
 
-1. Launch with EN + DE only and hide UK/RU until translated? (Recommended: yes — a half-translated locale hurts more than a missing one.)
+1. ~~Hide UK/RU until translated?~~ — decided: keep all four, untranslated keys fall back to EN.
 2. Is `ivansytnik.com` registered? If not: which domain?
-3. Restaurant CRM — OK to say publicly that it runs in my own restaurant?
+3. ~~Restaurant CRM ownership~~ — decided: neutral wording ("a restaurant in Graz").
 4. Pallet site — live URL, repo, stack, client or own project?
 5. Telegram notification for new leads — same bot as the pallet site, or a new one?

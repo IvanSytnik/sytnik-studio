@@ -17,15 +17,14 @@ export const brand = {
   description:
     "Independent frontend developer building production-grade web products with React, Next.js, and TypeScript.",
   url: "https://ivansytnik.com",
-  ogImage: "/og.png",
   locale: "en",
   /**
    * Social links shown in the footer.
    * Empty strings = not configured yet; the footer hides empties.
    */
   social: {
-    github: "",
-    linkedin: "",
+    github: "https://github.com/IvanSytnik",
+    linkedin: "https://www.linkedin.com/in/ivan-sytnik/",
     upwork: "",
     telegram: "",
     email: "",

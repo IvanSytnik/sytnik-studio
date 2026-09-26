@@ -2,7 +2,7 @@
 
 Portfolio & lead-generation site. Personal brand wrapped as a small independent studio.
 
-## Current state — Pack #3 (CI + SEO gate) + pre-Pack #4 fixes
+## Current state — Pack #4 (Projects data layer)
 
 Foundation + site shell:
 
@@ -26,6 +26,14 @@ Pre-Pack #4 fixes (see `docs/STATUS.md`):
 - `next-intl` v4 (open-redirect advisory); messages inherited by `NextIntlClientProvider`, typed locales via `src/types/next-intl.d.ts`
 - Locale pages statically prerendered (`setRequestLocale` in the locale layout)
 - Real feature folders under `src/features/`
+
+Pack #4 — projects data layer (no UI yet):
+
+- `src/features/projects/` — `types.ts`, `data.ts` (registry), `queries.ts` (read API used by all sections/pages)
+- Project copy in `messages/*.json` under `projects.items.<slug>`; slugs are typed from `en.json`, so a project without copy fails typecheck
+- English fallback for untranslated keys in DE/UK/RU (`src/i18n/request.ts` + `src/lib/deep-merge.ts`)
+- Only client-used namespaces (`nav`, `theme`, `language`) are serialized to the browser
+- Service ids shared in `src/types/service.ts`; GitHub + LinkedIn filled in `brand.ts`
 
 ## Setup
 

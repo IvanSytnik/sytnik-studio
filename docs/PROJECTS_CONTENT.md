@@ -67,7 +67,7 @@ All text lives in `messages/*.json` under `projects.<slug>.*`, not in the regist
 - **Card:** *Booking system and CRM running daily in a restaurant in Graz.*
 - **Tags:** Next.js · PostgreSQL · Booking
 
-**Context.** A small restaurant with five tables needed online reservations, an editable menu and one place to manage guests — without paying a monthly SaaS fee and giving guest data to a third party. `TODO: confirm you want to say publicly that it's your own restaurant — "built for my own restaurant" is a strong story.`
+**Context.** A small restaurant with five tables needed online reservations, an editable menu and one place to manage guests — without paying a monthly SaaS fee and giving guest data to a third party.
 
 **Problem.** Phone and ad-hoc bookings led to double-booked tables and no overview of the day. `TODO: confirm/adjust — was a paid booking tool replaced?`
 

@@ -37,5 +37,35 @@
     "sections": "Bereiche",
     "social": "Anderswo",
     "builtWith": "Mit Next.js gebaut, auf Vercel bereitgestellt."
+  },
+  "projects": {
+    "status": {
+      "live": "Live",
+      "delivered": "Übergeben",
+      "pre-launch": "Vor dem Launch"
+    },
+    "kind": {
+      "product": "Produkt",
+      "client": "Kundenprojekt"
+    }
+  },
+  "services": {
+    "items": {
+      "landing-pages": {
+        "label": "Landingpages"
+      },
+      "business-websites": {
+        "label": "Unternehmenswebsites"
+      },
+      "crm-systems": {
+        "label": "CRM- & Buchungssysteme"
+      },
+      "ai-integrations": {
+        "label": "KI-Integrationen"
+      },
+      "bots-automation": {
+        "label": "Bots & Automatisierung"
+      }
+    }
   }
 }

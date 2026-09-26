@@ -37,5 +37,35 @@
     "sections": "Розділи",
     "social": "Деінде",
     "builtWith": "Зроблено на Next.js, розгорнуто на Vercel."
+  },
+  "projects": {
+    "status": {
+      "live": "Працює",
+      "delivered": "Передано клієнту",
+      "pre-launch": "До запуску"
+    },
+    "kind": {
+      "product": "Продукт",
+      "client": "Клієнтський проєкт"
+    }
+  },
+  "services": {
+    "items": {
+      "landing-pages": {
+        "label": "Лендинги"
+      },
+      "business-websites": {
+        "label": "Сайти для бізнесу"
+      },
+      "crm-systems": {
+        "label": "CRM і системи бронювання"
+      },
+      "ai-integrations": {
+        "label": "AI-інтеграції"
+      },
+      "bots-automation": {
+        "label": "Боти та автоматизація"
+      }
+    }
   }
 }
