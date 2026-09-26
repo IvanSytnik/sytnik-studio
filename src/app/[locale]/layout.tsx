@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
-import { NextIntlClientProvider } from "next-intl";
-import { getMessages, setRequestLocale } from "next-intl/server";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Analytics } from "@vercel/analytics/react";
 import type { ReactNode } from "react";
@@ -91,15 +91,12 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  if (!(routing.locales as readonly string[]).includes(locale)) {
+  if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
 
   // Enable static rendering: must run before any next-intl server API.
   setRequestLocale(locale);
-
-  // Load messages for this locale so client components can read translations.
-  const messages = await getMessages();
 
   return (
     <html
@@ -110,7 +107,7 @@ export default async function LocaleLayout({
     >
       <body className="flex min-h-dvh flex-col bg-background font-sans text-foreground">
         <ThemeProvider>
-          <NextIntlClientProvider locale={locale} messages={messages}>
+          <NextIntlClientProvider>
             <SiteHeader />
             <main className="flex-1">{children}</main>
             <SiteFooter />
