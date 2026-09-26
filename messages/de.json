@@ -4,10 +4,6 @@
     "studio": "Unabhängiges Web-Studio",
     "tagline": "Frontend-Entwicklung auf Studio-Niveau."
   },
-  "welcome": {
-    "title": "Das Gerüst läuft.",
-    "description": "Wenn diese Seite im hellen und dunklen Modus angezeigt wird und du zwischen en / de / uk / ru wechseln kannst, funktioniert das Fundament. Bereit für das nächste Paket."
-  },
   "nav": {
     "projects": "Projekte",
     "services": "Leistungen",
@@ -17,6 +13,19 @@
     "openMenu": "Menü öffnen",
     "closeMenu": "Menü schließen",
     "menuTitle": "Menü"
+  },
+  "hero": {
+    "availability": "Offen für neue Projekte, mit Sitz in Graz",
+    "title": "Websites, Buchungssysteme und KI-Funktionen – alles aus einer Hand.",
+    "subtitle": "Ich bin Ivan, unabhängiger Entwickler in Österreich. Sie arbeiten direkt mit mir – vom ersten Gespräch bis zum Launch, ohne Übergaben und ohne Account-Manager.",
+    "ctaPrimary": "Projekt starten",
+    "ctaSecondary": "Meine Arbeiten",
+    "stats": {
+      "projects": "{count, plural, one {ausgewähltes Projekt} other {ausgewählte Projekte}}",
+      "live": "{count, plural, one {Produkt live} other {Produkte live}}",
+      "languages": "{count, plural, one {Sprache, in der ich entwickle} other {Sprachen, in denen ich entwickle}}",
+      "languagesHint": "DE, EN, UK, RU"
+    }
   },
   "theme": {
     "label": "Theme",

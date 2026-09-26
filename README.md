@@ -2,7 +2,7 @@
 
 Portfolio & lead-generation site. Personal brand wrapped as a small independent studio.
 
-## Current state — Pack #4 (Projects data layer)
+## Current state — Pack #5 (Hero)
 
 Foundation + site shell:
 
@@ -34,6 +34,12 @@ Pack #4 — projects data layer (no UI yet):
 - English fallback for untranslated keys in DE/UK/RU (`src/i18n/request.ts` + `src/lib/deep-merge.ts`)
 - Only client-used namespaces (`nav`, `theme`, `language`) are serialized to the browser
 - Service ids shared in `src/types/service.ts`; GitHub + LinkedIn filled in `brand.ts`
+
+Pack #5 — Hero:
+
+- `src/features/hero/` — typographic hero, Server Components only (no client JS); stats computed from the project registry and locales
+- Hero copy in all four locales (ICU plurals for stat labels)
+- CTA contrast fixed: `--accent-foreground` is graphite in light theme (6.3:1)
 
 ## Setup
 
