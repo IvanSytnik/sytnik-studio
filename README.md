@@ -2,7 +2,7 @@
 
 Portfolio & lead-generation site. Personal brand wrapped as a small independent studio.
 
-## Current state — Pack #2 (Site shell)
+## Current state — Pack #3 (CI + SEO gate) + pre-Pack #4 fixes
 
 Foundation + site shell:
 
@@ -13,6 +13,19 @@ Foundation + site shell:
 - **Language switcher** — EN / DE / UK / RU (dropdown with locale-aware router)
 - **Mobile sheet** — hamburger → slide-in panel with nav, CTA, switchers
 - **Landing placeholders** — `#projects`, `#services`, `#process`, `#contact` so nav scrolls somewhere until real sections ship
+
+Pack #3:
+
+- **CI** — GitHub Actions: typecheck, lint, build on push/PR to `main`
+- **robots.txt + sitemap.xml** — sitemap with hreflang alternates for all locales
+- **Indexing gate** — site is noindex (meta + robots.txt) until `NEXT_PUBLIC_ALLOW_INDEXING=true`
+
+Pre-Pack #4 fixes (see `docs/STATUS.md`):
+
+- `next` 15.5.26 (security advisories), `drizzle-orm` 0.45.2 / `drizzle-kit` 0.31.10 (security advisory)
+- `next-intl` v4 (open-redirect advisory); messages inherited by `NextIntlClientProvider`, typed locales via `src/types/next-intl.d.ts`
+- Locale pages statically prerendered (`setRequestLocale` in the locale layout)
+- Real feature folders under `src/features/`
 
 ## Setup
 
@@ -38,7 +51,7 @@ Open <http://localhost:3000>. EN at `/`, others at `/de`, `/uk`, `/ru`.
 
 ## Stack
 
-Next.js 15.5.18 · React 19.2.6 · TypeScript strict · Tailwind 3 · next-intl 3 · next-themes · Drizzle ORM + Neon Postgres · Resend · Vercel Analytics · Inter + JetBrains Mono · react-icons · framer-motion · react-hook-form + zod
+Next.js 15.5.26 · React 19.2.6 · TypeScript strict · Tailwind 3 · next-intl 4 · next-themes · Drizzle ORM + Neon Postgres · Resend · Vercel Analytics · Inter + JetBrains Mono · react-icons · framer-motion · react-hook-form + zod
 
 ## Folder structure
 
