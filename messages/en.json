@@ -4,10 +4,6 @@
     "studio": "Independent Web Studio",
     "tagline": "Frontend development with studio-level craft."
   },
-  "welcome": {
-    "title": "Skeleton is up.",
-    "description": "If you can see this page in light and dark modes and switch between en / de / uk / ru, the foundation works. Ready for the next pack."
-  },
   "nav": {
     "projects": "Projects",
     "services": "Services",
@@ -17,6 +13,19 @@
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "menuTitle": "Menu"
+  },
+  "hero": {
+    "availability": "Available for new projects, based in Graz",
+    "title": "Websites, booking systems and AI features — built by one developer, end to end.",
+    "subtitle": "I'm Ivan, an independent developer in Austria. You work directly with me — from the first call to launch, with no handoffs and no account managers.",
+    "ctaPrimary": "Start a project",
+    "ctaSecondary": "See my work",
+    "stats": {
+      "projects": "{count, plural, one {selected project} other {selected projects}}",
+      "live": "{count, plural, one {product live} other {products live}}",
+      "languages": "{count, plural, one {language I build in} other {languages I build in}}",
+      "languagesHint": "DE, EN, UK, RU"
+    }
   },
   "theme": {
     "label": "Theme",

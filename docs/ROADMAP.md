@@ -34,7 +34,7 @@ Order is deliberate: data before UI that depends on it; legal before indexing.
 | # | Pack | Key deliverables | Depends on |
 |---|---|---|---|
 | 4 ✅ | **Projects data layer** | Typed registry + queries, EN case copy, EN fallback for other locales, client message scoping, brand social links | — |
-| 5 | **Hero** | Headline, value prop, 2 CTAs (Start a project / See work), photo slot, honest stat cards derived from the registry (project count, locales shipped, etc.) | 4 |
+| 5 ✅ | **Hero** | Headline, value prop, 2 CTAs (Start a project / See work), photo slot, honest stat cards derived from the registry (project count, locales shipped, etc.) | 4 |
 | 6 | **Featured Projects section** | Flagship cards (large, image, status badge, 3 tags, "Read case study") + compact "Client work" grid; Server Components only; `next/image` | 4 |
 | 7 | **Case study pages** `/projects/[slug]` | Template: context → problem → what I built → engineering highlights → result → stack → links; `generateStaticParams`, per-page metadata, OG image, JSON-LD (`CreativeWork`), sitemap entries, prev/next navigation, CTA to contact | 4, 6 |
 | 8 | **About + Why work with me** | Short first-person bio, 6 feature cards (direct communication, ownership, DACH timezone, etc.) | 5 |
