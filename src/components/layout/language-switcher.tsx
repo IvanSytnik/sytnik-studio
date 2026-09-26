@@ -1,6 +1,6 @@
 "use client";
 
-import { useLocale, useTranslations } from "next-intl";
+import { hasLocale, useLocale, useTranslations } from "next-intl";
 import { useTransition } from "react";
 import { FiGlobe } from "react-icons/fi";
 
@@ -32,6 +32,7 @@ export function LanguageSwitcher() {
   const [isPending, startTransition] = useTransition();
 
   function handleChange(nextLocale: string) {
+    if (!hasLocale(routing.locales, nextLocale)) return;
     startTransition(() => {
       router.replace(pathname, { locale: nextLocale });
     });
