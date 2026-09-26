@@ -49,13 +49,13 @@ Security notes on the core packages:
 
 | Sev | Area | File:line | Problem | Suggested fix |
 |---|---|---|---|---|
-| blocker | Security | `package.json:30` | `next@15.5.18` has a critical advisory set, including AVIF-optimizer RCE (AVIF is enabled) and Server Actions DoS, before the Server Action contact form ships | Bump `next` and `eslint-config-next` to 15.5.26 or later on the 15.5 line. |
-| high | Security | `package.json:31` | `next-intl@3.26.5` open redirect (GHSA-8f24-v5vv-gm5j); fix exists only in v4 | Schedule the next-intl v4 migration (small surface: `routing.ts`, `request.ts`, `middleware.ts`) before launch. |
-| high | Security / Data | `package.json:28` | `drizzle-orm@0.36.4` has a high SQL-injection advisory (fix in 0.45.2, pre-1.0 breaking) | Upgrade `drizzle-orm` and `drizzle-kit` together before writing the first queries. |
+| ~~blocker~~ **fixed `5e19e14`** | Security | `package.json:30` | `next@15.5.18` has a critical advisory set, including AVIF-optimizer RCE (AVIF is enabled) and Server Actions DoS, before the Server Action contact form ships | Bump `next` and `eslint-config-next` to 15.5.26 or later on the 15.5 line. |
+| ~~high~~ **fixed `ad3af3c`** | Security | `package.json:31` | `next-intl@3.26.5` open redirect (GHSA-8f24-v5vv-gm5j); fix exists only in v4 | Schedule the next-intl v4 migration (small surface: `routing.ts`, `request.ts`, `middleware.ts`) before launch. |
+| ~~high~~ **fixed `995ced4`** | Security / Data | `package.json:28` | `drizzle-orm@0.36.4` has a high SQL-injection advisory (fix in 0.45.2, pre-1.0 breaking) | Upgrade `drizzle-orm` and `drizzle-kit` together before writing the first queries. |
 | high | Legal | `src/app/[locale]/` | No Impressum (§5 DDG / §5 ECG) and no Datenschutz page. No consent text exists for the planned forms | Add a Legal pack before any public (indexable) launch; link both from the footer. |
-| high | Structure | `src/features/{hero,…,footer}/.gitkeep` | Literal brace-named directory is committed (shell brace expansion didn't run). No real feature folders exist | Delete it and create the real `src/features/<name>/` folders. |
-| medium | Structure | `src/components/{ui,providers,layout}` | Empty literal brace-named directory (untracked, local only) | Delete it. |
-| medium | Rendering | `src/app/[locale]/layout.tsx:99` | The layout calls `getMessages()` without `setRequestLocale(locale)`. Locale pages are absent from the prerender manifest, so they are likely rendered dynamically | Call `setRequestLocale(locale)` in the layout before any next-intl server API, then re-check the manifest. |
+| ~~high~~ **fixed `5d53767`** | Structure | `src/features/{hero,…,footer}/.gitkeep` | Literal brace-named directory is committed (shell brace expansion didn't run). No real feature folders exist | Delete it and create the real `src/features/<name>/` folders. |
+| ~~medium~~ **fixed (local only; untracked dir removed during `5d53767`)** | Structure | `src/components/{ui,providers,layout}` | Empty literal brace-named directory (untracked, local only) | Delete it. |
+| ~~medium~~ **fixed `26e5b9f`** | Rendering | `src/app/[locale]/layout.tsx:99` | The layout calls `getMessages()` without `setRequestLocale(locale)`. Locale pages are absent from the prerender manifest, so they are likely rendered dynamically | Call `setRequestLocale(locale)` in the layout before any next-intl server API, then re-check the manifest. |
 | medium | A11y | `src/app/globals.css:20-21` | Light theme: accent-foreground on accent is 2.94:1 (CTA text fails AA 4.5:1). The accent focus ring on the background is 2.94:1 (< 3:1) | Darken the light `--accent`, or use dark text on the accent. |
 | medium | SEO | `src/app/[locale]/layout.tsx:43` | Metadata is static English: no `alternates.canonical`, no hreflang `alternates.languages`, no `x-default`, not localized per locale | Switch to `generateMetadata({ params })` with localized title/description and alternates. |
 | medium | SEO | `src/lib/brand.ts:20`, `public/` | `ogImage: "/og.png"` is defined but not used in metadata, and the file doesn't exist. No OG or Twitter image is served | Add `opengraph-image` (file or route) and reference it. |
@@ -70,12 +70,26 @@ Security notes on the core packages:
 | low | SEO | `src/app/robots.ts:14` | `host` is given as a full URL (expects a hostname); non-standard and ignored by Google | Drop `host` or pass the bare hostname. |
 | low | SEO | `src/app/sitemap.ts:17` | `lastModified: new Date()` changes on every build | Use content dates once projects exist. |
 | low | i18n | `messages/*.json` | Keys match across all 4 locales (no missing or extra). Unused keys: `brand.name`, `brand.studio`, `nav.closeMenu` | Use them or remove them. |
-| low | Docs | `README.md:5` | README says Pack #2; `docs/ROADMAP.md` doesn't exist | Update the README and add the roadmap file. |
+| low — **README part fixed in the docs commit; ROADMAP still missing** | Docs | `README.md:5` | README says Pack #2; `docs/ROADMAP.md` doesn't exist | Update the README and add the roadmap file. |
 | low | CI | `.github/workflows/ci.yml:33` | CI runs Node 20 while local is 22; there is no audit or format check step | Align the Node version; consider `npm audit --omit=dev --audit-level=high`. |
+
+### Fix log (2026-09-26)
+
+| Commit | Change | Verification |
+|---|---|---|
+| `87f7c7c` | docs: add status audit | — |
+| `5e19e14` | `next` / `eslint-config-next` 15.5.18 → 15.5.26 | All direct `Next.js:` GHSA advisories gone; critical count 1 → 0 |
+| `5d53767` | Brace-named dirs removed; `src/features/{hero,about,projects,services,process,faq,contact,estimator,testimonials}` created | typecheck, lint, build pass |
+| `26e5b9f` | `setRequestLocale(locale)` in `[locale]/layout.tsx` | `/en`, `/de`, `/uk`, `/ru` now in `prerender-manifest.json` and emitted as HTML |
+| `995ced4` | `drizzle-orm` 0.36.4 → 0.45.2, `drizzle-kit` 0.28.1 → 0.31.10 | drizzle advisory gone; no DB connection made |
+| `ad3af3c` | `next-intl` 3.26.5 → 4.14.7 | open-redirect advisory gone; locale routes and cookie redirects checked with curl |
+
+Remaining `npm audit --omit=dev` findings (transitive): `postcss@8.4.31` bundled in `next` (only Next 16 fixes it), `sharp@0.34.5`, `nanoid@3.3.15` under `postcss`. 4 vulnerabilities (1 moderate, 3 high), 0 critical.
+`/[locale]` first-load JS went from 109 kB to 120 kB after the next-intl v4 migration.
 
 ## 5. Ready for Pack #4?
 
-**Yes, conditionally.** Pack #4 (data layer) doesn't depend on the open issues, but do these first (all small):
+**Yes.** Items 1–4 below were applied on 2026-09-26 (see fix log). Originally: **yes, conditionally.** Pack #4 (data layer) doesn't depend on the open issues, but do these first (all small):
 1. Bump `next` and `eslint-config-next` to the patched 15.5.x (critical advisory; AVIF optimizer is enabled).
 2. Remove the literal `{…}` directories and create the real `src/features/*` folders that Pack #4+ will populate.
 3. Add `setRequestLocale` in `[locale]/layout.tsx` and confirm the locale pages prerender, before adding `/projects/[slug]` with `generateStaticParams`.
