@@ -37,5 +37,118 @@
     "sections": "Sections",
     "social": "Elsewhere",
     "builtWith": "Built with Next.js, deployed on Vercel."
+  },
+  "projects": {
+    "status": {
+      "live": "Live",
+      "delivered": "Delivered",
+      "pre-launch": "Pre-launch"
+    },
+    "kind": {
+      "product": "Product",
+      "client": "Client work"
+    },
+    "items": {
+      "restaurant-crm": {
+        "title": "Restaurant CRM & Booking Platform",
+        "summary": "Booking system and CRM running daily in a restaurant in Graz.",
+        "result": "In daily use at the restaurant: guests book online, staff manage the day from one screen.",
+        "role": "Sole developer and product owner",
+        "context": "A small restaurant with five tables needed online reservations, a menu it could edit itself and one place to manage guests — without a monthly SaaS fee and without handing guest data to a third party.",
+        "problem": "Bookings came in by phone and ad hoc, which made double-booked tables likely and left no clear overview of the day.",
+        "built": [
+          "Public website in German, English and Ukrainian with menu, promotions, gallery and online booking.",
+          "Booking engine that picks the best-fitting table for the group size, respects visit length and turnover buffers, and prevents conflicts.",
+          "Admin CRM with reservations by day, table plan, menu and content editing, and role-based access."
+        ],
+        "highlights": [
+          "Allocation rules modelled explicitly: table capacities, 60/90-minute visits by group size, 15-minute buffers and a last-slot cutoff.",
+          "Credentials authentication with JWT sessions; access checks enforced on every protected page.",
+          "German as the mandatory source language, with automatic fallback for English and Ukrainian content."
+        ]
+      },
+      "styleme": {
+        "title": "StyleMe — AI hairstyle try-on",
+        "summary": "Upload a selfie and see yourself with a new hairstyle in seconds.",
+        "result": "First MVP is live and publicly usable.",
+        "role": "Solo — product, full-stack, architecture, DevOps and security",
+        "context": "People want to see a haircut on themselves before committing to it. A consumer AI product also has to stay cheap per request and hard to abuse.",
+        "problem": "Image generation costs real money on every request, so free usage needs limits that can't be bypassed from the browser.",
+        "built": [
+          "Upload a photo, pick one of 40 preset styles, describe one in free text or use a reference photo, and get a generated result.",
+          "A free daily quota plus extra credits earned by watching an ad."
+        ],
+        "highlights": [
+          "Image generation through Replicate, with the per-generation cost built into the quota design.",
+          "Quotas and rate limits enforced on the server, per IP and per user, in Redis — nothing is trusted from the browser.",
+          "Rewarded-ad credits protected against fraud: single-use server-issued nonce, minimum watch time, atomic redemption and a calculated worst-case cost ceiling.",
+          "Monorepo with a shared package as the single source of truth for types, Zod schemas and machine-readable error codes.",
+          "Unit, contract and Playwright end-to-end tests in CI; architecture decisions documented as ADRs."
+        ]
+      },
+      "englishlearn": {
+        "title": "EnglishLearn — adaptive learning platform",
+        "summary": "An English course that decides what you should practise next, based on a model of what you actually know.",
+        "result": "Pre-launch: the learning engine is built and tested; the student-facing app is in progress.",
+        "role": "Technical co-founder and sole developer",
+        "context": "Most language apps show every learner the same sequence of lessons.",
+        "problem": "A fixed sequence wastes time on what the learner already knows and moves on before weak spots are fixed.",
+        "built": [
+          "A learner model that estimates what the student knows, predicts what they are about to forget and chooses the next exercise accordingly.",
+          "Planned next: an AI tutor and a diagnostic placement test."
+        ],
+        "highlights": [
+          "Learner model combining Bayesian Knowledge Tracing, Item Response Theory, FSRS spaced repetition and Thompson Sampling.",
+          "Turborepo monorepo with Prisma, PostgreSQL and Auth.js; four interface languages.",
+          "Engine covered by an automated test suite."
+        ]
+      },
+      "media-processing-platform": {
+        "title": "Media Processing Platform",
+        "summary": "An asynchronous media-processing backend with a Telegram bot as its first client.",
+        "result": "Works end to end, including files over 1 GB; ready for a closed beta.",
+        "role": "Solo developer",
+        "context": "A Telegram bot that takes a link and sends back the processed media file — designed from day one as the core of a platform, not a one-off script.",
+        "problem": "Long-running media jobs can freeze a bot, hit platform file-size limits and tie business logic to one messenger.",
+        "built": [
+          "Send a link, watch live progress and receive the file in the chat, including files over 1 GB.",
+          "Two interface languages."
+        ],
+        "highlights": [
+          "Clean Architecture with ports and adapters: Telegram is one adapter, so a web or REST client can be added without touching the core.",
+          "Heavy jobs run in a separate OS process that can be killed on timeout, so the bot never freezes.",
+          "Live progress streamed through Redis pub/sub — the processing layer knows nothing about Telegram.",
+          "Files up to 2 GB via a self-hosted Telegram Bot API server instead of the 50 MB public limit.",
+          "Secure by default: domain allowlist, no shell execution, sliding-window rate limiting; 181 tests and strict type checking."
+        ]
+      },
+      "medconsult": {
+        "title": "MedConsult Pro",
+        "summary": "Service catalogue and multi-step consultation request flow for a medical tourism agency. Leads go straight to the agency's messaging channels."
+      },
+      "pallet-sales": {
+        "title": "Pallet sales website",
+        "summary": "Sales website for a pallet supplier. Every inquiry lands instantly in the team's Telegram group through a custom bot, so no lead gets lost in an inbox."
+      }
+    }
+  },
+  "services": {
+    "items": {
+      "landing-pages": {
+        "label": "Landing pages"
+      },
+      "business-websites": {
+        "label": "Business websites"
+      },
+      "crm-systems": {
+        "label": "CRM & booking systems"
+      },
+      "ai-integrations": {
+        "label": "AI integrations"
+      },
+      "bots-automation": {
+        "label": "Bots & automation"
+      }
+    }
   }
 }
