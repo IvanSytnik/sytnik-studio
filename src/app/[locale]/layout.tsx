@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Analytics } from "@vercel/analytics/react";
 import type { ReactNode } from "react";
@@ -94,6 +94,9 @@ export default async function LocaleLayout({
   if (!(routing.locales as readonly string[]).includes(locale)) {
     notFound();
   }
+
+  // Enable static rendering: must run before any next-intl server API.
+  setRequestLocale(locale);
 
   // Load messages for this locale so client components can read translations.
   const messages = await getMessages();
