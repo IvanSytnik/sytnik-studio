@@ -69,6 +69,8 @@ export async function CaseStudy({ project }: Props) {
         <ProjectCover
           title={title}
           src={project.media.cover}
+          srcLight={project.media.coverLight}
+          kind={project.media.coverKind}
           alt={t("coverAlt", { title })}
           priority
           className="mt-14"

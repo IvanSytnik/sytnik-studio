@@ -21,7 +21,7 @@ export async function ProjectsSection() {
     <section
       id="projects"
       aria-labelledby="projects-heading"
-      className="scroll-mt-20 border-t border-border py-20 sm:py-28"
+      className="scroll-mt-16 border-t border-border pb-20 pt-14 sm:pb-28 sm:pt-20"
     >
       <Container>
         <header className="max-w-2xl">

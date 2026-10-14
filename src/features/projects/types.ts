@@ -61,6 +61,18 @@ export type GalleryImage = {
 export type ProjectMedia = {
   /** 16:10 cover under /public, e.g. "/projects/styleme/cover.webp". */
   cover?: string;
+  /**
+   * Optional light-theme variant. Without it the same cover is used in
+   * both themes — dark screenshots still sit on a soft stage, so they
+   * never look like a black hole in the light theme.
+   */
+  coverLight?: string;
+  /**
+   * "screen" (default): a website screenshot, shown as a framed screen.
+   * "devices": a transparent composite (e.g. phone screens) placed
+   * directly on the stage, without a frame.
+   */
+  coverKind?: "screen" | "devices";
   /** Extra screenshots for the case study page. */
   gallery: readonly GalleryImage[];
 };

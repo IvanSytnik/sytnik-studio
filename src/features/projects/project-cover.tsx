@@ -6,49 +6,74 @@ type Props = {
   title: string;
   /** Path under /public. Without it a typographic cover is rendered. */
   src?: string;
+  /** Light-theme variant; falls back to `src`. */
+  srcLight?: string;
+  kind?: "screen" | "devices";
   alt: string;
   /** Only the first cover on the page is above the fold on large screens. */
   priority?: boolean;
   className?: string;
 };
 
+const SIZES = "(min-width: 1024px) 680px, 100vw";
+
 /**
- * 16:10 project cover framed as a minimal browser window, so screenshots
- * of very different products read as one consistent set.
+ * 16:10 project cover on a soft "stage": a tinted panel with the
+ * screenshot inset like a product shot. Dark and light screenshots both
+ * sit comfortably on it, in either theme.
  *
- * Without a screenshot the frame shows the project title set large — the
- * layout stays identical, and dropping a file into /public later is the
- * only change needed.
+ * Theme variants: when a light cover exists, both images are rendered and
+ * CSS shows the right one. Lazy images hidden with display:none are never
+ * fetched, so below the fold only the visible variant is downloaded.
  */
-export function ProjectCover({ title, src, alt, priority, className }: Props) {
+export function ProjectCover({
+  title,
+  src,
+  srcLight,
+  kind = "screen",
+  alt,
+  priority,
+  className,
+}: Props) {
+  const image = (path: string, extra?: string) => (
+    <Image
+      src={path}
+      alt={alt}
+      fill
+      priority={priority}
+      sizes={SIZES}
+      className={cn(
+        kind === "devices" ? "object-contain" : "object-cover object-top",
+        extra
+      )}
+    />
+  );
+
   return (
     <div
       className={cn(
-        "overflow-hidden rounded-xl border border-border bg-card shadow-sm",
+        "rounded-2xl bg-[hsl(var(--stage))] p-[5%] ring-1 ring-inset ring-border",
         className
       )}
     >
       <div
-        aria-hidden
-        className="flex h-7 items-center gap-1.5 border-b border-border bg-muted/60 px-3"
+        className={cn(
+          "relative aspect-[16/10] overflow-hidden",
+          kind === "screen" &&
+            "rounded-lg bg-card shadow-[0_1px_2px_hsl(var(--foreground)/0.06),0_12px_32px_-12px_hsl(var(--foreground)/0.25)] ring-1 ring-foreground/5"
+        )}
       >
-        <span className="h-2 w-2 rounded-full bg-border" />
-        <span className="h-2 w-2 rounded-full bg-border" />
-        <span className="h-2 w-2 rounded-full bg-border" />
-      </div>
-
-      <div className="relative aspect-[16/10] bg-muted">
         {src ? (
-          <Image
-            src={src}
-            alt={alt}
-            fill
-            priority={priority}
-            sizes="(min-width: 1024px) 680px, 100vw"
-            className="object-cover object-top"
-          />
+          srcLight ? (
+            <>
+              {image(srcLight, "dark:hidden")}
+              {image(src, "hidden dark:block")}
+            </>
+          ) : (
+            image(src)
+          )
         ) : (
-          <div className="absolute inset-0 flex items-end bg-[radial-gradient(hsl(var(--border))_1px,transparent_1px)] p-6 [background-size:16px_16px] sm:p-10">
+          <div className="absolute inset-0 flex items-end bg-card p-6 sm:p-10">
             <p
               aria-hidden
               className="max-w-[14ch] text-balance text-3xl font-semibold leading-[1.05] tracking-[-0.03em] text-foreground/80 sm:text-5xl"

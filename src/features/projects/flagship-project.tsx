@@ -32,6 +32,8 @@ export async function FlagshipProject({ project, index }: Props) {
       <ProjectCover
         title={title}
         src={project.media.cover}
+        srcLight={project.media.coverLight}
+        kind={project.media.coverKind}
         alt={t("coverAlt", { title })}
         priority={index === 0}
         className={cn("lg:col-span-7", reversed && "lg:order-2")}
@@ -80,11 +82,14 @@ export async function FlagshipProject({ project, index }: Props) {
         <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
           <Link
             href={`/projects/${project.slug}`}
-            className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="group inline-flex items-center gap-2 rounded-md border border-foreground/20 px-4 py-2 text-sm font-medium transition-colors hover:border-foreground/40 hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             {t("caseStudy.open")}
             <span className="sr-only">: {title}</span>
-            <FiArrowRight aria-hidden className="h-4 w-4" />
+            <FiArrowRight
+              aria-hidden
+              className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+            />
           </Link>
           <ProjectLinks project={project} title={title} />
         </div>

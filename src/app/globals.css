@@ -22,6 +22,7 @@
     --accent-foreground: 0 0% 4%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 60 18% 97%;
+    --stage: 40 18% 91%;
     --radius: 0.75rem;
   }
   .dark {
@@ -42,6 +43,7 @@
     --accent-foreground: 240 5% 5%;
     --destructive: 0 62% 40%;
     --destructive-foreground: 60 14% 96%;
+    --stage: 240 4% 10%;
   }
   * { @apply border-border; }
   html {

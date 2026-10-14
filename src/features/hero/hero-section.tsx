@@ -30,7 +30,7 @@ export async function HeroSection() {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative pb-16 pt-12 sm:pb-24 sm:pt-20 lg:pb-28 lg:pt-24"
+      className="relative pb-14 pt-10 sm:pb-20 sm:pt-14 lg:pb-24 lg:pt-16"
     >
       <Container>
         <p
@@ -45,12 +45,12 @@ export async function HeroSection() {
 
         <h1
           id="hero-heading"
-          className="mt-8 max-w-[19ch] hyphens-auto break-words text-balance text-[2.25rem] font-semibold leading-[1.02] tracking-[-0.035em] sm:text-6xl lg:text-7xl xl:text-[5.25rem]"
+          className="mt-6 max-w-[20ch] text-balance break-words text-[2.25rem] font-semibold leading-[1.04] tracking-[-0.035em] sm:text-5xl lg:text-6xl xl:text-[4.25rem]"
         >
           {t("title")}
         </h1>
 
-        <div className="mt-12 grid gap-10 border-t border-border pt-10 lg:mt-16 lg:grid-cols-12 lg:items-end lg:gap-8">
+        <div className="mt-10 grid gap-10 border-t border-border pt-8 lg:mt-12 lg:grid-cols-12 lg:items-end lg:gap-8">
           <div className={cn("lg:col-span-6", enter, "motion-safe:delay-150")}>
             <p className="max-w-[52ch] text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
               {t("subtitle")}

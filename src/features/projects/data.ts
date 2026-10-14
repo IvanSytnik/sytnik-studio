@@ -32,6 +32,7 @@ export const projects = [
     services: ["crm-systems", "business-websites"],
     media: {
       cover: "/projects/restaurant-crm/cover.webp",
+      coverLight: "/projects/restaurant-crm/cover-light.webp",
       gallery: [
         {
           src: "/projects/restaurant-crm/floor-plan.webp",
@@ -70,6 +71,7 @@ export const projects = [
     services: ["bots-automation", "ai-integrations"],
     media: {
       cover: "/projects/dealradar/cover.webp",
+      coverKind: "devices",
       gallery: [
         {
           src: "/projects/dealradar/market-analysis.webp",
