@@ -2,7 +2,7 @@
 
 Portfolio & lead-generation site. Personal brand wrapped as a small independent studio.
 
-## Current state — Pack #10 (Process + FAQ)
+## Current state — Pack #11 (Contact form)
 
 Foundation + site shell:
 
@@ -67,6 +67,14 @@ Pack #10 — Process + FAQ:
 
 - `src/features/process/` — six numbered steps from intro call to 60 days of support
 - `src/features/faq/` — eight questions on native `<details>` (no JS), FAQPage JSON-LD
+
+Pack #11 — Contact form:
+
+- Server Action `src/actions/contact.ts` + shared Zod schema; works without JavaScript
+- Delivery to every configured channel in parallel (Neon, Resend email, Telegram); succeeds if at least one accepts the lead
+- Spam protection: honeypot, minimum fill time, per-IP rate limit (best effort)
+- All section placeholders are gone — the landing page is complete
+- Setup: see `docs/CONTACT_SETUP.md`
 
 ## Setup
 

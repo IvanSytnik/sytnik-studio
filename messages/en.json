@@ -380,5 +380,36 @@
         "a": "Yes, before we discuss any confidential details."
       }
     }
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's talk about your project",
+    "intro": "Tell me what you want to build and by when. You'll get a reply from me personally with next steps and an honest estimate.",
+    "reply": "I reply within one working day.",
+    "linkedin": "Or message me on LinkedIn",
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "company": "Company",
+      "message": "What do you need?"
+    },
+    "optional": "(optional)",
+    "messagePlaceholder": "A few sentences about the project, your timeline and budget range, if you have one.",
+    "privacy": "I'll only use your details to reply to this inquiry.",
+    "submit": "Send inquiry",
+    "sending": "Sending…",
+    "success": {
+      "title": "Thanks — your message is on its way",
+      "text": "I'll get back to you within one working day. If it's urgent, mention it in a follow-up on LinkedIn."
+    },
+    "errors": {
+      "name": "Please enter your name.",
+      "email": "Please enter a valid email address.",
+      "company": "Company name is too long.",
+      "message": "Please write at least a couple of sentences (20+ characters).",
+      "tooFast": "That was quick! Please check your message and send it again.",
+      "rateLimited": "Too many messages in a short time. Please try again in a few minutes.",
+      "deliveryFailed": "Something went wrong on my side. Please try again or message me on LinkedIn."
+    }
   }
 }

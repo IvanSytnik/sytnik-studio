@@ -272,5 +272,36 @@
         "a": "Ja, bevor wir vertrauliche Details besprechen."
       }
     }
+  },
+  "contact": {
+    "eyebrow": "Kontakt",
+    "title": "Sprechen wir über Ihr Projekt",
+    "intro": "Erzählen Sie mir, was Sie bauen möchten und bis wann. Sie erhalten eine persönliche Antwort mit nächsten Schritten und einer ehrlichen Einschätzung.",
+    "reply": "Ich antworte innerhalb eines Werktags.",
+    "linkedin": "Oder schreiben Sie mir auf LinkedIn",
+    "fields": {
+      "name": "Name",
+      "email": "E-Mail",
+      "company": "Unternehmen",
+      "message": "Was brauchen Sie?"
+    },
+    "optional": "(optional)",
+    "messagePlaceholder": "Ein paar Sätze zum Projekt, zum Zeitrahmen und – falls vorhanden – zum Budget.",
+    "privacy": "Ihre Daten verwende ich nur, um auf diese Anfrage zu antworten.",
+    "submit": "Anfrage senden",
+    "sending": "Wird gesendet…",
+    "success": {
+      "title": "Danke – Ihre Nachricht ist angekommen",
+      "text": "Ich melde mich innerhalb eines Werktags. Wenn es dringend ist, schreiben Sie mir zusätzlich auf LinkedIn."
+    },
+    "errors": {
+      "name": "Bitte geben Sie Ihren Namen ein.",
+      "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      "company": "Der Firmenname ist zu lang.",
+      "message": "Bitte schreiben Sie mindestens ein paar Sätze (20+ Zeichen).",
+      "tooFast": "Das ging schnell! Bitte prüfen Sie Ihre Nachricht und senden Sie sie erneut.",
+      "rateLimited": "Zu viele Nachrichten in kurzer Zeit. Bitte versuchen Sie es in ein paar Minuten erneut.",
+      "deliveryFailed": "Bei mir ist etwas schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie mir auf LinkedIn."
+    }
   }
 }

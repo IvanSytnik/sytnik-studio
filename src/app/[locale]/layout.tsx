@@ -107,6 +107,7 @@ export default async function LocaleLayout({
     nav: messages.nav,
     theme: messages.theme,
     language: messages.language,
+    contact: messages.contact,
   };
 
   return (
