@@ -310,5 +310,75 @@
     },
     "timelineLabel": "Typical timeline",
     "proofLabel": "See it in practice"
+  },
+  "process": {
+    "eyebrow": "Process",
+    "title": "How we'll work together",
+    "intro": "A clear path from the first call to a live product — and you see progress every week.",
+    "steps": {
+      "call": {
+        "title": "Free intro call",
+        "text": "30 minutes to understand your goals, users and deadline. No obligation."
+      },
+      "estimate": {
+        "title": "Written estimate",
+        "text": "Scope, timeline and fixed price in writing, so you know exactly what you get."
+      },
+      "design": {
+        "title": "Design & prototype",
+        "text": "Layout and key screens first, so we agree on the result before code is written."
+      },
+      "build": {
+        "title": "Build with weekly updates",
+        "text": "A live preview link from week one and a short update every week."
+      },
+      "launch": {
+        "title": "Launch",
+        "text": "Domain, hosting, analytics and search setup — on your accounts."
+      },
+      "support": {
+        "title": "60 days of support",
+        "text": "Bugs found after launch are fixed free of charge for 60 days."
+      }
+    }
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Questions clients ask",
+    "intro": "Didn't find your question? Ask me directly — I reply within one working day.",
+    "items": {
+      "cost": {
+        "q": "How much does a project cost?",
+        "a": "It depends on scope. After a free call you get a written fixed-price estimate — the price doesn't change unless the scope does."
+      },
+      "payment": {
+        "q": "How do payments work?",
+        "a": "Usually in milestones: part upfront, the rest as agreed stages are delivered. If you prefer, we can also work through Upwork or another freelance platform with its payment protection."
+      },
+      "ownership": {
+        "q": "Who owns the code?",
+        "a": "You do. The full source code, repository and all accounts are transferred to you."
+      },
+      "support": {
+        "q": "What happens after launch?",
+        "a": "For 60 days after launch I fix any bugs free of charge. After that, ongoing support and new features are available hourly or as a monthly plan."
+      },
+      "existing": {
+        "q": "Can you work with my existing website or design?",
+        "a": "Yes. I can extend an existing project, rebuild it on a modern stack, or implement a design from Figma."
+      },
+      "hosting": {
+        "q": "Where will my website be hosted?",
+        "a": "On your own accounts — for example Vercel or a European server. I set everything up and you keep full control."
+      },
+      "languages": {
+        "q": "Which languages can we communicate in?",
+        "a": "English, German, Ukrainian or Russian."
+      },
+      "nda": {
+        "q": "Do you sign an NDA?",
+        "a": "Yes, before we discuss any confidential details."
+      }
+    }
   }
 }

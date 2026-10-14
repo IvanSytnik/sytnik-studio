@@ -39,7 +39,7 @@ Order is deliberate: data before UI that depends on it; legal before indexing.
 | 7 ✅ | **Case study pages** `/projects/[slug]` | Template: context → problem → what I built → engineering highlights → result → stack → links; `generateStaticParams`, per-page metadata, OG image, JSON-LD (`CreativeWork`), sitemap entries, prev/next navigation, CTA to contact | 4, 6 |
 | 8 ✅ | **About + Why work with me** | Short first-person bio, 6 feature cards (direct communication, ownership, DACH timezone, etc.) | 5 |
 | 9 ✅ | **Services** | 4–5 service cards, each linking to the matching case study as proof | 7 |
-| 10 | **Process + FAQ** | 6-step timeline; FAQ with `FAQPage` JSON-LD | — |
+| 10 ✅ | **Process + FAQ** | 6-step timeline; FAQ with `FAQPage` JSON-LD | — |
 | 11 | **Contact form** | Server Action, React Hook Form + Zod (shared schema), Resend email, Neon insert (`contact_submissions`), Telegram notification to my group via bot, honeypot + per-IP rate limit, loading/success/error states, validated server env | — |
 | 12 | **Project estimator** | Multi-step questionnaire (type, timeline, budget, features, notes) writing into the existing `estimator` jsonb column; reuses Pack 11 pipeline | 11 |
 | 13 | **Legal** | `/impressum`, `/datenschutz` (EN + DE), footer links, form consent line | 11 |

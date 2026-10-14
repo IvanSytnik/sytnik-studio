@@ -2,7 +2,7 @@
 
 Portfolio & lead-generation site. Personal brand wrapped as a small independent studio.
 
-## Current state — Pack #9 (Services)
+## Current state — Pack #10 (Process + FAQ)
 
 Foundation + site shell:
 
@@ -62,6 +62,11 @@ Pack #9 — Services:
 
 - `src/features/services/` — five services with pitch, what's included and typical timeline; copy in all four locales
 - Proof links come from the project registry (`getProjectsForService`): flagships link to their case study, smaller work to its live site
+
+Pack #10 — Process + FAQ:
+
+- `src/features/process/` — six numbered steps from intro call to 60 days of support
+- `src/features/faq/` — eight questions on native `<details>` (no JS), FAQPage JSON-LD
 
 ## Setup
 

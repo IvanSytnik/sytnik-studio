@@ -6,6 +6,8 @@ import { HeroSection } from "@/features/hero/hero-section";
 import { ProjectsSection } from "@/features/projects/projects-section";
 import { AboutSection } from "@/features/about/about-section";
 import { ServicesSection } from "@/features/services/services-section";
+import { ProcessSection } from "@/features/process/process-section";
+import { FaqSection } from "@/features/faq/faq-section";
 import { routing, type Locale } from "@/i18n/routing";
 import { navItems } from "@/lib/nav";
 
@@ -26,6 +28,8 @@ export default async function HomePage({
       <ProjectsSection />
       <AboutSection />
       <ServicesSection />
+      <ProcessSection />
+      <FaqSection />
       <SectionPlaceholders />
     </>
   );
@@ -41,7 +45,7 @@ function SectionPlaceholders() {
   return (
     <Container className="space-y-16 py-24">
       {navItems
-        .filter((item) => item.id !== "projects" && item.id !== "services")
+        .filter((item) => item.id === "contact")
         .map((item) => (
           <section
             key={item.id}

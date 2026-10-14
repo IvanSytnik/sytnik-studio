@@ -202,5 +202,75 @@
     },
     "timelineLabel": "Typische Dauer",
     "proofLabel": "So sieht das aus"
+  },
+  "process": {
+    "eyebrow": "Ablauf",
+    "title": "So arbeiten wir zusammen",
+    "intro": "Ein klarer Weg vom ersten Gespräch zum fertigen Produkt – und Sie sehen jede Woche den Fortschritt.",
+    "steps": {
+      "call": {
+        "title": "Kostenloses Erstgespräch",
+        "text": "30 Minuten, um Ziele, Nutzer und Zeitrahmen zu verstehen. Unverbindlich."
+      },
+      "estimate": {
+        "title": "Schriftliches Angebot",
+        "text": "Umfang, Zeitplan und Festpreis schriftlich – Sie wissen genau, was Sie bekommen."
+      },
+      "design": {
+        "title": "Design & Prototyp",
+        "text": "Zuerst Layout und wichtige Screens, damit wir uns vor dem Code auf das Ergebnis einigen."
+      },
+      "build": {
+        "title": "Entwicklung mit Wochen-Updates",
+        "text": "Ab der ersten Woche ein Vorschau-Link und jede Woche ein kurzes Update."
+      },
+      "launch": {
+        "title": "Launch",
+        "text": "Domain, Hosting, Analytics und Suchmaschinen-Setup – auf Ihren Konten."
+      },
+      "support": {
+        "title": "60 Tage Support",
+        "text": "Fehler nach dem Launch behebe ich 60 Tage lang kostenlos."
+      }
+    }
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Häufige Fragen",
+    "intro": "Ihre Frage ist nicht dabei? Fragen Sie mich direkt – ich antworte innerhalb eines Werktags.",
+    "items": {
+      "cost": {
+        "q": "Was kostet ein Projekt?",
+        "a": "Das hängt vom Umfang ab. Nach einem kostenlosen Gespräch erhalten Sie ein schriftliches Festpreisangebot – der Preis ändert sich nur, wenn sich der Umfang ändert."
+      },
+      "payment": {
+        "q": "Wie läuft die Bezahlung?",
+        "a": "In der Regel in Etappen: ein Teil vorab, der Rest nach Abnahme vereinbarter Meilensteine. Auf Wunsch arbeiten wir auch über Upwork oder eine andere Freelance-Plattform mit Zahlungsschutz."
+      },
+      "ownership": {
+        "q": "Wem gehört der Code?",
+        "a": "Ihnen. Der vollständige Quellcode, das Repository und alle Zugänge gehen an Sie über."
+      },
+      "support": {
+        "q": "Was passiert nach dem Launch?",
+        "a": "60 Tage nach dem Launch behebe ich Fehler kostenlos. Danach sind Support und neue Funktionen stundenweise oder als Monatspaket möglich."
+      },
+      "existing": {
+        "q": "Können Sie mit meiner bestehenden Website oder meinem Design arbeiten?",
+        "a": "Ja. Ich kann ein bestehendes Projekt erweitern, es auf einem modernen Stack neu aufbauen oder ein Figma-Design umsetzen."
+      },
+      "hosting": {
+        "q": "Wo wird meine Website gehostet?",
+        "a": "Auf Ihren eigenen Konten – zum Beispiel bei Vercel oder auf einem europäischen Server. Ich richte alles ein, Sie behalten die volle Kontrolle."
+      },
+      "languages": {
+        "q": "In welchen Sprachen können wir kommunizieren?",
+        "a": "Englisch, Deutsch, Ukrainisch oder Russisch."
+      },
+      "nda": {
+        "q": "Unterschreiben Sie eine Geheimhaltungsvereinbarung?",
+        "a": "Ja, bevor wir vertrauliche Details besprechen."
+      }
+    }
   }
 }
