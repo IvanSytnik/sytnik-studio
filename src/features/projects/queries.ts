@@ -1,5 +1,10 @@
 import { projects } from "./data";
-import type { Project, ProjectSlug } from "./types";
+import type {
+  CaseStudySlug,
+  CompactProject,
+  FlagshipProject,
+  Project,
+} from "./types";
 
 /**
  * Read access to the registry. Sections and pages only talk to these
@@ -13,15 +18,15 @@ function publishedProjects(): Project[] {
   return (projects as readonly Project[]).filter((p) => p.published);
 }
 
-export function getFlagshipProjects(): Project[] {
+export function getFlagshipProjects(): FlagshipProject[] {
   return publishedProjects()
-    .filter((p) => p.tier === "flagship")
+    .filter((p): p is FlagshipProject => p.tier === "flagship")
     .sort(byOrder);
 }
 
-export function getCompactProjects(): Project[] {
+export function getCompactProjects(): CompactProject[] {
   return publishedProjects()
-    .filter((p) => p.tier === "compact")
+    .filter((p): p is CompactProject => p.tier === "compact")
     .sort(byOrder);
 }
 
@@ -30,7 +35,7 @@ export function getProjectBySlug(slug: string): Project | undefined {
 }
 
 /** Slugs that get a case study page — used by generateStaticParams + sitemap. */
-export function getCaseStudySlugs(): ProjectSlug[] {
+export function getCaseStudySlugs(): CaseStudySlug[] {
   return getFlagshipProjects().map((p) => p.slug);
 }
 

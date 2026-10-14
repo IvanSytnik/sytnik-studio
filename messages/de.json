@@ -57,7 +57,23 @@
     "kind": {
       "product": "Produkt",
       "client": "Kundenprojekt"
-    }
+    },
+    "section": {
+      "eyebrow": "Ausgewählte Arbeiten",
+      "title": "Produkte, die ich gebaut und veröffentlicht habe",
+      "intro": "Jedes davon habe ich selbst umgesetzt – von der Datenbank über die Oberfläche bis zum Deployment. Jeder Status ist ehrlich: „Live“ heißt, Sie können es jetzt öffnen.",
+      "moreTitle": "Weitere Arbeiten"
+    },
+    "links": {
+      "live": "Zur Website",
+      "bot": "In Telegram öffnen",
+      "preview": "Vorschau",
+      "video": "Demo ansehen",
+      "code": "Code"
+    },
+    "coverAlt": "Screenshot von {title}",
+    "resultLabel": "Ergebnis",
+    "stackLabel": "Technologien"
   },
   "services": {
     "items": {

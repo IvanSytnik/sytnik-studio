@@ -8,6 +8,17 @@ import type { ServiceId } from "@/types/service";
  */
 export type ProjectSlug = keyof typeof en.projects.items;
 
+type ProjectCopy = typeof en.projects.items;
+
+/**
+ * Slugs whose copy contains a full case study (result, context, problem…).
+ * Only these may be flagships — promoting a project without that copy is
+ * a type error, not a page with holes in it.
+ */
+export type CaseStudySlug = {
+  [K in ProjectSlug]: ProjectCopy[K] extends { result: string } ? K : never;
+}[ProjectSlug];
+
 /**
  * Lifecycle status, shown as a badge. Keep it honest:
  * - live        publicly usable right now
@@ -27,7 +38,7 @@ export type ProjectStatus = (typeof PROJECT_STATUSES)[number];
  * flagship → large card + its own case study page at /projects/[slug]
  * compact  → small card in the "Client & smaller work" grid, no page
  */
-export type ProjectTier = "flagship" | "compact";
+export type ProjectTier = Project["tier"];
 
 /** Who the work was for. Drives the "Client work" label. */
 export type ProjectKind = "product" | "client";
@@ -50,9 +61,7 @@ export type ProjectMedia = {
  * All human-readable text lives in messages/*.json under
  * `projects.items.<slug>` — never put copy here.
  */
-export type Project = {
-  slug: ProjectSlug;
-  tier: ProjectTier;
+type ProjectBase = {
   status: ProjectStatus;
   kind: ProjectKind;
   /** Lower comes first within its tier. */
@@ -63,9 +72,21 @@ export type Project = {
    */
   published: boolean;
   links: ProjectLinks;
-  /** Display names, most important first. Cards show the first three. */
+  /** Display names, most important first. Flagship rows show the first four. */
   stack: readonly string[];
-  /** First entry is the primary service, used as the card category. */
+  /** First entry is the primary service, used as the row's category. */
   services: readonly [ServiceId, ...ServiceId[]];
   media: ProjectMedia;
 };
+
+export type FlagshipProject = ProjectBase & {
+  tier: "flagship";
+  slug: CaseStudySlug;
+};
+
+export type CompactProject = ProjectBase & {
+  tier: "compact";
+  slug: ProjectSlug;
+};
+
+export type Project = FlagshipProject | CompactProject;

@@ -165,7 +165,23 @@
         "title": "ShopSmart AI",
         "summary": "AI shopping-list generator for German supermarkets: weekly lists that respect your budget and diet. Being rebuilt as a new MVP."
       }
-    }
+    },
+    "section": {
+      "eyebrow": "Selected work",
+      "title": "Products I've built and shipped",
+      "intro": "Each one built end to end by me — from the database to the interface and deployment. Every status is honest: “Live” means you can open it right now.",
+      "moreTitle": "More work"
+    },
+    "links": {
+      "live": "Live site",
+      "bot": "Open in Telegram",
+      "preview": "Preview",
+      "video": "Watch demo",
+      "code": "Code"
+    },
+    "coverAlt": "Screenshot of {title}",
+    "resultLabel": "Result",
+    "stackLabel": "Tech stack"
   },
   "services": {
     "items": {

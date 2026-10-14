@@ -30,7 +30,13 @@ export const projects = [
       "Vercel",
     ],
     services: ["crm-systems", "business-websites"],
-    media: { gallery: [] },
+    media: {
+      cover: "/projects/restaurant-crm/cover.webp",
+      gallery: [
+        "/projects/restaurant-crm/floor-plan.webp",
+        "/projects/restaurant-crm/booking.webp",
+      ],
+    },
   },
   {
     slug: "dealradar",
@@ -54,7 +60,13 @@ export const projects = [
       "Docker",
     ],
     services: ["bots-automation", "ai-integrations"],
-    media: { gallery: [] },
+    media: {
+      cover: "/projects/dealradar/cover.webp",
+      gallery: [
+        "/projects/dealradar/market-analysis.webp",
+        "/projects/dealradar/report-filters.webp",
+      ],
+    },
   },
   {
     slug: "styleme",
@@ -78,7 +90,10 @@ export const projects = [
       "Playwright",
     ],
     services: ["ai-integrations"],
-    media: { gallery: [] },
+    media: {
+      cover: "/projects/styleme/cover.webp",
+      gallery: ["/projects/styleme/upload.webp"],
+    },
   },
   {
     slug: "englishlearn",
@@ -88,6 +103,7 @@ export const projects = [
     order: 4,
     published: true,
     links: {
+      live: "https://english-learn-web-two.vercel.app/",
       repo: "https://github.com/IvanSytnik/english-learn",
     },
     stack: [
@@ -99,7 +115,10 @@ export const projects = [
       "Turborepo",
     ],
     services: ["ai-integrations"],
-    media: { gallery: [] },
+    media: {
+      cover: "/projects/englishlearn/cover.webp",
+      gallery: [],
+    },
   },
   {
     // Neutral slug on purpose: presented as an engineering case,

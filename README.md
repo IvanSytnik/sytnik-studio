@@ -2,7 +2,7 @@
 
 Portfolio & lead-generation site. Personal brand wrapped as a small independent studio.
 
-## Current state — Pack #5 (Hero)
+## Current state — Pack #6 (Projects section)
 
 Foundation + site shell:
 
@@ -40,6 +40,12 @@ Pack #5 — Hero:
 - `src/features/hero/` — typographic hero, Server Components only (no client JS); stats computed from the project registry and locales
 - Hero copy in all four locales (ICU plurals for stat labels)
 - CTA contrast fixed: `--accent-foreground` is graphite in light theme (6.3:1)
+
+Pack #6 — Projects section:
+
+- `src/features/projects/` — flagship rows (cover + story, alternating sides) and a compact "More work" list; Server Components
+- Covers in `public/projects/<slug>/` (16:10 WebP); projects without a screenshot get a typographic cover
+- Flagships are typed to require full case-study copy (`CaseStudySlug`)
 
 ## Setup
 
