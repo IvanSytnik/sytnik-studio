@@ -43,7 +43,7 @@ function SectionPlaceholders() {
             key={item.id}
             id={item.id}
             aria-labelledby={`${item.id}-heading`}
-            className="scroll-mt-16 rounded-lg border border-dashed border-border bg-card/40 p-8"
+            className="scroll-mt-20 rounded-lg border border-dashed border-border bg-card/40 p-8"
           >
             <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
               #{item.id}

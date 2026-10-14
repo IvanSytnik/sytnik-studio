@@ -21,7 +21,7 @@ export async function ProjectsSection() {
     <section
       id="projects"
       aria-labelledby="projects-heading"
-      className="scroll-mt-16 border-t border-border pb-20 pt-14 sm:pb-28 sm:pt-20"
+      className="scroll-mt-14 border-t border-border pb-16 pt-10 sm:pb-20"
     >
       <Container>
         <header className="max-w-2xl">
@@ -39,14 +39,14 @@ export async function ProjectsSection() {
           </p>
         </header>
 
-        <div className="mt-16 space-y-20 sm:mt-20 lg:space-y-28">
+        <div className="mt-10 space-y-16 sm:mt-12 lg:space-y-20">
           {flagships.map((project, i) => (
             <FlagshipProject key={project.slug} project={project} index={i} />
           ))}
         </div>
 
         {compact.length > 0 && (
-          <div className="mt-24 lg:mt-32">
+          <div className="mt-16 lg:mt-20">
             <h3 className="text-lg font-semibold tracking-tight">
               {t("moreTitle")}
             </h3>

@@ -19,7 +19,7 @@ export function ProjectGallery({ images, altFor }: Props) {
           <li
             key={img.src}
             className={cn(
-              "overflow-hidden rounded-xl bg-[hsl(var(--stage))] p-3 ring-1 ring-inset ring-border sm:p-4",
+              "overflow-hidden rounded-xl bg-[hsl(var(--stage))] p-2.5 ring-1 ring-inset ring-border sm:p-3",
               portrait ? "mx-auto w-full max-w-sm" : "sm:col-span-2"
             )}
           >
@@ -33,7 +33,7 @@ export function ProjectGallery({ images, altFor }: Props) {
                   ? "(min-width: 640px) 384px, 100vw"
                   : "(min-width: 1280px) 1216px, 100vw"
               }
-              className="h-auto w-full rounded-lg ring-1 ring-foreground/5"
+              className="h-auto w-full rounded-md ring-1 ring-foreground/5"
             />
           </li>
         );

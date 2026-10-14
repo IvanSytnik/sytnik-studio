@@ -52,7 +52,7 @@ export function ProjectCover({
   return (
     <div
       className={cn(
-        "rounded-2xl bg-[hsl(var(--stage))] p-[5%] ring-1 ring-inset ring-border",
+        "rounded-xl bg-[hsl(var(--stage))] p-2.5 ring-1 ring-inset ring-border sm:p-3",
         className
       )}
     >
@@ -60,7 +60,7 @@ export function ProjectCover({
         className={cn(
           "relative aspect-[16/10] overflow-hidden",
           kind === "screen" &&
-            "rounded-lg bg-card shadow-[0_1px_2px_hsl(var(--foreground)/0.06),0_12px_32px_-12px_hsl(var(--foreground)/0.25)] ring-1 ring-foreground/5"
+            "rounded-md bg-card shadow-[0_1px_2px_hsl(var(--foreground)/0.08)] ring-1 ring-foreground/5"
         )}
       >
         {src ? (
