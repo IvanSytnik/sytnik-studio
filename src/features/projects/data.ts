@@ -16,7 +16,7 @@ export const projects = [
     order: 1,
     published: true,
     links: {
-      live: "https://restaurant-crm-hwdr.vercel.app/de",
+      live: "https://restaurant-crm-ten.vercel.app/",
       repo: "https://github.com/IvanSytnik/restaurant-crm",
     },
     stack: [
@@ -33,15 +33,39 @@ export const projects = [
     media: { gallery: [] },
   },
   {
-    slug: "styleme",
+    slug: "dealradar",
     tier: "flagship",
     status: "live",
     kind: "product",
     order: 2,
     published: true,
     links: {
+      live: "https://t.me/dealradar_austria_bot",
+      repo: "https://github.com/IvanSytnik/dealradar",
+    },
+    stack: [
+      "TypeScript",
+      "Claude API",
+      "AWS",
+      "Terraform",
+      "grammY",
+      "SQLite",
+      "Vitest",
+      "Docker",
+    ],
+    services: ["bots-automation", "ai-integrations"],
+    media: { gallery: [] },
+  },
+  {
+    slug: "styleme",
+    tier: "flagship",
+    status: "live",
+    kind: "product",
+    order: 3,
+    published: true,
+    links: {
       live: "https://styleme-second-v-web.vercel.app/",
-      repo: "https://github.com/IvanSytnik/styleme-second_v",
+      repo: "https://github.com/IvanSytnik/styleme",
     },
     stack: [
       "Next.js 16",
@@ -61,7 +85,7 @@ export const projects = [
     tier: "flagship",
     status: "pre-launch",
     kind: "product",
-    order: 3,
+    order: 4,
     published: true,
     links: {
       repo: "https://github.com/IvanSytnik/english-learn",
@@ -79,12 +103,13 @@ export const projects = [
   },
   {
     // Neutral slug on purpose: presented as an engineering case,
-    // never as a downloader service. No public bot link.
+    // never as a downloader service. No public bot link on this site,
+    // even while the bot itself is in beta.
     slug: "media-processing-platform",
-    tier: "flagship",
-    status: "pre-launch",
+    tier: "compact",
+    status: "beta",
     kind: "product",
-    order: 4,
+    order: 3,
     published: true,
     links: {
       repo: "https://github.com/IvanSytnik/Universal-Media-Downloader",
@@ -117,6 +142,20 @@ export const projects = [
     // TODO(ivan): verify — GitHub reports the repo as JavaScript.
     stack: ["React", "Node.js", "Tailwind CSS", "Telegram Bot API"],
     services: ["landing-pages"],
+    media: { gallery: [] },
+  },
+  {
+    slug: "shopsmart-ai",
+    tier: "compact",
+    status: "pre-launch",
+    kind: "product",
+    order: 4,
+    published: true,
+    links: {
+      repo: "https://github.com/IvanSytnik/shopsmart-ai",
+    },
+    stack: ["React", "TypeScript", "FastAPI", "OpenAI API", "Docker"],
+    services: ["ai-integrations"],
     media: { gallery: [] },
   },
   {

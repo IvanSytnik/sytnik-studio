@@ -11,10 +11,16 @@ export type ProjectSlug = keyof typeof en.projects.items;
 /**
  * Lifecycle status, shown as a badge. Keep it honest:
  * - live        publicly usable right now
+ * - beta        working, open to a limited group of testers
  * - delivered   handed over to the client; not necessarily launched
  * - pre-launch  built/being built, not publicly available
  */
-export const PROJECT_STATUSES = ["live", "delivered", "pre-launch"] as const;
+export const PROJECT_STATUSES = [
+  "live",
+  "beta",
+  "delivered",
+  "pre-launch",
+] as const;
 export type ProjectStatus = (typeof PROJECT_STATUSES)[number];
 
 /**

@@ -50,6 +50,7 @@
   "projects": {
     "status": {
       "live": "Работает",
+      "beta": "Бета",
       "delivered": "Передан клиенту",
       "pre-launch": "До запуска"
     },

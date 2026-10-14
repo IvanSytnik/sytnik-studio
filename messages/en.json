@@ -50,6 +50,7 @@
   "projects": {
     "status": {
       "live": "Live",
+      "beta": "Beta",
       "delivered": "Delivered",
       "pre-launch": "Pre-launch"
     },
@@ -61,10 +62,10 @@
       "restaurant-crm": {
         "title": "Restaurant CRM & Booking Platform",
         "summary": "Booking system and CRM running daily in a restaurant in Graz.",
-        "result": "In daily use at the restaurant: guests book online, staff manage the day from one screen.",
+        "result": "In daily use at the restaurant, replacing the paid booking service: guests book online, staff manage the day from one screen.",
         "role": "Sole developer and product owner",
         "context": "A small restaurant with five tables needed online reservations, a menu it could edit itself and one place to manage guests — without a monthly SaaS fee and without handing guest data to a third party.",
-        "problem": "Bookings came in by phone and ad hoc, which made double-booked tables likely and left no clear overview of the day.",
+        "problem": "The restaurant paid a monthly fee for a third-party booking tool that didn't fit how it actually worked, and its guest data lived on someone else's platform.",
         "built": [
           "Public website in German, English and Ukrainian with menu, promotions, gallery and online booking.",
           "Booking engine that picks the best-fitting table for the group size, respects visit length and turnover buffers, and prevents conflicts.",
@@ -74,6 +75,27 @@
           "Allocation rules modelled explicitly: table capacities, 60/90-minute visits by group size, 15-minute buffers and a last-slot cutoff.",
           "Credentials authentication with JWT sessions; access checks enforced on every protected page.",
           "German as the mandatory source language, with automatic fallback for English and Ukrainian content."
+        ]
+      },
+      "dealradar": {
+        "title": "DealRadar — marketplace deal finder",
+        "summary": "A Telegram bot that watches willhaben.at and kleinanzeigen.de and only sends the listings worth opening.",
+        "result": "Live and open to everyone, in four languages, running on AWS for about $12 a month.",
+        "role": "Solo — product, backend, AI, infrastructure",
+        "context": "Second-hand marketplaces are full of accessories, wanted ads and junk. Checking a search by hand means scrolling through dozens of irrelevant listings, and a single average price says little about whether one offer is actually good.",
+        "problem": "Prices differ hugely between variants of the same product, so one blended average makes the expensive model look overpriced and the cheap one look like a bargain. AI on every listing would also get expensive fast.",
+        "built": [
+          "Paste a search link or just type what you want: the bot builds a filter and notifies you about new listings and price drops.",
+          "A market scan that reads every page of a search and reports prices model by model, as a Telegram Mini App.",
+          "Feedback buttons under each notification that teach the filter what you do and don't want.",
+          "Free and Pro plans, invite links, a privacy page and one-command data erasure."
+        ],
+        "highlights": [
+          "Deal scores come from per-model medians of the live market — the AI judges relevance and condition, never the price.",
+          "Rules first, AI second: a German marketplace lexicon drops most junk for free; only what passes is classified, in batches, with a cache and a daily budget per user.",
+          "Polite by design: one request per unique search per cycle, a per-host queue with backoff, and a health alert when a site's layout changes.",
+          "Core logic doesn't depend on Telegram or the LLM vendor; both sit behind ports, so the bot is tested end to end offline — 262 tests, strict TypeScript, CI on every push.",
+          "Infrastructure as code: Terraform provisions EC2, ECR, S3 + CloudFront and secrets in SSM; GitHub Actions deploys with no open inbound ports."
         ]
       },
       "styleme": {
@@ -115,7 +137,7 @@
       "media-processing-platform": {
         "title": "Media Processing Platform",
         "summary": "An asynchronous media-processing backend with a Telegram bot as its first client.",
-        "result": "Works end to end, including files over 1 GB; ready for a closed beta.",
+        "result": "Works end to end, including files over 1 GB; now in beta with a limited group of testers.",
         "role": "Solo developer",
         "context": "A Telegram bot that takes a link and sends back the processed media file — designed from day one as the core of a platform, not a one-off script.",
         "problem": "Long-running media jobs can freeze a bot, hit platform file-size limits and tie business logic to one messenger.",
@@ -138,6 +160,10 @@
       "pallet-sales": {
         "title": "Pallet sales website",
         "summary": "Sales website for a pallet supplier. Every inquiry lands instantly in the team's Telegram group through a custom bot, so no lead gets lost in an inbox."
+      },
+      "shopsmart-ai": {
+        "title": "ShopSmart AI",
+        "summary": "AI shopping-list generator for German supermarkets: weekly lists that respect your budget and diet. Being rebuilt as a new MVP."
       }
     }
   },
