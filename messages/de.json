@@ -90,6 +90,57 @@
       "ctaButton": "Projekt starten"
     }
   },
+  "about": {
+    "eyebrow": "Über mich",
+    "title": "Ein Entwickler, mit dem Sie direkt sprechen",
+    "bio": "Ich bin Ivan, Full-Stack-Entwickler in Graz. Seit 2025 baue ich Websites, Buchungssysteme und KI-Funktionen – für Kundinnen und Kunden und als eigene Produkte – von der Datenbank über die Oberfläche bis zum Deployment. Ich arbeite mit Kunden in Europa und Übersee, vollständig remote.",
+    "portraitAlt": "Ivan Sytnik",
+    "facts": {
+      "location": {
+        "label": "Standort",
+        "value": "Graz, Österreich (MEZ)"
+      },
+      "languages": {
+        "label": "Sprachen",
+        "value": "Englisch, Deutsch (B1), Ukrainisch, Russisch"
+      },
+      "education": {
+        "label": "Ausbildung",
+        "value": "BSc & MSc in Informatik"
+      },
+      "clients": {
+        "label": "Kunden",
+        "value": "Europa und USA, remote"
+      }
+    },
+    "reasonsTitle": "Warum mit mir arbeiten",
+    "reasons": {
+      "endToEnd": {
+        "title": "Alles aus einer Hand",
+        "text": "Oberfläche, Backend und Deployment von einer Person – nichts geht zwischen Dienstleistern verloren."
+      },
+      "direct": {
+        "title": "Sie sprechen mit dem Entwickler",
+        "text": "Keine Account-Manager. Wer Ihre Nachricht beantwortet, schreibt auch den Code."
+      },
+      "ai": {
+        "title": "KI mit kontrollierten Kosten",
+        "text": "Kontingente, Caching und Budgets pro Nutzer sind Teil des Designs, kein Nachgedanke."
+      },
+      "multilingual": {
+        "title": "Mehrsprachig von Anfang an",
+        "text": "Saubere Übersetzungen, Sprachumschaltung und Sichtbarkeit in Suchmaschinen für jede Sprache."
+      },
+      "quality": {
+        "title": "Gebaut, um zu bleiben",
+        "text": "Tests, CI und sichere Voreinstellungen – plus Dokumentation, die Sie an andere Entwickler weitergeben können."
+      },
+      "remote": {
+        "title": "Einfache Zusammenarbeit aus der Ferne",
+        "text": "Schriftliche Updates, klare Schätzungen und Arbeitszeiten, die sich mit Europa und der US-Ostküste überschneiden."
+      }
+    }
+  },
   "services": {
     "items": {
       "landing-pages": {

@@ -4,6 +4,7 @@ import { setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/layout/container";
 import { HeroSection } from "@/features/hero/hero-section";
 import { ProjectsSection } from "@/features/projects/projects-section";
+import { AboutSection } from "@/features/about/about-section";
 import { routing, type Locale } from "@/i18n/routing";
 import { navItems } from "@/lib/nav";
 
@@ -22,6 +23,7 @@ export default async function HomePage({
     <>
       <HeroSection />
       <ProjectsSection />
+      <AboutSection />
       <SectionPlaceholders />
     </>
   );

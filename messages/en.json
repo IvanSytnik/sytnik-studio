@@ -198,6 +198,57 @@
       "ctaButton": "Start a project"
     }
   },
+  "about": {
+    "eyebrow": "About",
+    "title": "A developer you can talk to directly",
+    "bio": "I'm Ivan, a full-stack developer based in Graz, Austria. Since 2025 I've been building websites, booking systems and AI features — for clients and as products of my own — from the database to the interface and deployment. I work with clients in Europe and overseas, fully remote.",
+    "portraitAlt": "Ivan Sytnik",
+    "facts": {
+      "location": {
+        "label": "Based in",
+        "value": "Graz, Austria (CET)"
+      },
+      "languages": {
+        "label": "Languages",
+        "value": "English, German (B1), Ukrainian, Russian"
+      },
+      "education": {
+        "label": "Education",
+        "value": "BSc & MSc in Computer Science"
+      },
+      "clients": {
+        "label": "Clients",
+        "value": "Europe and the US, remote"
+      }
+    },
+    "reasonsTitle": "Why work with me",
+    "reasons": {
+      "endToEnd": {
+        "title": "One person, end to end",
+        "text": "Interface, backend and deployment in one pair of hands — nothing gets lost between contractors."
+      },
+      "direct": {
+        "title": "You talk to the developer",
+        "text": "No account managers. The person answering your message is the one writing the code."
+      },
+      "ai": {
+        "title": "AI with costs under control",
+        "text": "Quotas, caching and per-user budgets are part of the design, not an afterthought."
+      },
+      "multilingual": {
+        "title": "Multilingual from day one",
+        "text": "Proper translations, language switching and search visibility for every language."
+      },
+      "quality": {
+        "title": "Built to last",
+        "text": "Tests, CI and secure defaults, plus documentation you can hand to the next developer."
+      },
+      "remote": {
+        "title": "Easy to work with remotely",
+        "text": "Written updates, clear estimates, and hours that overlap with both Europe and the US East Coast."
+      }
+    }
+  },
   "services": {
     "items": {
       "landing-pages": {

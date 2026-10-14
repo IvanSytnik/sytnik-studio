@@ -2,7 +2,7 @@
 
 Portfolio & lead-generation site. Personal brand wrapped as a small independent studio.
 
-## Current state — Pack #7 (Case study pages)
+## Current state — Pack #8 (About)
 
 Foundation + site shell:
 
@@ -52,6 +52,11 @@ Pack #7 — Case study pages:
 - `/projects/[slug]` for flagships only (`dynamicParams = false` → other slugs 404), statically prerendered for all locales
 - Context → problem → what I built → engineering highlights, sticky role/stack column, screenshot gallery, next project, contact CTA
 - Per-page metadata: canonical, hreflang + x-default, Open Graph cover, CreativeWork JSON-LD; pages added to the sitemap
+
+Pack #8 — About:
+
+- `src/features/about/` — bio, facts (location, languages, education, clients), six reasons to work with me; copy in all four locales
+- Portrait at `public/images/ivan-sytnik.webp` (4:5; replace the file to change the photo)
 
 ## Setup
 
