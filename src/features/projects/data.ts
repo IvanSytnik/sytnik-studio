@@ -33,8 +33,16 @@ export const projects = [
     media: {
       cover: "/projects/restaurant-crm/cover.webp",
       gallery: [
-        "/projects/restaurant-crm/floor-plan.webp",
-        "/projects/restaurant-crm/booking.webp",
+        {
+          src: "/projects/restaurant-crm/floor-plan.webp",
+          width: 1600,
+          height: 1000,
+        },
+        {
+          src: "/projects/restaurant-crm/booking.webp",
+          width: 1600,
+          height: 1000,
+        },
       ],
     },
   },
@@ -63,8 +71,16 @@ export const projects = [
     media: {
       cover: "/projects/dealradar/cover.webp",
       gallery: [
-        "/projects/dealradar/market-analysis.webp",
-        "/projects/dealradar/report-filters.webp",
+        {
+          src: "/projects/dealradar/market-analysis.webp",
+          width: 860,
+          height: 1466,
+        },
+        {
+          src: "/projects/dealradar/report-filters.webp",
+          width: 860,
+          height: 1466,
+        },
       ],
     },
   },
@@ -92,7 +108,9 @@ export const projects = [
     services: ["ai-integrations"],
     media: {
       cover: "/projects/styleme/cover.webp",
-      gallery: ["/projects/styleme/upload.webp"],
+      gallery: [
+        { src: "/projects/styleme/upload.webp", width: 1600, height: 1000 },
+      ],
     },
   },
   {

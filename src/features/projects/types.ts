@@ -50,10 +50,19 @@ export type ProjectLinks = {
   video?: string;
 };
 
+export type GalleryImage = {
+  /** Path under /public, e.g. "/projects/styleme/upload.webp". */
+  src: string;
+  /** Intrinsic size — lets the page reserve space and avoid layout shift. */
+  width: number;
+  height: number;
+};
+
 export type ProjectMedia = {
-  /** Path under /public, e.g. "/projects/styleme/cover.webp". */
+  /** 16:10 cover under /public, e.g. "/projects/styleme/cover.webp". */
   cover?: string;
-  gallery: readonly string[];
+  /** Extra screenshots for the case study page. */
+  gallery: readonly GalleryImage[];
 };
 
 /**

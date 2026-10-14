@@ -73,7 +73,22 @@
     },
     "coverAlt": "Screenshot von {title}",
     "resultLabel": "Ergebnis",
-    "stackLabel": "Technologien"
+    "stackLabel": "Technologien",
+    "caseStudy": {
+      "open": "Fallstudie",
+      "back": "Alle Projekte",
+      "role": "Meine Rolle",
+      "context": "Ausgangslage",
+      "problem": "Das Problem",
+      "built": "Was ich gebaut habe",
+      "highlights": "Technische Highlights",
+      "gallery": "Screenshots",
+      "galleryAlt": "{title}, Screenshot {n}",
+      "next": "Nächstes Projekt",
+      "ctaTitle": "Brauchen Sie etwas Ähnliches?",
+      "ctaText": "Erzählen Sie mir von Ihrem Vorhaben – Sie bekommen eine Antwort direkt von mir, nicht von einem Vertriebsteam.",
+      "ctaButton": "Projekt starten"
+    }
   },
   "services": {
     "items": {

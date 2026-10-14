@@ -48,3 +48,15 @@ export function getProjectStats() {
     clientProjects: all.filter((p) => p.kind === "client").length,
   } as const;
 }
+
+export function getFlagshipBySlug(slug: string): FlagshipProject | undefined {
+  return getFlagshipProjects().find((p) => p.slug === slug);
+}
+
+/** The flagship after this one, wrapping around — for "Next project". */
+export function getNextFlagship(slug: string): FlagshipProject | undefined {
+  const all = getFlagshipProjects();
+  const i = all.findIndex((p) => p.slug === slug);
+  if (i === -1 || all.length < 2) return undefined;
+  return all[(i + 1) % all.length];
+}

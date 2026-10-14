@@ -2,7 +2,7 @@
 
 Portfolio & lead-generation site. Personal brand wrapped as a small independent studio.
 
-## Current state — Pack #6 (Projects section)
+## Current state — Pack #7 (Case study pages)
 
 Foundation + site shell:
 
@@ -46,6 +46,12 @@ Pack #6 — Projects section:
 - `src/features/projects/` — flagship rows (cover + story, alternating sides) and a compact "More work" list; Server Components
 - Covers in `public/projects/<slug>/` (16:10 WebP); projects without a screenshot get a typographic cover
 - Flagships are typed to require full case-study copy (`CaseStudySlug`)
+
+Pack #7 — Case study pages:
+
+- `/projects/[slug]` for flagships only (`dynamicParams = false` → other slugs 404), statically prerendered for all locales
+- Context → problem → what I built → engineering highlights, sticky role/stack column, screenshot gallery, next project, contact CTA
+- Per-page metadata: canonical, hreflang + x-default, Open Graph cover, CreativeWork JSON-LD; pages added to the sitemap
 
 ## Setup
 

@@ -181,7 +181,22 @@
     },
     "coverAlt": "Screenshot of {title}",
     "resultLabel": "Result",
-    "stackLabel": "Tech stack"
+    "stackLabel": "Tech stack",
+    "caseStudy": {
+      "open": "Case study",
+      "back": "All projects",
+      "role": "My role",
+      "context": "Context",
+      "problem": "The problem",
+      "built": "What I built",
+      "highlights": "Engineering highlights",
+      "gallery": "Screenshots",
+      "galleryAlt": "{title}, screenshot {n}",
+      "next": "Next project",
+      "ctaTitle": "Need something similar?",
+      "ctaText": "Tell me what you're working on — you'll get a reply from me personally, not from a sales team.",
+      "ctaButton": "Start a project"
+    }
   },
   "services": {
     "items": {
