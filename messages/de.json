@@ -144,20 +144,63 @@
   "services": {
     "items": {
       "landing-pages": {
-        "label": "Landingpages"
+        "label": "Landingpages",
+        "timeline": "1–2 Wochen",
+        "pitch": "Eine schnelle Landingpage, die Besucher zu Anfragen macht.",
+        "includes": [
+          "Mobile-first, schnelle Ladezeit",
+          "Kontaktformular an E-Mail und Telegram",
+          "SEO-Grundlagen und Analytics"
+        ]
       },
       "business-websites": {
-        "label": "Unternehmenswebsites"
+        "label": "Unternehmenswebsites",
+        "timeline": "2–4 Wochen",
+        "pitch": "Eine mehrsprachige Website mit Speisekarte, Katalog oder Buchung, die Sie selbst pflegen können.",
+        "includes": [
+          "Mehrere Sprachen mit sauberem SEO",
+          "Inhalte ohne Entwickler bearbeiten",
+          "Hosting, Domain und Launch inklusive"
+        ]
       },
       "crm-systems": {
-        "label": "CRM- & Buchungssysteme"
+        "label": "CRM- & Buchungssysteme",
+        "timeline": "4–8 Wochen",
+        "pitch": "Ersetzen Sie Tabellen und teure Tools durch ein System, das zu Ihren Abläufen passt.",
+        "includes": [
+          "Online-Buchung mit Ihren eigenen Regeln",
+          "Admin-Bereich mit Rollen und Rechten",
+          "Ihre Daten auf Ihrer Infrastruktur"
+        ]
       },
       "ai-integrations": {
-        "label": "KI-Integrationen"
+        "label": "KI-Integrationen",
+        "timeline": "2–6 Wochen",
+        "pitch": "Bildgenerierung, Assistenten oder smarte Empfehlungen für Ihr Produkt – mit kontrollierten Kosten.",
+        "includes": [
+          "Modelle von OpenAI, Anthropic oder Replicate",
+          "Kontingente, Caching und Missbrauchsschutz",
+          "Klare Kosten pro Nutzer vor dem Launch"
+        ]
       },
       "bots-automation": {
-        "label": "Bots & Automatisierung"
+        "label": "Bots & Automatisierung",
+        "timeline": "1–4 Wochen",
+        "pitch": "Telegram-Bots und Hintergrundprozesse, die benachrichtigen, verarbeiten und Routinearbeit automatisieren.",
+        "includes": [
+          "Benachrichtigungen, Alerts und Berichte",
+          "Geplante Jobs und Integrationen",
+          "Deployment und Monitoring inklusive"
+        ]
       }
-    }
+    },
+    "section": {
+      "eyebrow": "Leistungen",
+      "title": "Was ich für Sie bauen kann",
+      "intro": "Klarer Umfang, transparente Schätzung, regelmäßige Updates. Zu jeder Leistung gibt es bereits umgesetzte Projekte.",
+      "note": "Die Zeiträume gelten typischerweise für eine erste Version. Jedes Projekt beginnt mit einem kostenlosen Gespräch und einer schriftlichen Schätzung."
+    },
+    "timelineLabel": "Typische Dauer",
+    "proofLabel": "So sieht das aus"
   }
 }

@@ -1,3 +1,4 @@
+import type { ServiceId } from "@/types/service";
 import { projects } from "./data";
 import type {
   CaseStudySlug,
@@ -59,4 +60,16 @@ export function getNextFlagship(slug: string): FlagshipProject | undefined {
   const i = all.findIndex((p) => p.slug === slug);
   if (i === -1 || all.length < 2) return undefined;
   return all[(i + 1) % all.length];
+}
+
+/**
+ * Published projects that prove a given service, flagships first.
+ * Used by the Services section to link each offer to real work.
+ */
+export function getProjectsForService(service: ServiceId): Project[] {
+  return publishedProjects()
+    .filter((p) => p.services.includes(service))
+    .sort((a, b) =>
+      a.tier === b.tier ? byOrder(a, b) : a.tier === "flagship" ? -1 : 1
+    );
 }

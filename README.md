@@ -2,7 +2,7 @@
 
 Portfolio & lead-generation site. Personal brand wrapped as a small independent studio.
 
-## Current state — Pack #8 (About)
+## Current state — Pack #9 (Services)
 
 Foundation + site shell:
 
@@ -57,6 +57,11 @@ Pack #8 — About:
 
 - `src/features/about/` — bio, facts (location, languages, education, clients), six reasons to work with me; copy in all four locales
 - Portrait at `public/images/ivan-sytnik.webp` (4:5; replace the file to change the photo)
+
+Pack #9 — Services:
+
+- `src/features/services/` — five services with pitch, what's included and typical timeline; copy in all four locales
+- Proof links come from the project registry (`getProjectsForService`): flagships link to their case study, smaller work to its live site
 
 ## Setup
 

@@ -252,20 +252,63 @@
   "services": {
     "items": {
       "landing-pages": {
-        "label": "Landing pages"
+        "label": "Landing pages",
+        "timeline": "1–2 weeks",
+        "pitch": "A fast one-pager that turns visitors into inquiries.",
+        "includes": [
+          "Mobile-first design, fast loading",
+          "Contact form to your email and Telegram",
+          "Basic SEO and analytics"
+        ]
       },
       "business-websites": {
-        "label": "Business websites"
+        "label": "Business websites",
+        "timeline": "2–4 weeks",
+        "pitch": "A multilingual website with menu, catalogue or booking that you can update yourself.",
+        "includes": [
+          "Several languages with proper SEO",
+          "Content you can edit without a developer",
+          "Hosting, domain and launch handled"
+        ]
       },
       "crm-systems": {
-        "label": "CRM & booking systems"
+        "label": "CRM & booking systems",
+        "timeline": "4–8 weeks",
+        "pitch": "Replace spreadsheets and paid tools with a system built around how you actually work.",
+        "includes": [
+          "Online booking with your own rules",
+          "Admin panel with roles and access",
+          "Your data, on your infrastructure"
+        ]
       },
       "ai-integrations": {
-        "label": "AI integrations"
+        "label": "AI integrations",
+        "timeline": "2–6 weeks",
+        "pitch": "Add image generation, assistants or smart recommendations to your product — with costs under control.",
+        "includes": [
+          "OpenAI, Anthropic or Replicate models",
+          "Quotas, caching and abuse protection",
+          "Clear cost per user before launch"
+        ]
       },
       "bots-automation": {
-        "label": "Bots & automation"
+        "label": "Bots & automation",
+        "timeline": "1–4 weeks",
+        "pitch": "Telegram bots and background jobs that notify, process and automate the boring parts.",
+        "includes": [
+          "Notifications, alerts and reports",
+          "Scheduled jobs and integrations",
+          "Deployed and monitored"
+        ]
       }
-    }
+    },
+    "section": {
+      "eyebrow": "Services",
+      "title": "What I can build for you",
+      "intro": "Fixed scope, clear estimate, regular updates. Each service links to work I've already shipped.",
+      "note": "Timelines are typical for a first version. Every project starts with a free call and a written estimate."
+    },
+    "timelineLabel": "Typical timeline",
+    "proofLabel": "See it in practice"
   }
 }
