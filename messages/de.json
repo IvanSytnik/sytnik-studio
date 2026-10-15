@@ -93,6 +93,114 @@
       "ctaTitle": "Brauchen Sie etwas Ähnliches?",
       "ctaText": "Erzählen Sie mir von Ihrem Vorhaben – Sie bekommen eine Antwort direkt von mir, nicht von einem Vertriebsteam.",
       "ctaButton": "Projekt starten"
+    },
+    "items": {
+      "restaurant-crm": {
+        "title": "Restaurant-CRM & Buchungsplattform",
+        "summary": "Buchungssystem und CRM, täglich im Einsatz in einem Restaurant in Graz.",
+        "result": "Täglich im Einsatz und ersetzt den kostenpflichtigen Buchungsdienst: Gäste reservieren online, das Team steuert den Tag über einen Bildschirm.",
+        "role": "Alleiniger Entwickler und Product Owner",
+        "context": "Ein kleines Restaurant mit fünf Tischen brauchte Online-Reservierungen, eine selbst pflegbare Speisekarte und einen Ort für die Gästeverwaltung – ohne monatliche SaaS-Gebühr und ohne Gästedaten an Dritte weiterzugeben.",
+        "problem": "Das Restaurant zahlte monatlich für ein fremdes Buchungstool, das nicht zu den eigenen Abläufen passte, und die Gästedaten lagen auf der Plattform eines Anbieters.",
+        "built": [
+          "Öffentliche Website auf Deutsch, Englisch und Ukrainisch mit Speisekarte, Aktionen, Galerie und Online-Reservierung.",
+          "Buchungslogik, die den passenden Tisch für die Gruppengröße wählt, Aufenthaltsdauer und Puffer berücksichtigt und Doppelbuchungen verhindert.",
+          "Admin-CRM mit Reservierungen pro Tag, Tischplan, Pflege von Speisekarte und Inhalten sowie rollenbasiertem Zugriff."
+        ],
+        "highlights": [
+          "Zuteilungsregeln explizit modelliert: Tischkapazitäten, 60/90 Minuten Aufenthalt je nach Gruppengröße, 15 Minuten Puffer und letzter Slot.",
+          "Login mit Zugangsdaten und JWT-Sessions; Zugriffsprüfung auf jeder geschützten Seite.",
+          "Deutsch als verbindliche Quellsprache mit automatischem Fallback für englische und ukrainische Inhalte."
+        ]
+      },
+      "dealradar": {
+        "title": "DealRadar – Schnäppchen-Finder für Marktplätze",
+        "summary": "Ein Telegram-Bot, der willhaben.at und kleinanzeigen.de beobachtet und nur die Inserate schickt, die sich lohnen.",
+        "result": "Live und für alle offen, in vier Sprachen, läuft auf AWS für rund 12 $ im Monat.",
+        "role": "Allein – Produkt, Backend, KI, Infrastruktur",
+        "context": "Gebrauchtmarktplätze sind voller Zubehör, Suchanzeigen und Schrott. Eine Suche von Hand zu prüfen heißt, durch Dutzende irrelevante Inserate zu scrollen – und ein einzelner Durchschnittspreis sagt wenig darüber, ob ein Angebot wirklich gut ist.",
+        "problem": "Die Preise unterscheiden sich stark zwischen Varianten desselben Produkts: Ein gemischter Durchschnitt lässt das teure Modell überteuert und das günstige wie ein Schnäppchen aussehen. KI für jedes Inserat wäre außerdem schnell teuer.",
+        "built": [
+          "Suchlink einfügen oder einfach schreiben, was man sucht: Der Bot erstellt einen Filter und meldet neue Inserate und Preissenkungen.",
+          "Ein Marktscan, der alle Seiten einer Suche liest und Preise Modell für Modell auswertet – als Telegram Mini App.",
+          "Feedback-Buttons unter jeder Benachrichtigung, mit denen der Filter lernt, was man will und was nicht.",
+          "Free- und Pro-Tarif, Einladungslinks, Datenschutzseite und Datenlöschung per Befehl."
+        ],
+        "highlights": [
+          "Die Bewertung basiert auf Medianen pro Modell aus dem aktuellen Markt – die KI beurteilt Relevanz und Zustand, nie den Preis.",
+          "Erst Regeln, dann KI: Ein Lexikon für deutschsprachige Marktplätze filtert den meisten Schrott kostenlos; nur der Rest wird gebündelt klassifiziert, mit Cache und Tagesbudget pro Nutzer.",
+          "Rücksichtsvoll gebaut: eine Anfrage pro eindeutiger Suche und Zyklus, Warteschlange pro Host mit Backoff und Warnung, wenn sich das Layout einer Seite ändert.",
+          "Die Kernlogik hängt weder von Telegram noch vom KI-Anbieter ab; beide sitzen hinter Ports, daher ist der Bot offline end-to-end getestet – 262 Tests, striktes TypeScript, CI bei jedem Push.",
+          "Infrastructure as Code: Terraform stellt EC2, ECR, S3 + CloudFront und Secrets in SSM bereit; GitHub Actions deployt ohne offene eingehende Ports."
+        ]
+      },
+      "styleme": {
+        "title": "StyleMe – Frisuren mit KI ausprobieren",
+        "summary": "Selfie hochladen und sich in Sekunden mit neuer Frisur sehen.",
+        "result": "Das erste MVP ist live und öffentlich nutzbar.",
+        "role": "Allein – Produkt, Full-Stack, Architektur, DevOps und Sicherheit",
+        "context": "Menschen wollen einen Haarschnitt an sich selbst sehen, bevor sie sich entscheiden. Ein KI-Produkt für Endkunden muss außerdem günstig pro Anfrage und schwer zu missbrauchen sein.",
+        "problem": "Jede Bildgenerierung kostet echtes Geld – kostenlose Nutzung braucht daher Limits, die sich im Browser nicht umgehen lassen.",
+        "built": [
+          "Foto hochladen, eine von 40 Frisuren wählen, eine eigene beschreiben oder ein Referenzfoto nutzen – und das generierte Ergebnis sehen.",
+          "Ein kostenloses Tageskontingent plus zusätzliche Credits für das Ansehen einer Werbung."
+        ],
+        "highlights": [
+          "Bildgenerierung über Replicate, die Kosten pro Generierung sind in das Kontingent-Design eingerechnet.",
+          "Kontingente und Rate-Limits serverseitig pro IP und Nutzer in Redis – dem Browser wird nichts geglaubt.",
+          "Werbe-Credits gegen Betrug geschützt: serverseitige Einmal-Nonce, Mindest-Ansehdauer, atomare Einlösung und berechnete Kostenobergrenze.",
+          "Monorepo mit gemeinsamem Paket als einziger Quelle für Typen, Zod-Schemas und maschinenlesbare Fehlercodes.",
+          "Unit-, Contract- und Playwright-E2E-Tests in der CI; Architekturentscheidungen als ADRs dokumentiert."
+        ]
+      },
+      "englishlearn": {
+        "title": "EnglishLearn – adaptive Lernplattform",
+        "summary": "Ein Englischkurs, der entscheidet, was Sie als Nächstes üben sollten – basierend auf einem Modell dessen, was Sie wirklich können.",
+        "result": "Vor dem Launch: Die Lern-Engine ist gebaut und getestet, die App für Lernende ist in Arbeit.",
+        "role": "Technischer Mitgründer und alleiniger Entwickler",
+        "context": "Die meisten Sprach-Apps zeigen allen Lernenden dieselbe Abfolge von Lektionen.",
+        "problem": "Eine feste Reihenfolge verschwendet Zeit mit Bekanntem und geht weiter, bevor Schwächen behoben sind.",
+        "built": [
+          "Ein Lernermodell, das schätzt, was jemand kann, vorhersagt, was bald vergessen wird, und danach die nächste Übung auswählt.",
+          "Als Nächstes geplant: ein KI-Tutor und ein Einstufungstest."
+        ],
+        "highlights": [
+          "Lernermodell aus Bayesian Knowledge Tracing, Item Response Theory, FSRS-Wiederholungsplanung und Thompson Sampling.",
+          "Turborepo-Monorepo mit Prisma, PostgreSQL und Auth.js; vier Oberflächensprachen.",
+          "Die Engine ist durch automatisierte Tests abgedeckt."
+        ]
+      },
+      "media-processing-platform": {
+        "title": "Media Processing Platform",
+        "summary": "Ein asynchrones Backend zur Medienverarbeitung mit einem Telegram-Bot als erstem Client.",
+        "result": "Funktioniert end-to-end, auch mit Dateien über 1 GB; jetzt in der Beta mit einer begrenzten Testgruppe.",
+        "role": "Alleiniger Entwickler",
+        "context": "Ein Telegram-Bot, der einen Link annimmt und die verarbeitete Mediendatei zurückschickt – von Anfang an als Kern einer Plattform gedacht, nicht als einmaliges Skript.",
+        "problem": "Lang laufende Medienjobs können einen Bot einfrieren, an Dateigrößenlimits scheitern und die Geschäftslogik an einen Messenger binden.",
+        "built": [
+          "Link senden, Fortschritt live verfolgen und die Datei im Chat erhalten – auch über 1 GB.",
+          "Zwei Oberflächensprachen."
+        ],
+        "highlights": [
+          "Clean Architecture mit Ports und Adaptern: Telegram ist nur ein Adapter, ein Web- oder REST-Client lässt sich ohne Änderungen am Kern ergänzen.",
+          "Aufwendige Jobs laufen in einem separaten Prozess, der bei Timeout beendet werden kann – der Bot friert nie ein.",
+          "Live-Fortschritt über Redis Pub/Sub – die Verarbeitung weiß nichts von Telegram.",
+          "Dateien bis 2 GB über einen selbst gehosteten Telegram-Bot-API-Server statt des öffentlichen 50-MB-Limits.",
+          "Sicher als Standard: Domain-Allowlist, keine Shell-Ausführung, Sliding-Window-Rate-Limiting; 181 Tests und strikte Typprüfung."
+        ]
+      },
+      "medconsult": {
+        "title": "MedConsult Pro",
+        "summary": "Leistungskatalog und mehrstufiges Anfrageformular für eine Medizintourismus-Agentur. Anfragen landen direkt in den Messenger-Kanälen der Agentur."
+      },
+      "pallet-sales": {
+        "title": "Website für Palettenverkauf",
+        "summary": "Verkaufswebsite für einen Palettenhändler. Jede Anfrage landet über einen eigenen Bot sofort in der Telegram-Gruppe des Teams – keine Anfrage geht im Postfach verloren."
+      },
+      "shopsmart-ai": {
+        "title": "ShopSmart AI",
+        "summary": "KI-Einkaufslisten für deutsche Supermärkte: Wochenlisten, die Budget und Ernährung berücksichtigen. Wird als neues MVP neu aufgebaut."
+      }
     }
   },
   "about": {
