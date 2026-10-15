@@ -13,6 +13,13 @@ type Lead = ContactInput & { locale: string };
 export async function deliverLead(lead: Lead): Promise<boolean> {
   const jobs: Promise<unknown>[] = [];
 
+  if (process.env.NODE_ENV !== "production") {
+    const names = Object.entries(leadChannels)
+      .filter(([, cfg]) => cfg)
+      .map(([name]) => name);
+    console.info(`[contact] channels: ${names.join(", ") || "none"}`);
+  }
+
   if (leadChannels.database) jobs.push(saveToDatabase(lead));
   if (leadChannels.email) jobs.push(sendEmail(lead, leadChannels.email));
   if (leadChannels.telegram)
