@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { FiArrowUpRight } from "react-icons/fi";
 
 import { Container } from "@/components/layout/container";
+import { QuickContact } from "@/components/contact/quick-contact";
 import { brand } from "@/lib/brand";
 import { ContactForm } from "./contact-form";
 
@@ -29,6 +30,9 @@ export async function ContactSection() {
           <p className="mt-4 text-pretty leading-relaxed text-muted-foreground sm:text-lg">
             {t("intro")}
           </p>
+
+          <p className="mt-8 text-sm text-muted-foreground">{t("direct")}</p>
+          <QuickContact className="mt-3" />
 
           <ul className="mt-8 space-y-2 text-sm">
             <li className="text-muted-foreground">{t("reply")}</li>

@@ -51,10 +51,7 @@ export function SiteHeader() {
       <Container className="flex h-16 items-center justify-between gap-4">
         <BrandMark />
 
-        <nav
-          aria-label="Main"
-          className="hidden items-center gap-1 md:flex"
-        >
+        <nav aria-label="Main" className="hidden items-center gap-1 md:flex">
           {navItems.map((item) => (
             <Link
               key={item.id}
@@ -79,6 +76,14 @@ export function SiteHeader() {
           </div>
 
           <div className="flex items-center gap-1 md:hidden">
+            <Button
+              variant="accent"
+              size="sm"
+              asChild
+              className="mr-1 h-8 px-3 text-xs"
+            >
+              <Link href="/#contact">{t("ctaShort")}</Link>
+            </Button>
             <ThemeSwitcher />
             <MobileNav />
           </div>

@@ -12,8 +12,8 @@ export type NavItem = {
 };
 
 export const navItems: readonly NavItem[] = [
-  { id: "projects", labelKey: "projects" },
   { id: "services", labelKey: "services" },
+  { id: "projects", labelKey: "projects" },
   { id: "process", labelKey: "process" },
   { id: "contact", labelKey: "contact" },
 ] as const;

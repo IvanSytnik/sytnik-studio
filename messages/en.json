@@ -12,10 +12,11 @@
     "cta": "Start a project",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
-    "menuTitle": "Menu"
+    "menuTitle": "Menu",
+    "ctaShort": "Contact"
   },
   "hero": {
-    "availability": "Available for new projects, based in Graz",
+    "availability": "Available for new projects, replies within one working day",
     "title": "Websites, booking systems and AI features — built by one developer, end to end.",
     "subtitle": "I'm Ivan, an independent developer in Austria. You work directly with me — from the first call to launch, with no handoffs and no account managers.",
     "ctaPrimary": "Start a project",
@@ -25,7 +26,8 @@
       "live": "{count, plural, one {product live} other {products live}}",
       "languages": "{count, plural, one {language I build in} other {languages I build in}}",
       "languagesHint": "DE, EN, UK, RU"
-    }
+    },
+    "orDirect": "or message me directly:"
   },
   "theme": {
     "label": "Theme",
@@ -45,7 +47,10 @@
     "rights": "All rights reserved.",
     "sections": "Sections",
     "social": "Elsewhere",
-    "builtWith": "Built with Next.js, deployed on Vercel."
+    "builtWith": "Built with Next.js, deployed on Vercel.",
+    "legal": "Legal",
+    "impressum": "Legal notice",
+    "privacy": "Privacy"
   },
   "projects": {
     "status": {
@@ -388,7 +393,7 @@
     "reply": "I reply within one working day.",
     "linkedin": "Or message me on LinkedIn",
     "optional": "(optional)",
-    "privacy": "I'll only use your details to reply to this inquiry.",
+    "privacy": "I'll only use your details to reply. <link>Privacy policy</link>",
     "submit": "Send inquiry",
     "sending": "Sending…",
     "errors": {
@@ -467,6 +472,18 @@
         "whatsapp": "I'll message you on WhatsApp within one working day.",
         "phone": "I'll call you within one working day."
       }
+    },
+    "direct": "Prefer a quick chat?"
+  },
+  "cta": {
+    "button": "Start a project",
+    "afterServices": {
+      "title": "Not sure which one you need?",
+      "text": "Describe the problem — I'll suggest the simplest way to solve it."
+    },
+    "afterProjects": {
+      "title": "Need something similar?",
+      "text": "Tell me about your project and get an honest estimate within a day."
     }
   }
 }

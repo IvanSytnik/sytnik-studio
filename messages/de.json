@@ -12,10 +12,11 @@
     "cta": "Projekt starten",
     "openMenu": "Menü öffnen",
     "closeMenu": "Menü schließen",
-    "menuTitle": "Menü"
+    "menuTitle": "Menü",
+    "ctaShort": "Kontakt"
   },
   "hero": {
-    "availability": "Offen für neue Projekte, mit Sitz in Graz",
+    "availability": "Offen für neue Projekte, Antwort innerhalb eines Werktags",
     "title": "Websites, Buchungssysteme und KI-Funktionen – alles aus einer Hand.",
     "subtitle": "Ich bin Ivan, unabhängiger Entwickler in Österreich. Sie arbeiten direkt mit mir – vom ersten Gespräch bis zum Launch, ohne Übergaben und ohne Account-Manager.",
     "ctaPrimary": "Projekt starten",
@@ -25,7 +26,8 @@
       "live": "{count, plural, one {Produkt live} other {Produkte live}}",
       "languages": "{count, plural, one {Sprache, in der ich entwickle} other {Sprachen, in denen ich entwickle}}",
       "languagesHint": "DE, EN, UK, RU"
-    }
+    },
+    "orDirect": "oder direkt schreiben:"
   },
   "theme": {
     "label": "Theme",
@@ -45,7 +47,10 @@
     "rights": "Alle Rechte vorbehalten.",
     "sections": "Bereiche",
     "social": "Anderswo",
-    "builtWith": "Mit Next.js gebaut, auf Vercel bereitgestellt."
+    "builtWith": "Mit Next.js gebaut, auf Vercel bereitgestellt.",
+    "legal": "Rechtliches",
+    "impressum": "Impressum",
+    "privacy": "Datenschutz"
   },
   "projects": {
     "status": {
@@ -280,7 +285,7 @@
     "reply": "Ich antworte innerhalb eines Werktags.",
     "linkedin": "Oder schreiben Sie mir auf LinkedIn",
     "optional": "(optional)",
-    "privacy": "Ihre Daten verwende ich nur, um auf diese Anfrage zu antworten.",
+    "privacy": "Ihre Daten verwende ich nur für die Antwort. <link>Datenschutz</link>",
     "submit": "Anfrage senden",
     "sending": "Wird gesendet…",
     "errors": {
@@ -359,6 +364,18 @@
         "whatsapp": "Ich schreibe Ihnen innerhalb eines Werktags auf WhatsApp.",
         "phone": "Ich rufe Sie innerhalb eines Werktags an."
       }
+    },
+    "direct": "Lieber kurz chatten?"
+  },
+  "cta": {
+    "button": "Projekt starten",
+    "afterServices": {
+      "title": "Nicht sicher, was Sie brauchen?",
+      "text": "Beschreiben Sie das Problem – ich schlage die einfachste Lösung vor."
+    },
+    "afterProjects": {
+      "title": "Etwas Ähnliches geplant?",
+      "text": "Erzählen Sie mir von Ihrem Projekt und erhalten Sie innerhalb eines Tages eine ehrliche Einschätzung."
     }
   }
 }

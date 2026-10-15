@@ -2,7 +2,7 @@
 
 Portfolio & lead-generation site. Personal brand wrapped as a small independent studio.
 
-## Current state — Pack #12 (Contact brief)
+## Current state — Pack #13 (Legal + conversion)
 
 Foundation + site shell:
 
@@ -82,6 +82,13 @@ Pack #12 — Contact brief (replaces the planned estimator):
 - Chips are real checkboxes/radios styled with `has-[:checked]` — works without JS, choices survive a failed submit
 - Telegram notification includes a one-tap link to reply (t.me / wa.me)
 - DB: `contact_method`, `contact_value` columns, brief stored in `estimator` jsonb — run `npm run db:push`
+
+Pack #13 — Legal pages and conversion:
+
+- `/impressum` and `/datenschutz` (German binding, English for other locales); details in `src/lib/legal.ts`, trade-licence fields appear once filled in
+- Direct channels (Telegram, WhatsApp) in `brand.contact`: hero, contact section, footer, mid-page CTAs
+- Mobile: sticky contact bar between hero and contact section, compact CTA in the header
+- Section order: Services → Projects → Process → About → FAQ → Contact, with CTAs after Services and Projects
 
 ## Setup
 

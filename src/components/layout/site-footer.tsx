@@ -6,6 +6,7 @@ import {
   FiMail,
   FiBriefcase,
 } from "react-icons/fi";
+import { FaWhatsapp } from "react-icons/fa";
 import type { ComponentType } from "react";
 
 import { Container } from "./container";
@@ -63,6 +64,12 @@ export function SiteFooter() {
       Icon: FiSend,
     },
     {
+      key: "whatsapp",
+      url: brand.social.whatsapp,
+      label: "WhatsApp",
+      Icon: FaWhatsapp,
+    },
+    {
       key: "email",
       url: brand.social.email ? `mailto:${brand.social.email}` : "",
       label: "Email",
@@ -88,7 +95,10 @@ export function SiteFooter() {
           </div>
 
           {/* Sections */}
-          <nav aria-label={t("footer.sections")} className="flex flex-col gap-3">
+          <nav
+            aria-label={t("footer.sections")}
+            className="flex flex-col gap-3"
+          >
             <h2 className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
               {t("footer.sections")}
             </h2>
@@ -139,6 +149,14 @@ export function SiteFooter() {
           <p>
             © {year} {brand.name}. {t("footer.rights")}
           </p>
+          <nav aria-label={t("footer.legal")} className="flex gap-4">
+            <Link href="/impressum" className="hover:text-foreground">
+              {t("footer.impressum")}
+            </Link>
+            <Link href="/datenschutz" className="hover:text-foreground">
+              {t("footer.privacy")}
+            </Link>
+          </nav>
           <p className="font-mono text-[10px] uppercase tracking-[0.15em]">
             {t("footer.builtWith")}
           </p>

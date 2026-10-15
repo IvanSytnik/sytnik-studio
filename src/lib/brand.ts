@@ -26,8 +26,21 @@ export const brand = {
     github: "https://github.com/IvanSytnik",
     linkedin: "https://www.linkedin.com/in/ivan-sytnik/",
     upwork: "",
-    telegram: "",
-    email: "",
+    telegram: "https://t.me/frogva",
+    whatsapp: "https://wa.me/380957219583",
+    email: "ivan.sytnik02@gmail.com",
+  },
+  /**
+   * Direct channels for clients — used by the hero, the contact section,
+   * the mobile contact bar and the footer. Change them here only.
+   */
+  contact: {
+    telegram: { handle: "@frogva", url: "https://t.me/frogva" },
+    whatsapp: {
+      number: "+380 95 721 95 83",
+      url: "https://wa.me/380957219583",
+    },
+    email: "ivan.sytnik02@gmail.com",
   },
 } as const;
 

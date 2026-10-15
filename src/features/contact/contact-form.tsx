@@ -11,6 +11,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { FiCheck } from "react-icons/fi";
 
 import { submitContact } from "@/actions/contact";
+import { Link } from "@/i18n/routing";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import {
@@ -283,7 +284,18 @@ export function ContactForm() {
       </div>
 
       <div className="flex flex-col gap-4 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-xs text-muted-foreground">{t("privacy")}</p>
+        <p className="text-xs text-muted-foreground">
+          {t.rich("privacy", {
+            link: (chunks) => (
+              <Link
+                href="/datenschutz"
+                className="underline underline-offset-4 hover:text-foreground"
+              >
+                {chunks}
+              </Link>
+            ),
+          })}
+        </p>
         <button
           type="submit"
           disabled={pending}

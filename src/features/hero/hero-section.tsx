@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 
 import { Container } from "@/components/layout/container";
 import { buttonVariants } from "@/components/ui/button";
+import { QuickContact } from "@/components/contact/quick-contact";
 import { cn } from "@/lib/utils";
 import { HeroStats } from "./hero-stats";
 
@@ -29,6 +30,7 @@ export async function HeroSection() {
 
   return (
     <section
+      data-hero
       aria-labelledby="hero-heading"
       className="relative pb-14 pt-10 sm:pb-20 sm:pt-14 lg:pb-24 lg:pt-16"
     >
@@ -69,6 +71,10 @@ export async function HeroSection() {
               >
                 {t("ctaSecondary")}
               </a>
+            </div>
+            <div className="mt-5 flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+              <span>{t("orDirect")}</span>
+              <QuickContact />
             </div>
           </div>
 
