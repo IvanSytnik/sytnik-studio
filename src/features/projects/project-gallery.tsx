@@ -1,43 +1,51 @@
 import Image from "next/image";
 
-import { cn } from "@/lib/utils";
+import { Laptop } from "@/components/devices/laptop";
+import { Phone } from "@/components/devices/phone";
 import type { GalleryImage } from "./types";
 
 type Props = { images: readonly GalleryImage[]; altFor: (n: number) => string };
 
 /**
- * Screenshots on the case study page. Landscape shots take the full width;
- * portrait (phone) shots sit side by side, so a Telegram bot and a web app
- * both look intentional instead of letterboxed.
+ * Screenshots on the case study page, each in its device: desktop shots
+ * in a laptop at full width, phone shots side by side in phone frames.
  */
 export function ProjectGallery({ images, altFor }: Props) {
+  const desktop = images.filter((img) => img.width >= img.height);
+  const mobile = images.filter((img) => img.height > img.width);
+  const indexOf = (img: GalleryImage) => images.indexOf(img) + 1;
+
   return (
-    <ul className="grid gap-6 sm:grid-cols-2">
-      {images.map((img, i) => {
-        const portrait = img.height > img.width;
-        return (
-          <li
-            key={img.src}
-            className={cn(
-              "overflow-hidden rounded-xl bg-[hsl(var(--stage))] p-2.5 ring-1 ring-inset ring-border sm:p-3",
-              portrait ? "mx-auto w-full max-w-sm" : "sm:col-span-2"
-            )}
-          >
-            <Image
-              src={img.src}
-              alt={altFor(i + 1)}
-              width={img.width}
-              height={img.height}
-              sizes={
-                portrait
-                  ? "(min-width: 640px) 384px, 100vw"
-                  : "(min-width: 1280px) 1216px, 100vw"
-              }
-              className="h-auto w-full rounded-md ring-1 ring-foreground/5"
-            />
-          </li>
-        );
-      })}
-    </ul>
+    <div className="space-y-14">
+      {desktop.map((img) => (
+        <Laptop key={img.src} className="mx-auto max-w-4xl">
+          <Image
+            src={img.src}
+            alt={altFor(indexOf(img))}
+            fill
+            sizes="(min-width: 1024px) 860px, 90vw"
+            className="object-cover object-top"
+          />
+        </Laptop>
+      ))}
+
+      {mobile.length > 0 && (
+        <ul className="flex flex-wrap items-start justify-center gap-8 sm:gap-12">
+          {mobile.map((img) => (
+            <li key={img.src} className="w-[min(16rem,70vw)]">
+              <Phone>
+                <Image
+                  src={img.src}
+                  alt={altFor(indexOf(img))}
+                  fill
+                  sizes="256px"
+                  className="object-cover object-top"
+                />
+              </Phone>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 }

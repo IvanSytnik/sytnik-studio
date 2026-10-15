@@ -1,88 +1,105 @@
 import Image from "next/image";
 
+import { Laptop } from "@/components/devices/laptop";
+import { Phone } from "@/components/devices/phone";
 import { cn } from "@/lib/utils";
 
 type Props = {
   title: string;
-  /** Path under /public. Without it a typographic cover is rendered. */
+  /** Desktop screenshot under /public. Without it a typographic screen is shown. */
   src?: string;
-  /** Light-theme variant; falls back to `src`. */
+  /** Light-theme variant of `src`. */
   srcLight?: string;
-  kind?: "screen" | "devices";
+  kind?: "laptop" | "phones";
+  /** Phone screenshots for kind "phones". */
+  phones?: readonly string[];
   alt: string;
   /** Only the first cover on the page is above the fold on large screens. */
   priority?: boolean;
   className?: string;
 };
 
-const SIZES = "(min-width: 1024px) 680px, 100vw";
-
 /**
- * 16:10 project cover on a soft "stage": a tinted panel with the
- * screenshot inset like a product shot. Dark and light screenshots both
- * sit comfortably on it, in either theme.
+ * Project cover in a device frame: a laptop for web apps, a row of phones
+ * for mobile/Telegram products. Frames are pure CSS, so they cost nothing
+ * to load and adapt to both themes.
  *
  * Theme variants: when a light cover exists, both images are rendered and
  * CSS shows the right one. Lazy images hidden with display:none are never
- * fetched, so below the fold only the visible variant is downloaded.
+ * fetched, so only the visible variant is downloaded.
  */
 export function ProjectCover({
   title,
   src,
   srcLight,
-  kind = "screen",
+  kind = "laptop",
+  phones,
   alt,
   priority,
   className,
 }: Props) {
+  if (kind === "phones" && phones?.length) {
+    return (
+      <div
+        className={cn(
+          "flex items-end justify-center gap-[4%] px-[4%]",
+          className
+        )}
+      >
+        {phones.map((phone, i) => (
+          <Phone
+            key={phone}
+            className={cn(
+              "w-[29%]",
+              phones.length === 3 && i === 1 && "-translate-y-[6%]"
+            )}
+          >
+            <Image
+              src={phone}
+              alt={i === 0 ? alt : ""}
+              fill
+              priority={priority && i === 0}
+              sizes="(min-width: 1024px) 200px, 30vw"
+              className="object-cover object-top"
+            />
+          </Phone>
+        ))}
+      </div>
+    );
+  }
+
   const image = (path: string, extra?: string) => (
     <Image
       src={path}
       alt={alt}
       fill
       priority={priority}
-      sizes={SIZES}
-      className={cn(
-        kind === "devices" ? "object-contain" : "object-cover object-top",
-        extra
-      )}
+      sizes="(min-width: 1024px) 640px, 90vw"
+      className={cn("object-cover object-top", extra)}
     />
   );
 
   return (
-    <div
-      className={cn(
-        "rounded-xl bg-[hsl(var(--stage))] p-2.5 ring-1 ring-inset ring-border sm:p-3",
-        className
-      )}
-    >
-      <div
-        className={cn(
-          "relative aspect-[16/10] overflow-hidden",
-          kind === "screen" &&
-            "rounded-md bg-card shadow-[0_1px_2px_hsl(var(--foreground)/0.08)] ring-1 ring-foreground/5"
-        )}
-      >
-        {src ? (
-          srcLight ? (
-            <>
-              {image(srcLight, "dark:hidden")}
-              {image(src, "hidden dark:block")}
-            </>
-          ) : (
-            image(src)
-          )
+    <Laptop className={className}>
+      {src ? (
+        srcLight ? (
+          <>
+            {image(srcLight, "dark:hidden")}
+            {image(src, "hidden dark:block")}
+          </>
         ) : (
-          <div className="absolute inset-0 flex items-end bg-card p-6 sm:p-10">
-            <p
-              aria-hidden
-              className="max-w-[14ch] text-balance text-3xl font-semibold leading-[1.05] tracking-[-0.03em] text-foreground/80 sm:text-5xl"
-            >
-              {title}
-            </p>
-          </div>
-        )}
-      </div>
-    </div>
+          image(src)
+        )
+      ) : (
+        <div className="absolute inset-0 flex items-end bg-card p-[6cqw]">
+          <p
+            aria-hidden
+            className="max-w-[14ch] text-balance text-[5cqw] font-semibold leading-[1.05] tracking-[-0.03em] text-foreground/80"
+          >
+            {title}
+          </p>
+        </div>
+      )}
+    </Laptop>
   );
 }

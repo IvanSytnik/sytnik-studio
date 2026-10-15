@@ -89,6 +89,8 @@ Pack #13 — Legal pages and conversion:
 - Direct channels (Telegram, WhatsApp) in `brand.contact`: hero, contact section, footer, mid-page CTAs
 - Mobile: sticky contact bar between hero and contact section, compact CTA in the header
 - Section order: Services → Projects → Process → About → FAQ → Contact, with CTAs after Services and Projects
+- Project covers and gallery in CSS device frames (`src/components/devices/`): laptop for web apps, phones for mobile/Telegram (`coverKind: "phones"` + `phones[]`)
+- Footer: tagline, sections, contacts with visible handles, profiles, legal links and language
 
 ## Setup
 

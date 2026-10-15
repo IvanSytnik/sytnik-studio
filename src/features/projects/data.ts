@@ -71,17 +71,22 @@ export const projects = [
     services: ["bots-automation", "ai-integrations"],
     media: {
       cover: "/projects/dealradar/cover.webp",
-      coverKind: "devices",
+      coverKind: "phones",
+      phones: [
+        "/projects/dealradar/phone-filter.webp",
+        "/projects/dealradar/phone-analysis.webp",
+        "/projects/dealradar/phone-report.webp",
+      ],
       gallery: [
         {
-          src: "/projects/dealradar/market-analysis.webp",
-          width: 860,
-          height: 1466,
+          src: "/projects/dealradar/report-list.webp",
+          width: 645,
+          height: 1398,
         },
         {
           src: "/projects/dealradar/report-filters.webp",
-          width: 860,
-          height: 1466,
+          width: 645,
+          height: 1398,
         },
       ],
     },

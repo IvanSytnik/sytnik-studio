@@ -2,7 +2,7 @@
   "brand": {
     "name": "Ivan Sytnik",
     "studio": "Unabhängiges Web-Studio",
-    "tagline": "Frontend-Entwicklung auf Studio-Niveau."
+    "tagline": "Websites, Buchungssysteme und KI-Funktionen – konzipiert und umgesetzt von einem Entwickler."
   },
   "nav": {
     "projects": "Projekte",
@@ -46,11 +46,11 @@
   "footer": {
     "rights": "Alle Rechte vorbehalten.",
     "sections": "Bereiche",
-    "social": "Anderswo",
-    "builtWith": "Mit Next.js gebaut, auf Vercel bereitgestellt.",
-    "legal": "Rechtliches",
     "impressum": "Impressum",
-    "privacy": "Datenschutz"
+    "privacy": "Datenschutz",
+    "basedIn": "Sitz in Graz, Österreich. Kunden in Europa und den USA.",
+    "contact": "Kontakt",
+    "profiles": "Profile"
   },
   "projects": {
     "status": {

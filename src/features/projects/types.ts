@@ -68,11 +68,14 @@ export type ProjectMedia = {
    */
   coverLight?: string;
   /**
-   * "screen" (default): a website screenshot, shown as a framed screen.
-   * "devices": a transparent composite (e.g. phone screens) placed
-   * directly on the stage, without a frame.
+   * How the cover is framed:
+   * - "laptop" (default): `cover` is a desktop screenshot in a laptop frame
+   * - "phones": `phones` are full-screen phone screenshots side by side in
+   *   phone frames (`cover` is still used for the Open Graph image)
    */
-  coverKind?: "screen" | "devices";
+  coverKind?: "laptop" | "phones";
+  /** Full-screen phone screenshots (9:19.5) for coverKind "phones". */
+  phones?: readonly string[];
   /** Extra screenshots for the case study page. */
   gallery: readonly GalleryImage[];
 };
