@@ -4,8 +4,11 @@ import { brand } from "@/lib/brand";
 import { cn } from "@/lib/utils";
 
 type Props = {
-  /** "pill": icon + label buttons; "icon": round icon-only buttons */
-  variant?: "pill" | "icon";
+  /**
+   * "pill": icon + label; "icon": round icon-only;
+   * "responsive": icon-only on phones, icon + label from sm up
+   */
+  variant?: "pill" | "icon" | "responsive";
   className?: string;
 };
 
@@ -34,16 +37,22 @@ export function QuickContact({ variant = "pill", className }: Props) {
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={variant === "icon" ? label : undefined}
+            aria-label={variant === "pill" ? undefined : label}
             className={cn(
               "inline-flex items-center justify-center gap-2 border border-border bg-background text-sm font-medium transition-colors hover:border-foreground/40 hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-              variant === "icon"
-                ? "h-11 w-11 rounded-full"
-                : "h-10 rounded-full px-4"
+              variant === "icon" && "h-11 w-11 rounded-full",
+              variant === "pill" && "h-10 rounded-full px-4",
+              variant === "responsive" &&
+                "h-10 w-10 rounded-full sm:w-auto sm:px-4"
             )}
           >
             <Icon aria-hidden className="h-4 w-4" />
             {variant === "pill" && label}
+            {variant === "responsive" && (
+              <span aria-hidden className="hidden sm:inline">
+                {label}
+              </span>
+            )}
           </a>
         </li>
       ))}

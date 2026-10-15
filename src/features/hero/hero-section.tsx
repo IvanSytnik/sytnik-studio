@@ -32,7 +32,7 @@ export async function HeroSection() {
     <section
       data-hero
       aria-labelledby="hero-heading"
-      className="relative pb-14 pt-10 sm:pb-20 sm:pt-14 lg:pb-24 lg:pt-16"
+      className="relative pb-12 pt-6 sm:pb-20 sm:pt-14 lg:pb-24 lg:pt-16"
     >
       <Container>
         <p
@@ -47,18 +47,18 @@ export async function HeroSection() {
 
         <h1
           id="hero-heading"
-          className="mt-6 max-w-[20ch] text-balance break-words text-[2.25rem] font-semibold leading-[1.04] tracking-[-0.035em] sm:text-5xl lg:text-6xl xl:text-[4.25rem]"
+          className="mt-5 max-w-[20ch] text-balance break-words text-[2rem] font-semibold leading-[1.05] tracking-[-0.035em] sm:mt-6 sm:text-5xl lg:text-6xl xl:text-[4.25rem]"
         >
           {t("title")}
         </h1>
 
-        <div className="mt-10 grid gap-10 border-t border-border pt-8 lg:mt-12 lg:grid-cols-12 lg:items-end lg:gap-8">
+        <div className="mt-6 grid gap-10 border-t border-border pt-6 sm:mt-10 sm:pt-8 lg:mt-12 lg:grid-cols-12 lg:items-end lg:gap-8">
           <div className={cn("lg:col-span-6", enter, "motion-safe:delay-150")}>
-            <p className="max-w-[52ch] text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
+            <p className="max-w-[52ch] text-pretty text-[15px] leading-relaxed text-muted-foreground sm:text-lg">
               {t("subtitle")}
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-6 grid grid-cols-2 gap-3 sm:mt-8 sm:flex">
               <a
                 href="#contact"
                 className={buttonVariants({ variant: "accent", size: "lg" })}
@@ -72,9 +72,9 @@ export async function HeroSection() {
                 {t("ctaSecondary")}
               </a>
             </div>
-            <div className="mt-5 flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+            <div className="mt-4 flex items-center gap-3 text-sm text-muted-foreground sm:mt-5">
               <span>{t("orDirect")}</span>
-              <QuickContact />
+              <QuickContact variant="responsive" />
             </div>
           </div>
 

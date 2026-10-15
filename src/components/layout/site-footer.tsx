@@ -50,9 +50,9 @@ export function SiteFooter() {
 
   return (
     <footer className="border-t border-border bg-background">
-      <Container className="py-14">
-        <div className="grid gap-10 md:grid-cols-12">
-          <div className="md:col-span-4">
+      <Container className="pb-8 pt-10 sm:pt-12">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-8 md:grid-cols-12 md:gap-10">
+          <div className="col-span-2 md:col-span-4">
             <BrandMark />
             <p className="mt-4 max-w-xs text-pretty text-sm leading-relaxed text-muted-foreground">
               {t("brand.tagline")}
@@ -72,7 +72,10 @@ export function SiteFooter() {
             ))}
           </Column>
 
-          <Column title={t("footer.contact")} className="md:col-span-4">
+          <Column
+            title={t("footer.contact")}
+            className="order-last col-span-2 md:order-none md:col-span-4"
+          >
             {contacts.map(({ label, value, href, Icon }) => (
               <li key={label}>
                 <a
@@ -116,11 +119,16 @@ export function SiteFooter() {
           </Column>
         </div>
 
-        <div className="mt-12 flex flex-col gap-4 border-t border-border pt-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-            <span>
-              © {year} {brand.name}
-            </span>
+        {/* Phones: © and language on one line, legal links below.
+            md+: one row — © · legal links … language. */}
+        <div className="mt-10 grid grid-cols-[1fr_auto] items-center gap-x-6 gap-y-2 border-t border-border pt-6 text-sm text-muted-foreground md:flex">
+          <span>
+            © {year} {brand.name}
+          </span>
+          <div className="md:order-last md:ml-auto">
+            <LanguageSwitcher />
+          </div>
+          <div className="col-span-2 flex gap-5">
             <Link href="/impressum" className="hover:text-foreground">
               {t("footer.impressum")}
             </Link>
@@ -128,7 +136,6 @@ export function SiteFooter() {
               {t("footer.privacy")}
             </Link>
           </div>
-          <LanguageSwitcher />
         </div>
       </Container>
     </footer>
@@ -150,7 +157,7 @@ function Column({
   return (
     <nav aria-label={title} className={className}>
       <h2 className="text-sm font-medium">{title}</h2>
-      <ul className="mt-4 space-y-2.5">{children}</ul>
+      <ul className="mt-3 space-y-2">{children}</ul>
     </nav>
   );
 }

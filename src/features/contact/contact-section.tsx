@@ -14,7 +14,7 @@ export async function ContactSection() {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="scroll-mt-14 border-t border-border pb-20 pt-10 sm:pb-28"
+      className="scroll-mt-14 border-t border-border pb-14 pt-10 sm:pb-16"
     >
       <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
         <header className="lg:col-span-5">
