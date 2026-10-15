@@ -50,14 +50,14 @@ export function SiteFooter() {
 
   return (
     <footer className="border-t border-border bg-background">
-      <Container className="pb-8 pt-10 sm:pt-12">
-        <div className="grid grid-cols-2 gap-x-6 gap-y-8 md:grid-cols-12 md:gap-10">
+      <Container className="pb-5 pt-6 sm:pt-8">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-5 md:grid-cols-12 md:gap-6">
           <div className="col-span-2 md:col-span-4">
             <BrandMark />
-            <p className="mt-4 max-w-xs text-pretty text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-3 max-w-xs text-pretty text-sm leading-relaxed text-muted-foreground">
               {t("brand.tagline")}
             </p>
-            <p className="mt-3 text-sm text-muted-foreground">
+            <p className="mt-2 text-sm text-muted-foreground">
               {t("footer.basedIn")}
             </p>
           </div>
@@ -121,7 +121,7 @@ export function SiteFooter() {
 
         {/* Phones: © and language on one line, legal links below.
             md+: one row — © · legal links … language. */}
-        <div className="mt-10 grid grid-cols-[1fr_auto] items-center gap-x-6 gap-y-2 border-t border-border pt-6 text-sm text-muted-foreground md:flex">
+        <div className="mt-6 grid grid-cols-[1fr_auto] items-center gap-x-6 gap-y-1 border-t border-border pt-4 text-sm text-muted-foreground md:flex">
           <span>
             © {year} {brand.name}
           </span>
@@ -157,7 +157,7 @@ function Column({
   return (
     <nav aria-label={title} className={className}>
       <h2 className="text-sm font-medium">{title}</h2>
-      <ul className="mt-3 space-y-2">{children}</ul>
+      <ul className="mt-2 space-y-1.5">{children}</ul>
     </nav>
   );
 }

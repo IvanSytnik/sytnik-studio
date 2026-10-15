@@ -31,7 +31,7 @@ export async function CaseStudy({ project }: Props) {
   const next = getNextFlagship(project.slug);
 
   return (
-    <article aria-labelledby="case-title" className="pb-24 pt-10 sm:pt-14">
+    <article aria-labelledby="case-title" className="pb-12 pt-10 sm:pt-14">
       <Container>
         <Link
           href="/#projects"

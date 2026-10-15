@@ -26,7 +26,7 @@ export async function AboutSection() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="scroll-mt-14 border-t border-border pb-16 pt-10 sm:pb-20"
+      className="scroll-mt-14 border-t border-border pb-10 pt-10 sm:pb-12"
     >
       <Container className="grid gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="order-2 lg:order-1 lg:col-span-4">

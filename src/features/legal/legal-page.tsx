@@ -14,7 +14,7 @@ export function LegalPage({
   children: ReactNode;
 }) {
   return (
-    <Container className="pb-24 pt-12 sm:pt-16">
+    <Container className="pb-12 pt-12 sm:pt-16">
       <article className="max-w-3xl">
         <h1 className="text-balance text-4xl font-semibold tracking-tight sm:text-5xl">
           {title}

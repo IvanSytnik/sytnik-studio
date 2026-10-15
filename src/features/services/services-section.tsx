@@ -23,7 +23,7 @@ export async function ServicesSection() {
     <section
       id="services"
       aria-labelledby="services-heading"
-      className="scroll-mt-14 border-t border-border pb-16 pt-10 sm:pb-20"
+      className="scroll-mt-14 border-t border-border pb-10 pt-10 sm:pb-12"
     >
       <Container>
         <header className="max-w-2xl">

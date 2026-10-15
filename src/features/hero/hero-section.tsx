@@ -32,7 +32,7 @@ export async function HeroSection() {
     <section
       data-hero
       aria-labelledby="hero-heading"
-      className="relative pb-12 pt-6 sm:pb-20 sm:pt-14 lg:pb-24 lg:pt-16"
+      className="relative pb-10 pt-4 sm:pb-12 sm:pt-8 lg:pb-14 lg:pt-8"
     >
       <Container>
         <p

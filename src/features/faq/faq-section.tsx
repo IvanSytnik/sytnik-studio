@@ -36,7 +36,7 @@ export async function FaqSection() {
     <section
       id="faq"
       aria-labelledby="faq-heading"
-      className="scroll-mt-14 border-t border-border pb-16 pt-10 sm:pb-20"
+      className="scroll-mt-14 border-t border-border pb-10 pt-10 sm:pb-12"
     >
       <script
         type="application/ld+json"

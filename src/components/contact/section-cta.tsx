@@ -16,7 +16,7 @@ export async function SectionCta({
   const t = await getTranslations("cta");
 
   return (
-    <Container className="pb-16 sm:pb-20">
+    <Container className="pb-10 sm:pb-12">
       <div className="flex flex-col gap-5 rounded-xl border border-border bg-card px-6 py-6 sm:flex-row sm:items-center sm:justify-between sm:px-8">
         <div>
           <p className="font-semibold tracking-tight">
