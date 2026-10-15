@@ -276,32 +276,89 @@
   "contact": {
     "eyebrow": "Kontakt",
     "title": "Sprechen wir über Ihr Projekt",
-    "intro": "Erzählen Sie mir, was Sie bauen möchten und bis wann. Sie erhalten eine persönliche Antwort mit nächsten Schritten und einer ehrlichen Einschätzung.",
+    "intro": "Wählen Sie, was Sie brauchen und wie ich Sie erreichen soll – ich melde mich mit nächsten Schritten und einer ehrlichen Einschätzung.",
     "reply": "Ich antworte innerhalb eines Werktags.",
     "linkedin": "Oder schreiben Sie mir auf LinkedIn",
-    "fields": {
-      "name": "Name",
-      "email": "E-Mail",
-      "company": "Unternehmen",
-      "message": "Was brauchen Sie?"
-    },
     "optional": "(optional)",
-    "messagePlaceholder": "Ein paar Sätze zum Projekt, zum Zeitrahmen und – falls vorhanden – zum Budget.",
     "privacy": "Ihre Daten verwende ich nur, um auf diese Anfrage zu antworten.",
     "submit": "Anfrage senden",
     "sending": "Wird gesendet…",
-    "success": {
-      "title": "Danke – Ihre Nachricht ist angekommen",
-      "text": "Ich melde mich innerhalb eines Werktags. Wenn es dringend ist, schreiben Sie mir zusätzlich auf LinkedIn."
-    },
     "errors": {
       "name": "Bitte geben Sie Ihren Namen ein.",
-      "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
       "company": "Der Firmenname ist zu lang.",
-      "message": "Bitte schreiben Sie mindestens ein paar Sätze (20+ Zeichen).",
       "tooFast": "Das ging schnell! Bitte prüfen Sie Ihre Nachricht und senden Sie sie erneut.",
       "rateLimited": "Zu viele Nachrichten in kurzer Zeit. Bitte versuchen Sie es in ein paar Minuten erneut.",
-      "deliveryFailed": "Bei mir ist etwas schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie mir auf LinkedIn."
+      "deliveryFailed": "Bei mir ist etwas schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie mir auf LinkedIn.",
+      "needsOrMessage": "Wählen Sie oben mindestens eine Option oder beschreiben Sie Ihre Idee (mind. 10 Zeichen).",
+      "contactEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      "contactTelegram": "Bitte geben Sie Ihren Telegram-Benutzernamen ein, z. B. @benutzername.",
+      "contactPhone": "Bitte geben Sie eine Nummer mit Ländervorwahl ein, z. B. +43 660 1234567."
+    },
+    "steps": {
+      "needs": "Was brauchen Sie?",
+      "needsHint": "eine oder mehrere Optionen",
+      "budget": "Budget & Zeitrahmen",
+      "contact": "Wie erreiche ich Sie?"
+    },
+    "fields": {
+      "message": "Beschreiben Sie Ihre Idee in eigenen Worten",
+      "budget": "Budget",
+      "timeline": "Zeitrahmen",
+      "method": "Bevorzugter Kanal",
+      "name": "Ihr Name",
+      "company": "Unternehmen"
+    },
+    "messagePlaceholder": "Was soll es können, für wen ist es, Links oder Beispiele, die Ihnen gefallen …",
+    "options": {
+      "needs": {
+        "landing": "Landingpage",
+        "website": "Unternehmenswebsite",
+        "crm": "CRM / Buchung",
+        "ai": "KI-Funktion",
+        "bot": "Telegram-Bot",
+        "redesign": "Redesign / Fehlerbehebung",
+        "notSure": "Noch unklar"
+      },
+      "budget": {
+        "lt500": "< 500 €",
+        "500to2k": "500–2.000 €",
+        "2to5k": "2–5 Tsd. €",
+        "5to10k": "5–10 Tsd. €",
+        "gt10k": "10 Tsd. €+",
+        "unknown": "Noch offen"
+      },
+      "timeline": {
+        "asap": "So bald wie möglich",
+        "1to3m": "1–3 Monate",
+        "flexible": "Flexibel"
+      },
+      "method": {
+        "email": "E-Mail",
+        "telegram": "Telegram",
+        "whatsapp": "WhatsApp",
+        "phone": "Anruf"
+      }
+    },
+    "contactLabel": {
+      "email": "E-Mail",
+      "telegram": "Telegram-Benutzername",
+      "whatsapp": "WhatsApp-Nummer",
+      "phone": "Telefonnummer"
+    },
+    "contactPlaceholder": {
+      "email": "sie@firma.at",
+      "telegram": "@benutzername",
+      "whatsapp": "+43 660 1234567",
+      "phone": "+43 660 1234567"
+    },
+    "success": {
+      "title": "Danke – Ihre Anfrage ist angekommen",
+      "text": {
+        "email": "Ich antworte per E-Mail innerhalb eines Werktags.",
+        "telegram": "Ich schreibe Ihnen innerhalb eines Werktags auf Telegram.",
+        "whatsapp": "Ich schreibe Ihnen innerhalb eines Werktags auf WhatsApp.",
+        "phone": "Ich rufe Sie innerhalb eines Werktags an."
+      }
     }
   }
 }

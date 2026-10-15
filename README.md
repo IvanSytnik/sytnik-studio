@@ -2,7 +2,7 @@
 
 Portfolio & lead-generation site. Personal brand wrapped as a small independent studio.
 
-## Current state — Pack #11 (Contact form)
+## Current state — Pack #12 (Contact brief)
 
 Foundation + site shell:
 
@@ -75,6 +75,13 @@ Pack #11 — Contact form:
 - Spam protection: honeypot, minimum fill time, per-IP rate limit (best effort)
 - All section placeholders are gone — the landing page is complete
 - Setup: see `docs/CONTACT_SETUP.md`
+
+Pack #12 — Contact brief (replaces the planned estimator):
+
+- Three steps: what you need (chips + free text), budget & timeline (optional), preferred channel (email, Telegram, WhatsApp, phone) with per-channel validation
+- Chips are real checkboxes/radios styled with `has-[:checked]` — works without JS, choices survive a failed submit
+- Telegram notification includes a one-tap link to reply (t.me / wa.me)
+- DB: `contact_method`, `contact_value` columns, brief stored in `estimator` jsonb — run `npm run db:push`
 
 ## Setup
 
