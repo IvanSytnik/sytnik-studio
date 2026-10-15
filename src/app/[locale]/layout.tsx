@@ -1,7 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { getMessages, setRequestLocale } from "next-intl/server";
+import {
+  getMessages,
+  getTranslations,
+  setRequestLocale,
+} from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Analytics } from "@vercel/analytics/react";
 import type { ReactNode } from "react";
@@ -40,44 +44,62 @@ export const viewport: Viewport = {
 // and local dev) is hard-noindexed via both meta tag AND robots.txt.
 const indexable = isIndexable();
 
-export const metadata: Metadata = {
-  metadataBase: new URL(env.siteUrl),
-  title: { default: brand.fullName, template: `%s · ${brand.name}` },
-  description: brand.description,
-  applicationName: brand.fullName,
-  authors: [{ name: brand.name }],
-  creator: brand.name,
-  publisher: brand.name,
-  openGraph: {
-    type: "website",
-    siteName: brand.fullName,
-    title: brand.fullName,
-    description: brand.description,
-    url: env.siteUrl,
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: brand.fullName,
-    description: brand.description,
-  },
-  robots: indexable
-    ? {
+const robots: Metadata["robots"] = indexable
+  ? {
+      index: true,
+      follow: true,
+      googleBot: {
         index: true,
         follow: true,
-        googleBot: {
-          index: true,
-          follow: true,
-          "max-image-preview": "large",
-          "max-snippet": -1,
-        },
-      }
-    : {
-        index: false,
-        follow: false,
-        nocache: true,
-        googleBot: { index: false, follow: false, noimageindex: true },
+        "max-image-preview": "large",
+        "max-snippet": -1,
       },
-};
+    }
+  : {
+      index: false,
+      follow: false,
+      nocache: true,
+      googleBot: { index: false, follow: false, noimageindex: true },
+    };
+
+/**
+ * Site-wide metadata, localized. Pages override title/description; the
+ * preview image comes from ./opengraph-image.tsx.
+ */
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const lang = hasLocale(routing.locales, locale)
+    ? locale
+    : routing.defaultLocale;
+  const t = await getTranslations({ locale: lang, namespace: "meta" });
+
+  return {
+    metadataBase: new URL(env.siteUrl),
+    title: { default: t("title"), template: `%s · ${brand.name}` },
+    description: t("description"),
+    applicationName: brand.fullName,
+    authors: [{ name: brand.name }],
+    creator: brand.name,
+    publisher: brand.name,
+    openGraph: {
+      type: "website",
+      siteName: brand.fullName,
+      title: t("title"),
+      description: t("description"),
+      locale: lang,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("description"),
+    },
+    robots,
+  };
+}
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));

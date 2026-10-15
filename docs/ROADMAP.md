@@ -43,7 +43,7 @@ Order is deliberate: data before UI that depends on it; legal before indexing.
 | 11 ✅ | **Contact form** | Server Action, React Hook Form + Zod (shared schema), Resend email, Neon insert (`contact_submissions`), Telegram notification to my group via bot, honeypot + per-IP rate limit, loading/success/error states, validated server env | — |
 | 12 ✅ | **Project estimator** (merged into the contact form as a 3-step brief) | Multi-step questionnaire (type, timeline, budget, features, notes) writing into the existing `estimator` jsonb column; reuses Pack 11 pipeline | 11 |
 | 13 ✅ | **Legal** | `/impressum`, `/datenschutz` (EN + DE), footer links, form consent line | 11 |
-| 14 | **Polish & launch** | DE copy review, OG images, Lighthouse ≥95 on mobile, a11y pass (keyboard, contrast, reduced motion), 404 page, flip `NEXT_PUBLIC_ALLOW_INDEXING=true`, Google Search Console + sitemap submit | all |
+| 14 🟡 | **Polish & launch** (code done; waiting for Gewerbe + domain) | DE copy review, OG images, Lighthouse ≥95 on mobile, a11y pass (keyboard, contrast, reduced motion), 404 page, flip `NEXT_PUBLIC_ALLOW_INDEXING=true`, Google Search Console + sitemap submit | all |
 
 Framer Motion enters in Pack 5 and stays limited to entrance/scroll reveals, all behind `prefers-reduced-motion`.
 

@@ -34,9 +34,7 @@ export async function generateMetadata({
   const title = t(`items.${project.slug}.title`);
   const description = t(`items.${project.slug}.summary`);
   const path = `/projects/${project.slug}`;
-  const images = project.media.cover
-    ? [{ url: project.media.cover, width: 1600, height: 1000, alt: title }]
-    : undefined;
+  // The preview image comes from ./opengraph-image.tsx (generated per locale).
 
   return {
     title,
@@ -52,13 +50,11 @@ export async function generateMetadata({
       url: localizedUrl(locale, path),
       siteName: brand.fullName,
       locale,
-      images,
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: images?.map((i) => i.url),
     },
   };
 }

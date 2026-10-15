@@ -485,5 +485,19 @@
       "title": "Need something similar?",
       "text": "Tell me about your project and get an honest estimate within a day."
     }
+  },
+  "meta": {
+    "title": "Ivan Sytnik — websites, booking systems and AI features",
+    "description": "Independent full-stack developer in Graz, Austria. I design and build websites, booking systems, CRMs and AI features — end to end, in up to four languages.",
+    "ogEyebrow": "Independent web studio",
+    "ogTitle": "Websites, booking systems and AI features — built end to end",
+    "ogDescription": "Next.js, TypeScript and AI integrations for businesses in Europe and the US.",
+    "ogFooter": "Graz, Austria · sytnik.app"
+  },
+  "notFound": {
+    "title": "This page doesn't exist",
+    "text": "The link may be outdated or mistyped. Here's where you can go instead:",
+    "home": "Go to homepage",
+    "projects": "See projects"
   }
 }

@@ -377,5 +377,19 @@
       "title": "Etwas Ähnliches geplant?",
       "text": "Erzählen Sie mir von Ihrem Projekt und erhalten Sie innerhalb eines Tages eine ehrliche Einschätzung."
     }
+  },
+  "meta": {
+    "title": "Ivan Sytnik – Websites, Buchungssysteme und KI-Funktionen",
+    "description": "Unabhängiger Full-Stack-Entwickler in Graz. Ich konzipiere und entwickle Websites, Buchungssysteme, CRMs und KI-Funktionen – alles aus einer Hand, in bis zu vier Sprachen.",
+    "ogEyebrow": "Unabhängiges Web-Studio",
+    "ogTitle": "Websites, Buchungssysteme und KI-Funktionen – alles aus einer Hand",
+    "ogDescription": "Next.js, TypeScript und KI-Integrationen für Unternehmen in Europa und den USA.",
+    "ogFooter": "Graz, Österreich · sytnik.app"
+  },
+  "notFound": {
+    "title": "Diese Seite gibt es nicht",
+    "text": "Der Link ist vielleicht veraltet oder falsch geschrieben. Hier geht es weiter:",
+    "home": "Zur Startseite",
+    "projects": "Projekte ansehen"
   }
 }

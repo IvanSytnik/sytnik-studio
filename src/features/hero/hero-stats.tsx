@@ -36,7 +36,7 @@ export async function HeroStats() {
           <dt className="order-2 text-xs leading-snug text-muted-foreground sm:text-sm">
             {item.label}
             {item.hint && (
-              <span className="mt-0.5 block text-[11px] text-muted-foreground/80 sm:text-xs">
+              <span className="mt-0.5 block text-[11px] text-muted-foreground sm:text-xs">
                 {item.hint}
               </span>
             )}

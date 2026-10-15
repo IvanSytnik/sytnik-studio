@@ -127,7 +127,7 @@ const proofClass =
 
 /** Flagships link to their case study; smaller work to its live site or code. */
 function ProofLink({ project, title }: { project: Project; title: string }) {
-  const short = title.split(" — ")[0];
+  const short = title.split(/\s[—–]\s/)[0];
 
   if (project.tier === "flagship") {
     return (

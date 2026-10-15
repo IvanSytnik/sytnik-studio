@@ -15,8 +15,9 @@ export const brand = {
   shortName: "Sytnik Studio",
   initials: "IS",
   description:
-    "Independent frontend developer building production-grade web products with React, Next.js, and TypeScript.",
-  url: "https://ivansytnik.com",
+    "Websites, booking systems and AI features — designed and built by one developer in Graz, Austria.",
+  /** Production domain. Canonical URLs use NEXT_PUBLIC_SITE_URL; keep both in sync. */
+  url: "https://sytnik.app",
   locale: "en",
   /**
    * Social links shown in the footer.

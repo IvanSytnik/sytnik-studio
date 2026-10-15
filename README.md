@@ -2,7 +2,7 @@
 
 Portfolio & lead-generation site. Personal brand wrapped as a small independent studio.
 
-## Current state — Pack #13 (Legal + conversion)
+## Current state — Pack #14 (Launch prep)
 
 Foundation + site shell:
 
@@ -170,3 +170,12 @@ This is a **hybrid** product — solo developer wrapped as a studio. Never prese
 | `npm run format`     | Prettier write              |
 | `npm run db:push`    | Push schema to Neon         |
 | `npm run db:studio`  | Open Drizzle Studio         |
+
+Pack #14 — Launch prep:
+
+- Localized `title`/`description` per locale (`messages/*.json → meta`), canonical + hreflang on every page
+- Open Graph images generated at build time with `next/og` (home per locale, every case study); Inter with Cyrillic bundled in `src/assets/fonts`
+- Homepage JSON-LD (`Person` + `ProfessionalService`, Graz address)
+- Localized 404 (`[locale]/not-found.tsx` + catch-all route)
+- Lint: ESLint CLI with flat config (`eslint.config.mjs`), `next lint` removed
+- Lighthouse (mobile, local): Performance 90+, Accessibility 100, Best Practices 96; SEO is 100 once indexing is enabled

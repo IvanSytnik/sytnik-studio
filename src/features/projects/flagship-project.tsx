@@ -36,7 +36,6 @@ export async function FlagshipProject({ project, index }: Props) {
         kind={project.media.coverKind}
         phones={project.media.phones}
         alt={t("coverAlt", { title })}
-        priority={index === 0}
         className={cn("lg:col-span-7", reversed && "lg:order-2")}
       />
 
