@@ -405,7 +405,8 @@
       "needsOrMessage": "Pick at least one option above or describe your idea (10+ characters).",
       "contactEmail": "Please enter a valid email address.",
       "contactTelegram": "Enter your Telegram username, e.g. @username.",
-      "contactPhone": "Enter a phone number with country code, e.g. +43 660 1234567."
+      "contactPhone": "Enter a phone number with country code, e.g. +43 660 1234567.",
+      "outdated": "The site was just updated. Please reload the page and send your message again — or write to me on Telegram."
     },
     "steps": {
       "needs": "What do you need?",
@@ -492,7 +493,7 @@
     "ogEyebrow": "Independent web studio",
     "ogTitle": "Websites, booking systems and AI features — built end to end",
     "ogDescription": "Next.js, TypeScript and AI integrations for businesses in Europe and the US.",
-    "ogFooter": "Remote · Europe · sytnik.app"
+    "ogFooter": "Remote · Europe · sytnik-studio.com"
   },
   "notFound": {
     "title": "This page doesn't exist",

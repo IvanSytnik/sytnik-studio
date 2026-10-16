@@ -405,7 +405,8 @@
       "needsOrMessage": "Wählen Sie oben mindestens eine Option oder beschreiben Sie Ihre Idee (mind. 10 Zeichen).",
       "contactEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
       "contactTelegram": "Bitte geben Sie Ihren Telegram-Benutzernamen ein, z. B. @benutzername.",
-      "contactPhone": "Bitte geben Sie eine Nummer mit Ländervorwahl ein, z. B. +43 660 1234567."
+      "contactPhone": "Bitte geben Sie eine Nummer mit Ländervorwahl ein, z. B. +43 660 1234567.",
+      "outdated": "Die Website wurde gerade aktualisiert. Bitte laden Sie die Seite neu und senden Sie Ihre Nachricht erneut – oder schreiben Sie mir auf Telegram."
     },
     "steps": {
       "needs": "Was brauchen Sie?",
@@ -492,7 +493,7 @@
     "ogEyebrow": "Unabhängiges Web-Studio",
     "ogTitle": "Websites, Buchungssysteme und KI-Funktionen – alles aus einer Hand",
     "ogDescription": "Next.js, TypeScript und KI-Integrationen für Unternehmen in Europa und den USA.",
-    "ogFooter": "Remote · Europa · sytnik.app"
+    "ogFooter": "Remote · Europa · sytnik-studio.com"
   },
   "notFound": {
     "title": "Diese Seite gibt es nicht",

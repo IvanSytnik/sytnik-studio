@@ -25,6 +25,37 @@ import type { ContactField, ContactState } from "./schema";
 
 const initial: ContactState = { status: "idle" };
 
+/**
+ * Calls the Server Action, but turns a thrown error into a form message.
+ * The common case: the site was redeployed while this tab was open, so the
+ * server no longer knows this build's action ID. Without the catch the
+ * whole page would crash; with it the visitor is asked to reload and keeps
+ * what they typed.
+ */
+async function submitSafely(
+  prev: ContactState,
+  formData: FormData
+): Promise<ContactState> {
+  try {
+    return await submitContact(prev, formData);
+  } catch {
+    return {
+      status: "error",
+      formError: "outdated",
+      values: {
+        message: String(formData.get("message") ?? ""),
+        name: String(formData.get("name") ?? ""),
+        contact: String(formData.get("contact") ?? ""),
+        company: String(formData.get("company") ?? ""),
+        needs: formData.getAll("needs").map(String),
+        budget: String(formData.get("budget") ?? "") || undefined,
+        timeline: String(formData.get("timeline") ?? "") || undefined,
+        method: String(formData.get("method") ?? "") || undefined,
+      },
+    };
+  }
+}
+
 const INPUT_TYPE: Record<
   ContactMethod,
   { type: string; autoComplete: string; inputMode?: "tel" | "email" | "text" }
@@ -46,7 +77,7 @@ const INPUT_TYPE: Record<
 export function ContactForm() {
   const t = useTranslations("contact");
   const locale = useLocale();
-  const [state, action, pending] = useActionState(submitContact, initial);
+  const [state, action, pending] = useActionState(submitSafely, initial);
   const [startedAt, setStartedAt] = useState("0");
   // Only the contact method needs React state (it changes the input below).
   // Chips are uncontrolled: their checked state lives in the DOM and is

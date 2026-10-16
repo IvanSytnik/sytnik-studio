@@ -17,7 +17,7 @@ export const brand = {
   description:
     "Websites, booking systems and AI features — designed and built by one developer, working remotely across Europe.",
   /** Production domain. Canonical URLs use NEXT_PUBLIC_SITE_URL; keep both in sync. */
-  url: "https://sytnik.app",
+  url: "https://sytnik-studio.com",
   locale: "en",
   /**
    * Social links shown in the footer.

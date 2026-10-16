@@ -69,7 +69,7 @@ export type ContactState =
   | {
       status: "error";
       /** Translation key under contact.errors.* for a form-level message. */
-      formError?: "rateLimited" | "deliveryFailed" | "tooFast";
+      formError?: "rateLimited" | "deliveryFailed" | "tooFast" | "outdated";
       /** Field → translation key under contact.errors.* */
       fieldErrors?: Partial<Record<ContactField, string>>;
       values?: ContactValues;
