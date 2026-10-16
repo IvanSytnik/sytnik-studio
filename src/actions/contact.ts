@@ -21,8 +21,12 @@ export async function submitContact(
   _prev: ContactState,
   formData: FormData
 ): Promise<ContactState> {
-  // Honeypot: invisible to people, irresistible to bots. Pretend success.
-  if (str(formData, "website").length > 0) return { status: "success" };
+  // Honeypot: invisible to people, irresistible to bots. Pretend success,
+  // but leave a trace (no personal data) so a false positive is visible.
+  if (str(formData, "hp_field").length > 0) {
+    console.warn("[contact] honeypot triggered — submission dropped");
+    return { status: "success" };
+  }
 
   const values = {
     message: str(formData, "message"),
@@ -56,8 +60,10 @@ export async function submitContact(
     h.get("x-forwarded-for")?.split(",")[0]?.trim() ||
     h.get("x-real-ip") ||
     "unknown";
-  if (isRateLimited(ip))
+  if (isRateLimited(ip)) {
+    console.warn("[contact] rate limit hit — submission rejected");
     return { status: "error", formError: "rateLimited", values };
+  }
 
   const requested = str(formData, "locale");
   const locale = (routing.locales as readonly string[]).includes(requested)

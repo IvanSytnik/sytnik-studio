@@ -147,15 +147,22 @@ export function ContactForm() {
     <form action={action} noValidate className="space-y-10">
       <input type="hidden" name="locale" value={locale} />
       <input type="hidden" name="startedAt" value={startedAt} />
-      {/* Honeypot — hidden from people and assistive tech. */}
+      {/* Honeypot — hidden from people and assistive tech. Deliberately
+          meaningless name and no label, so browser and password-manager
+          autofill never fill it in for a real visitor. */}
       <div
         aria-hidden
         className="absolute -left-[9999px] h-px w-px overflow-hidden"
       >
-        <label>
-          Website
-          <input type="text" name="website" tabIndex={-1} autoComplete="off" />
-        </label>
+        <input
+          type="text"
+          name="hp_field"
+          tabIndex={-1}
+          autoComplete="new-password"
+          data-1p-ignore
+          data-lpignore="true"
+          data-form-type="other"
+        />
       </div>
 
       {/* 1 — What do you need? */}
