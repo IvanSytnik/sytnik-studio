@@ -18,7 +18,7 @@
   "hero": {
     "availability": "Offen für Projekte · Antwort in 1 Werktag",
     "title": "Websites, Buchungssysteme und KI-Funktionen – alles aus einer Hand.",
-    "subtitle": "Ich bin Ivan, unabhängiger Entwickler in Österreich. Sie arbeiten direkt mit mir – vom ersten Gespräch bis zum Launch, ohne Übergaben und ohne Account-Manager.",
+    "subtitle": "Ich bin Ivan, unabhängiger Full-Stack-Entwickler und arbeite remote in ganz Europa. Sie arbeiten direkt mit mir – vom ersten Gespräch bis zum Launch, ohne Übergaben und ohne Account-Manager.",
     "ctaPrimary": "Projekt starten",
     "ctaSecondary": "Meine Arbeiten",
     "stats": {
@@ -48,7 +48,7 @@
     "sections": "Bereiche",
     "impressum": "Impressum",
     "privacy": "Datenschutz",
-    "basedIn": "Sitz in Graz, Österreich. Kunden in Europa und den USA.",
+    "basedIn": "Remote, Europa (MEZ). Kunden in Europa und den USA.",
     "contact": "Kontakt",
     "profiles": "Profile"
   },
@@ -206,12 +206,12 @@
   "about": {
     "eyebrow": "Über mich",
     "title": "Ein Entwickler, mit dem Sie direkt sprechen",
-    "bio": "Ich bin Ivan, Full-Stack-Entwickler in Graz. Seit 2025 baue ich Websites, Buchungssysteme und KI-Funktionen – für Kundinnen und Kunden und als eigene Produkte – von der Datenbank über die Oberfläche bis zum Deployment. Ich arbeite mit Kunden in Europa und Übersee, vollständig remote.",
+    "bio": "Ich bin Ivan, Full-Stack-Entwickler und arbeite remote aus Europa. Seit 2025 baue ich Websites, Buchungssysteme und KI-Funktionen – für Kundinnen und Kunden und als eigene Produkte – von der Datenbank über die Oberfläche bis zum Deployment. Ich arbeite mit Kunden in Europa und Übersee.",
     "portraitAlt": "Ivan Sytnik",
     "facts": {
       "location": {
         "label": "Standort",
-        "value": "Graz, Österreich (MEZ)"
+        "value": "Remote, Europa (MEZ)"
       },
       "languages": {
         "label": "Sprachen",
@@ -223,7 +223,7 @@
       },
       "clients": {
         "label": "Kunden",
-        "value": "Europa und USA, remote"
+        "value": "Europa und USA"
       }
     },
     "reasonsTitle": "Warum mit mir arbeiten",
@@ -358,7 +358,7 @@
       },
       "payment": {
         "q": "Wie läuft die Bezahlung?",
-        "a": "In der Regel in Etappen: ein Teil vorab, der Rest nach Abnahme vereinbarter Meilensteine. Auf Wunsch arbeiten wir auch über Upwork oder eine andere Freelance-Plattform mit Zahlungsschutz."
+        "a": "In der Regel in Etappen: ein Teil vorab, der Rest nach Abnahme vereinbarter Meilensteine. Ich stelle als registrierter Einzelunternehmer Rechnungen in EUR oder USD; bei Geschäftskunden in der EU wird die Umsatzsteuer in der Regel von Ihnen im Reverse-Charge-Verfahren abgeführt. Auf Wunsch arbeiten wir auch über Upwork oder eine andere Freelance-Plattform mit Zahlungsschutz."
       },
       "ownership": {
         "q": "Wem gehört der Code?",
@@ -374,7 +374,7 @@
       },
       "hosting": {
         "q": "Wo wird meine Website gehostet?",
-        "a": "Auf Ihren eigenen Konten – zum Beispiel bei Vercel oder auf einem europäischen Server. Ich richte alles ein, Sie behalten die volle Kontrolle."
+        "a": "Auf Ihren eigenen Konten – zum Beispiel bei Vercel oder auf einem Server in der EU. Ich richte alles ein, Sie behalten die volle Kontrolle."
       },
       "languages": {
         "q": "In welchen Sprachen können wir kommunizieren?",
@@ -488,11 +488,11 @@
   },
   "meta": {
     "title": "Ivan Sytnik – Websites, Buchungssysteme und KI-Funktionen",
-    "description": "Unabhängiger Full-Stack-Entwickler in Graz. Ich konzipiere und entwickle Websites, Buchungssysteme, CRMs und KI-Funktionen – alles aus einer Hand, in bis zu vier Sprachen.",
+    "description": "Unabhängiger Full-Stack-Entwickler, remote in ganz Europa. Ich konzipiere und entwickle Websites, Buchungssysteme, CRMs und KI-Funktionen – alles aus einer Hand, in bis zu vier Sprachen.",
     "ogEyebrow": "Unabhängiges Web-Studio",
     "ogTitle": "Websites, Buchungssysteme und KI-Funktionen – alles aus einer Hand",
     "ogDescription": "Next.js, TypeScript und KI-Integrationen für Unternehmen in Europa und den USA.",
-    "ogFooter": "Graz, Österreich · sytnik.app"
+    "ogFooter": "Remote · Europa · sytnik.app"
   },
   "notFound": {
     "title": "Diese Seite gibt es nicht",

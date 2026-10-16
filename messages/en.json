@@ -18,7 +18,7 @@
   "hero": {
     "availability": "Open for projects · reply within 1 working day",
     "title": "Websites, booking systems and AI features — built by one developer, end to end.",
-    "subtitle": "I'm Ivan, an independent developer in Austria. You work directly with me — from the first call to launch, with no handoffs and no account managers.",
+    "subtitle": "I'm Ivan, an independent full-stack developer working remotely across Europe. You work directly with me — from the first call to launch, with no handoffs and no account managers.",
     "ctaPrimary": "Start a project",
     "ctaSecondary": "See my work",
     "stats": {
@@ -48,7 +48,7 @@
     "sections": "Sections",
     "impressum": "Legal notice",
     "privacy": "Privacy",
-    "basedIn": "Based in Graz, Austria. Working with clients in Europe and the US.",
+    "basedIn": "Remote, Europe (CET). Working with clients in Europe and the US.",
     "contact": "Contact",
     "profiles": "Profiles"
   },
@@ -206,12 +206,12 @@
   "about": {
     "eyebrow": "About",
     "title": "A developer you can talk to directly",
-    "bio": "I'm Ivan, a full-stack developer based in Graz, Austria. Since 2025 I've been building websites, booking systems and AI features — for clients and as products of my own — from the database to the interface and deployment. I work with clients in Europe and overseas, fully remote.",
+    "bio": "I'm Ivan, a full-stack developer working remotely from Europe. Since 2025 I've been building websites, booking systems and AI features — for clients and as products of my own — from the database to the interface and deployment. I work with clients in Europe and overseas.",
     "portraitAlt": "Ivan Sytnik",
     "facts": {
       "location": {
         "label": "Based in",
-        "value": "Graz, Austria (CET)"
+        "value": "Remote, Europe (CET)"
       },
       "languages": {
         "label": "Languages",
@@ -223,7 +223,7 @@
       },
       "clients": {
         "label": "Clients",
-        "value": "Europe and the US, remote"
+        "value": "Europe and the US"
       }
     },
     "reasonsTitle": "Why work with me",
@@ -358,7 +358,7 @@
       },
       "payment": {
         "q": "How do payments work?",
-        "a": "Usually in milestones: part upfront, the rest as agreed stages are delivered. If you prefer, we can also work through Upwork or another freelance platform with its payment protection."
+        "a": "Usually in milestones: part upfront, the rest as agreed stages are delivered. I invoice in EUR or USD as a registered sole proprietor; for business clients in the EU, VAT is normally handled by you under the reverse-charge rule. If you prefer, we can also work through Upwork or another freelance platform with its payment protection."
       },
       "ownership": {
         "q": "Who owns the code?",
@@ -374,7 +374,7 @@
       },
       "hosting": {
         "q": "Where will my website be hosted?",
-        "a": "On your own accounts — for example Vercel or a European server. I set everything up and you keep full control."
+        "a": "On your own accounts — for example Vercel or a server in the EU. I set everything up and you keep full control."
       },
       "languages": {
         "q": "Which languages can we communicate in?",
@@ -488,11 +488,11 @@
   },
   "meta": {
     "title": "Ivan Sytnik — websites, booking systems and AI features",
-    "description": "Independent full-stack developer in Graz, Austria. I design and build websites, booking systems, CRMs and AI features — end to end, in up to four languages.",
+    "description": "Independent full-stack developer working remotely across Europe. I design and build websites, booking systems, CRMs and AI features — end to end, in up to four languages.",
     "ogEyebrow": "Independent web studio",
     "ogTitle": "Websites, booking systems and AI features — built end to end",
     "ogDescription": "Next.js, TypeScript and AI integrations for businesses in Europe and the US.",
-    "ogFooter": "Graz, Austria · sytnik.app"
+    "ogFooter": "Remote · Europe · sytnik.app"
   },
   "notFound": {
     "title": "This page doesn't exist",

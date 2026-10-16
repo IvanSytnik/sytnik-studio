@@ -15,7 +15,7 @@ export const brand = {
   shortName: "Sytnik Studio",
   initials: "IS",
   description:
-    "Websites, booking systems and AI features — designed and built by one developer in Graz, Austria.",
+    "Websites, booking systems and AI features — designed and built by one developer, working remotely across Europe.",
   /** Production domain. Canonical URLs use NEXT_PUBLIC_SITE_URL; keep both in sync. */
   url: "https://sytnik.app",
   locale: "en",

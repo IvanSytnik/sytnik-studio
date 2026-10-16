@@ -23,8 +23,18 @@ async function loadFonts() {
     readFile(join(fontDir, "inter-600.woff")),
   ]);
   return [
-    { name: "Inter", data: regular, weight: 400 as const, style: "normal" as const },
-    { name: "Inter", data: semibold, weight: 600 as const, style: "normal" as const },
+    {
+      name: "Inter",
+      data: regular,
+      weight: 400 as const,
+      style: "normal" as const,
+    },
+    {
+      name: "Inter",
+      data: semibold,
+      weight: 600 as const,
+      style: "normal" as const,
+    },
   ];
 }
 

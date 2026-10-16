@@ -7,12 +7,10 @@ import {
 } from "@/features/legal/impressum-content";
 import { LegalPage } from "@/features/legal/legal-page";
 import { routing, type Locale } from "@/i18n/routing";
+import { legalLangFor as langFor } from "@/lib/legal";
 import { languageAlternates, localizedUrl } from "@/lib/urls";
 
 type Params = { locale: Locale };
-
-/** Legal texts exist in German (binding) and English; uk/ru show English. */
-const langFor = (locale: Locale) => (locale === "de" ? "de" : "en");
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -38,12 +36,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
   setRequestLocale(locale);
   const lang = langFor(locale);
   return (
-    <LegalPage
-      title={impressumTitle(lang)}
-      note={
-        lang === "en" ? "The German version is legally binding." : undefined
-      }
-    >
+    <LegalPage title={impressumTitle(lang)}>
       <ImpressumContent lang={lang} />
     </LegalPage>
   );

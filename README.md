@@ -179,3 +179,10 @@ Pack #14 — Launch prep:
 - Localized 404 (`[locale]/not-found.tsx` + catch-all route)
 - Lint: ESLint CLI with flat config (`eslint.config.mjs`), `next lint` removed
 - Lighthouse (mobile, local): Performance 90+, Accessibility 100, Best Practices 96; SEO is 100 once indexing is enabled
+
+Pack #15 — Business set up as a Ukrainian sole proprietorship (FOP):
+
+- `src/lib/legal.ts` holds the FOP details (register number, address, tax group); `isLegalComplete` must be true before enabling indexing
+- Legal notice (`/impressum`) and privacy policy in Ukrainian, German and English; Russian shows English
+- Copy no longer names a city: "remote, Europe"; invoices in EUR/USD, reverse charge for EU B2B mentioned in the FAQ
+- Visitors from Ukraine (Vercel `x-vercel-ip-country`) get `/uk` by default on first visit (Law "On the State Language", art. 27)
