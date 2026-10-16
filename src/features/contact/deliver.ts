@@ -124,6 +124,13 @@ async function saveToDatabase(lead: Lead) {
     });
 }
 
+function leadSubject(lead: Lead) {
+  const { display } = contactLink(lead.method, lead.contact);
+  const what = lead.needs.length ? needsText(lead) : "Inquiry";
+  const time = new Date().toISOString().slice(11, 16);
+  return `[Lead] ${what} · ${lead.name} (${display}) · ${lead.locale.toUpperCase()} · ${time} UTC`;
+}
+
 async function sendEmail(
   lead: Lead,
   cfg: { apiKey: string; from: string; to: string }
@@ -134,7 +141,9 @@ async function sendEmail(
     from: cfg.from,
     to: cfg.to,
     ...(lead.method === "email" ? { replyTo: lead.contact } : {}),
-    subject: `New inquiry from ${lead.name}${lead.company ? ` (${lead.company})` : ""}`,
+    // Unique per lead (contact + time), so Gmail never folds new leads into
+    // an older conversation thread where they are easy to miss.
+    subject: leadSubject(lead),
     text: summary(lead),
   });
   if (error) throw new Error(`Resend: ${error.message}`);
