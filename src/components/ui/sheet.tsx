@@ -44,7 +44,7 @@ const SheetContent = React.forwardRef<
       ref={ref}
       className={cn(
         "fixed inset-y-0 z-50 flex h-full w-full max-w-sm flex-col gap-6 border-l border-border bg-background p-6 shadow-xl",
-        "data-[state=open]:animate-in data-[state=closed]:animate-out duration-200",
+        "duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out",
         side === "right"
           ? "right-0 border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right"
           : "left-0 border-r data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left",

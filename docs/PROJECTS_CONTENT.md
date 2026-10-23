@@ -91,7 +91,7 @@ All text lives in `messages/*.json` under `projects.<slug>.*`, not in the regist
 
 ### 3.2 StyleMe — AI hairstyle try-on
 - **slug:** `styleme` · **status:** Live (MVP) · **services:** AI integrations
-- **Links:** live https://styleme-second-v-web.vercel.app/ · repo https://github.com/IvanSytnik/styleme-second_v
+- **Links:** live https://styleme.sytnik-studio.com/ · repo https://github.com/IvanSytnik/styleme
 - **Card:** *Upload a selfie, see yourself with a new hairstyle in seconds.*
 - **Tags:** AI · Next.js · SaaS
 
@@ -163,7 +163,7 @@ All text lives in `messages/*.json` under `projects.<slug>.*`, not in the regist
 ## 4. Client & smaller work (compact cards)
 
 ### MedConsult Pro
-- **status:** Delivered · live https://medconsult-pro.vercel.app/ · repo https://github.com/IvanSytnik/medconsult-pro
+- **status:** Delivered · live https://medconsult.sytnik-studio.com/ · repo https://github.com/IvanSytnik/medconsult-pro
 - **Card:** *Service catalogue and multi-step consultation request flow for a medical tourism agency. Leads go straight to the agency's messaging channels.*
 - **Tags:** Landing page · Lead funnel · Telegram
 - `TODO: verify stack — GitHub shows the repo as JavaScript, so "TypeScript" may be wrong.` Don't write "live" or mention traffic.

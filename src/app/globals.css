@@ -45,7 +45,9 @@
     --destructive-foreground: 60 14% 96%;
     --stage: 240 4% 10%;
   }
-  * { @apply border-border; }
+  * {
+    @apply border-border;
+  }
   html {
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
@@ -53,7 +55,11 @@
   }
   body {
     @apply bg-background text-foreground antialiased;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
   }
-  ::selection { @apply bg-accent text-accent-foreground; }
+  ::selection {
+    @apply bg-accent text-accent-foreground;
+  }
 }

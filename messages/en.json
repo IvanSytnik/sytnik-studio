@@ -17,8 +17,8 @@
   },
   "hero": {
     "availability": "Open for projects · reply within 1 working day",
-    "title": "Websites, booking systems and AI features — built by one developer, end to end.",
-    "subtitle": "I'm Ivan, an independent full-stack developer working remotely across Europe. You work directly with me — from the first call to launch, with no handoffs and no account managers.",
+    "title": "Production-ready web systems, custom CRMs and AI features — built end-to-end.",
+    "subtitle": "I'm Ivan, an independent full-stack engineer working remotely across Europe. I take products from database architecture to deployment — no agency overhead, no account managers, direct weekly delivery.",
     "ctaPrimary": "Start a project",
     "ctaSecondary": "See my work",
     "stats": {
@@ -155,7 +155,7 @@
           "Heavy jobs run in a separate OS process that can be killed on timeout, so the bot never freezes.",
           "Live progress streamed through Redis pub/sub — the processing layer knows nothing about Telegram.",
           "Files up to 2 GB via a self-hosted Telegram Bot API server instead of the 50 MB public limit.",
-          "Secure by default: domain allowlist, no shell execution, sliding-window rate limiting; 181 tests and strict type checking."
+          "Secure by default: domain allowlist, no shell execution, sliding-window rate limiting; 343 tests and strict type checking."
         ]
       },
       "medconsult": {
@@ -168,7 +168,7 @@
       },
       "shopsmart-ai": {
         "title": "ShopSmart AI",
-        "summary": "AI shopping-list generator for German supermarkets: weekly lists that respect your budget and diet. Being rebuilt as a new MVP."
+        "summary": "Budget-safe shopping lists for Austrian supermarkets: the AI picks the products, the server prices them from a real catalogue — so the total never exceeds your budget."
       }
     },
     "section": {

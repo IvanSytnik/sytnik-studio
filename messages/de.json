@@ -17,8 +17,8 @@
   },
   "hero": {
     "availability": "Offen für Projekte · Antwort in 1 Werktag",
-    "title": "Websites, Buchungssysteme und KI-Funktionen – alles aus einer Hand.",
-    "subtitle": "Ich bin Ivan, unabhängiger Full-Stack-Entwickler und arbeite remote in ganz Europa. Sie arbeiten direkt mit mir – vom ersten Gespräch bis zum Launch, ohne Übergaben und ohne Account-Manager.",
+    "title": "Produktionsreife Websysteme, individuelle CRMs und KI-Funktionen – end-to-end entwickelt.",
+    "subtitle": "Ich bin Ivan, unabhängiger Full-Stack-Engineer und arbeite remote in ganz Europa. Ich bringe Produkte von der Datenbankarchitektur bis zum Deployment – ohne Agentur-Overhead, ohne Account-Manager, mit direkter wöchentlicher Lieferung.",
     "ctaPrimary": "Projekt starten",
     "ctaSecondary": "Meine Arbeiten",
     "stats": {
@@ -186,7 +186,7 @@
           "Aufwendige Jobs laufen in einem separaten Prozess, der bei Timeout beendet werden kann – der Bot friert nie ein.",
           "Live-Fortschritt über Redis Pub/Sub – die Verarbeitung weiß nichts von Telegram.",
           "Dateien bis 2 GB über einen selbst gehosteten Telegram-Bot-API-Server statt des öffentlichen 50-MB-Limits.",
-          "Sicher als Standard: Domain-Allowlist, keine Shell-Ausführung, Sliding-Window-Rate-Limiting; 181 Tests und strikte Typprüfung."
+          "Sicher als Standard: Domain-Allowlist, keine Shell-Ausführung, Sliding-Window-Rate-Limiting; 343 Tests und strikte Typprüfung."
         ]
       },
       "medconsult": {
@@ -199,7 +199,7 @@
       },
       "shopsmart-ai": {
         "title": "ShopSmart AI",
-        "summary": "KI-Einkaufslisten für deutsche Supermärkte: Wochenlisten, die Budget und Ernährung berücksichtigen. Wird als neues MVP neu aufgebaut."
+        "summary": "Budgetsichere Einkaufslisten für österreichische Supermärkte: Die KI wählt die Produkte, der Server berechnet die Preise aus einem echten Katalog – die Summe überschreitet nie Ihr Budget."
       }
     }
   },
