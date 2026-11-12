@@ -59,7 +59,7 @@ Also used: Radix UI primitives (dialog, dropdown menu) for the UI kit, the Teleg
 
 ## Setup
 
-Requirements: Node.js 20 or newer (`engines` in `package.json`; CI runs Node 20) and npm.
+Requirements: Node.js 22 LTS or newer (`engines` in `package.json`; CI runs Node 22) and npm.
 
 ```bash
 npm install
