@@ -74,6 +74,8 @@ export async function CaseStudy({ project }: Props) {
           phones={project.media.phones}
           alt={t("coverAlt", { title })}
           priority
+          sizes="(min-width: 1280px) 1100px, 100vw"
+          phoneSizes="(min-width: 1280px) 360px, 30vw"
           className="mt-14"
         />
 
