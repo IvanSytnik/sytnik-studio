@@ -16,6 +16,14 @@ type Props = {
   alt: string;
   /** Only the first cover on the page is above the fold on large screens. */
   priority?: boolean;
+  /**
+   * `sizes` for the laptop screenshot. The default fits the homepage row
+   * (7 of 12 columns); full-width covers such as the case-study hero must
+   * pass their own, or the browser picks a too-small source and it blurs.
+   */
+  sizes?: string;
+  /** `sizes` for each phone screenshot (kind "phones"). */
+  phoneSizes?: string;
   className?: string;
 };
 
@@ -36,6 +44,8 @@ export function ProjectCover({
   phones,
   alt,
   priority,
+  sizes = "(min-width: 1024px) 640px, 90vw",
+  phoneSizes = "(min-width: 1024px) 200px, 30vw",
   className,
 }: Props) {
   if (kind === "phones" && phones?.length) {
@@ -59,7 +69,7 @@ export function ProjectCover({
               alt={i === 0 ? alt : ""}
               fill
               priority={priority && i === 0}
-              sizes="(min-width: 1024px) 200px, 30vw"
+              sizes={phoneSizes}
               className="object-cover object-top"
             />
           </Phone>
@@ -74,7 +84,7 @@ export function ProjectCover({
       alt={alt}
       fill
       priority={priority}
-      sizes="(min-width: 1024px) 640px, 90vw"
+      sizes={sizes}
       className={cn("object-cover object-top", extra)}
     />
   );

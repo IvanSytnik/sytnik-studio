@@ -1,0 +1,33 @@
+Copyright (c) 2026 Ivan Sytnik. All rights reserved.
+
+This repository is published for viewing only.
+
+You may view the source code and fork this repository on GitHub, as
+allowed by the GitHub Terms of Service, so you can read it and evaluate
+the author's work.
+
+You may NOT, without prior written permission from the copyright holder:
+
+  - copy, modify, merge or redistribute the code, in whole or in part;
+  - use the code or any part of it in another project, commercial or not;
+  - deploy, host or otherwise run this website or a derivative of it
+    publicly.
+
+Brand, content and media are excluded from any permission. The names
+"Ivan Sytnik", "Sytnik Studio" and "Ivan Sytnik — Independent Web Studio",
+the "IS" monogram and logo (including src/app/icon.svg), the portrait
+photograph, the project screenshots and covers under public/, and all
+site copy (including messages/*.json) are not licensed for any use.
+
+Third-party components in this repository keep their own licenses. For
+example, the Inter font files in src/assets/fonts/ are licensed under the
+SIL Open Font License; see src/assets/fonts/OFL.txt.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM THE
+USE OF THE SOFTWARE.
+
+For licensing requests, contact the author via https://sytnik-studio.com
+or by email at ivan.sytnik02@gmail.com.

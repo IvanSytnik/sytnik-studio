@@ -1,98 +1,65 @@
 # Ivan Sytnik — Independent Web Studio
 
+Portfolio and lead-generation site for Ivan Sytnik, a solo full-stack developer, presented as a small independent studio, in four languages.
+
+[![CI](https://img.shields.io/github/actions/workflow/status/IvanSytnik/sytnik-studio/ci.yml?branch=main&label=CI&logo=githubactions&logoColor=white)](https://github.com/IvanSytnik/sytnik-studio/actions/workflows/ci.yml)
+[![License: view-only](https://img.shields.io/badge/license-view--only-lightgrey)](LICENSE)
+[![Next.js 15](https://img.shields.io/badge/Next.js-15-000000?logo=nextdotjs&logoColor=white)](https://nextjs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![Tailwind CSS 3](https://img.shields.io/badge/Tailwind_CSS-3-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![Drizzle ORM](https://img.shields.io/badge/Drizzle_ORM-Neon_Postgres-C5F74F?logo=drizzle&logoColor=black)](https://orm.drizzle.team)
+
+**Live site:** <https://sytnik-studio.com>
+
+## Screenshots
+
+| Home (desktop) | Case study (desktop) |
+| --- | --- |
+| ![Home page: hero with headline, calls to action and project stats](docs/screenshots/home.png) | ![Case study page for the Restaurant CRM & Booking Platform](docs/screenshots/case-study.png) |
+
+<p align="center">
+  <img src="docs/screenshots/mobile.png" alt="Home page on a 390 px wide phone screen" width="300">
+</p>
+
+Captured with Playwright from a local production build (`npm run build && npm run start`), English locale, light theme.
+
+## Contents
+
+- [Overview](#overview)
+- [Stack](#stack)
+- [Setup](#setup)
+- [Folder structure](#folder-structure)
+- [Branding rules](#branding-rules)
+- [Scripts](#scripts)
+- [Deployment](#deployment)
+- [Development log](#development-log)
+- [License](#license)
+
+## Overview
+
 Portfolio & lead-generation site. Personal brand wrapped as a small independent studio.
 
-## Current state — Pack #14 (Launch prep)
+It is aimed at prospective clients who need websites, booking systems and CRMs, or AI features, and want to hire one developer directly. The site shows selected work, explains services and process, and turns visitors into leads.
 
-Foundation + site shell:
+What it includes:
 
-- Configs, design tokens, i18n (4 locales), Drizzle/Neon, Resend, Analytics, fonts
-- **Header** — sticky, transparent at top, off-white/dark with blur on scroll
-- **Footer** — brand + sections + social (auto-hides empty links)
-- **Theme switcher** — Light / Dark / System (dropdown, sun/moon trigger)
-- **Language switcher** — EN / DE / UK / RU (dropdown with locale-aware router)
-- **Mobile sheet** — hamburger → slide-in panel with nav, CTA, switchers
-- **Landing placeholders** — `#projects`, `#services`, `#process`, `#contact` so nav scrolls somewhere until real sections ship
+- **Landing page** with sections in this order: Hero → Services → Projects → Process → About → FAQ → Contact.
+- **Case study pages** at `/projects/[slug]` for flagship projects, statically prerendered for every locale.
+- **Four locales:** EN at `/`, DE at `/de`, UK at `/uk`, RU at `/ru`, with English fallback for untranslated keys.
+- **Contact brief:** a three-step form built on a Server Action that works without JavaScript. Each lead goes to every configured channel (Neon Postgres, Resend email, Telegram). Spam protection uses a honeypot, a minimum fill time and a per-IP rate limit.
+- **Light, dark and system themes**, plus a mobile navigation sheet and a sticky contact bar on mobile.
+- **Legal pages:** `/impressum` and `/datenschutz`.
+- **SEO:** per-locale metadata, canonical and hreflang links, Open Graph images generated at build time, JSON-LD, `robots.txt` and `sitemap.xml`. An indexing gate keeps the site `noindex` until it is explicitly enabled (see [Deployment](#deployment)).
 
-Pack #3:
+## Stack
 
-- **CI** — GitHub Actions: typecheck, lint, build on push/PR to `main`
-- **robots.txt + sitemap.xml** — sitemap with hreflang alternates for all locales
-- **Indexing gate** — site is noindex (meta + robots.txt) until `NEXT_PUBLIC_ALLOW_INDEXING=true`
+Next.js 15.5.26 · React 19.2.6 · TypeScript strict · Tailwind 3 · next-intl 4 · next-themes · Drizzle ORM + Neon Postgres · Resend · Vercel Analytics · Inter + JetBrains Mono · react-icons · framer-motion · react-hook-form + zod
 
-Pre-Pack #4 fixes (see `docs/STATUS.md`):
-
-- `next` 15.5.26 (security advisories), `drizzle-orm` 0.45.2 / `drizzle-kit` 0.31.10 (security advisory)
-- `next-intl` v4 (open-redirect advisory); messages inherited by `NextIntlClientProvider`, typed locales via `src/types/next-intl.d.ts`
-- Locale pages statically prerendered (`setRequestLocale` in the locale layout)
-- Real feature folders under `src/features/`
-
-Pack #4 — projects data layer (no UI yet):
-
-- `src/features/projects/` — `types.ts`, `data.ts` (registry), `queries.ts` (read API used by all sections/pages)
-- Project copy in `messages/*.json` under `projects.items.<slug>`; slugs are typed from `en.json`, so a project without copy fails typecheck
-- English fallback for untranslated keys in DE/UK/RU (`src/i18n/request.ts` + `src/lib/deep-merge.ts`)
-- Only client-used namespaces (`nav`, `theme`, `language`) are serialized to the browser
-- Service ids shared in `src/types/service.ts`; GitHub + LinkedIn filled in `brand.ts`
-
-Pack #5 — Hero:
-
-- `src/features/hero/` — typographic hero, Server Components only (no client JS); stats computed from the project registry and locales
-- Hero copy in all four locales (ICU plurals for stat labels)
-- CTA contrast fixed: `--accent-foreground` is graphite in light theme (6.3:1)
-
-Pack #6 — Projects section:
-
-- `src/features/projects/` — flagship rows (cover + story, alternating sides) and a compact "More work" list; Server Components
-- Covers in `public/projects/<slug>/` (16:10 WebP); projects without a screenshot get a typographic cover
-- Flagships are typed to require full case-study copy (`CaseStudySlug`)
-
-Pack #7 — Case study pages:
-
-- `/projects/[slug]` for flagships only (`dynamicParams = false` → other slugs 404), statically prerendered for all locales
-- Context → problem → what I built → engineering highlights, sticky role/stack column, screenshot gallery, next project, contact CTA
-- Per-page metadata: canonical, hreflang + x-default, Open Graph cover, CreativeWork JSON-LD; pages added to the sitemap
-
-Pack #8 — About:
-
-- `src/features/about/` — bio, facts (location, languages, education, clients), six reasons to work with me; copy in all four locales
-- Portrait at `public/images/ivan-sytnik.webp` (4:5; replace the file to change the photo)
-
-Pack #9 — Services:
-
-- `src/features/services/` — five services with pitch, what's included and typical timeline; copy in all four locales
-- Proof links come from the project registry (`getProjectsForService`): flagships link to their case study, smaller work to its live site
-
-Pack #10 — Process + FAQ:
-
-- `src/features/process/` — six numbered steps from intro call to 60 days of support
-- `src/features/faq/` — eight questions on native `<details>` (no JS), FAQPage JSON-LD
-
-Pack #11 — Contact form:
-
-- Server Action `src/actions/contact.ts` + shared Zod schema; works without JavaScript
-- Delivery to every configured channel in parallel (Neon, Resend email, Telegram); succeeds if at least one accepts the lead
-- Spam protection: honeypot, minimum fill time, per-IP rate limit (best effort)
-- All section placeholders are gone — the landing page is complete
-- Setup: see `docs/CONTACT_SETUP.md`
-
-Pack #12 — Contact brief (replaces the planned estimator):
-
-- Three steps: what you need (chips + free text), budget & timeline (optional), preferred channel (email, Telegram, WhatsApp, phone) with per-channel validation
-- Chips are real checkboxes/radios styled with `has-[:checked]` — works without JS, choices survive a failed submit
-- Telegram notification includes a one-tap link to reply (t.me / wa.me)
-- DB: `contact_method`, `contact_value` columns, brief stored in `estimator` jsonb — run `npm run db:push`
-
-Pack #13 — Legal pages and conversion:
-
-- `/impressum` and `/datenschutz` (German binding, English for other locales); details in `src/lib/legal.ts`, trade-licence fields appear once filled in
-- Direct channels (Telegram, WhatsApp) in `brand.contact`: hero, contact section, footer, mid-page CTAs
-- Mobile: sticky contact bar between hero and contact section, compact CTA in the header
-- Section order: Services → Projects → Process → About → FAQ → Contact, with CTAs after Services and Projects
-- Project covers and gallery in CSS device frames (`src/components/devices/`): laptop for web apps, phones for mobile/Telegram (`coverKind: "phones"` + `phones[]`)
-- Footer: tagline, sections, contacts with visible handles, profiles, legal links and language
+Also used: Radix UI primitives (dialog, dropdown menu) for the UI kit, the Telegram Bot API for lead notifications, and ESLint 9 (flat config) with Prettier.
 
 ## Setup
+
+Requirements: Node.js 22 LTS or newer (`engines` in `package.json`; CI runs Node 22) and npm.
 
 ```bash
 npm install
@@ -102,33 +69,36 @@ npm run dev
 
 Open <http://localhost:3000>. EN at `/`, others at `/de`, `/uk`, `/ru`.
 
-## Verifying Pack #2
+Every lead channel is optional. With an empty `.env.local` the site runs and the form renders, but no channel accepts submissions. To set up Neon, Resend and Telegram, see [`docs/CONTACT_SETUP.md`](docs/CONTACT_SETUP.md).
 
-- [ ] Page loads at `/`, no 404
-- [ ] Header visible: monogram `IS` + name + studio (sm+); 4 nav links (md+); language + theme + accent CTA
-- [ ] Mobile (resize narrow): nav collapses to hamburger → slide-in sheet
-- [ ] Scroll page → header gets a subtle border + blur
-- [ ] Click nav `Services` / `Process` / etc → smooth-scrolls to the matching placeholder section
-- [ ] Theme switcher: Light / Dark / System work, icon flips
-- [ ] Language switcher: changing to DE goes to `/de`; from `/de` back to EN goes to `/`
-- [ ] Footer: brand + tagline + Sections column; "Elsewhere" hidden because all social URLs are empty
-- [ ] No errors in console or terminal
-
-## Stack
-
-Next.js 15.5.26 · React 19.2.6 · TypeScript strict · Tailwind 3 · next-intl 4 · next-themes · Drizzle ORM + Neon Postgres · Resend · Vercel Analytics · Inter + JetBrains Mono · react-icons · framer-motion · react-hook-form + zod
+| Variable | Purpose |
+| --- | --- |
+| `NEXT_PUBLIC_SITE_URL` | Base URL for canonical links, the sitemap and Open Graph |
+| `NEXT_PUBLIC_ALLOW_INDEXING` | `true` allows indexing; anything else makes the site `noindex` |
+| `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, `RESEND_TO_EMAIL` | Email delivery of leads via Resend |
+| `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` | Telegram notifications for leads |
+| `DATABASE_URL` | Neon Postgres connection; stores leads |
+| `DATABASE_URL_UNPOOLED` | Optional. Direct connection used by `drizzle-kit` for schema changes |
 
 ## Folder structure
 
 ```
 src/
+  actions/
+    contact.ts                 # Server Action for the contact brief
   app/
     [locale]/
       layout.tsx               # html, fonts, header + main + footer
-      page.tsx                 # landing skeleton + section placeholders
-      projects/[slug]/         # reserved for project case studies
+      page.tsx                 # landing page: all sections in order
+      not-found.tsx            # localized 404
+      [...rest]/               # catch-all → localized 404
+      projects/[slug]/         # case study pages + per-project OG image
+      impressum/ datenschutz/  # legal notice, privacy policy
+      opengraph-image.tsx      # per-locale OG image (next/og)
     globals.css                # design tokens
     icon.svg                   # IS monogram favicon
+    robots.ts sitemap.ts       # indexing gate, hreflang sitemap
+  assets/fonts/                # Inter (Cyrillic) for OG images, OFL
   components/
     layout/
       container.tsx            # max-width + gutters
@@ -138,25 +108,40 @@ src/
       mobile-nav.tsx           # hamburger + sheet
       theme-switcher.tsx
       language-switcher.tsx
+    contact/                   # quick contact, section CTAs, mobile contact bar
+    devices/                   # CSS laptop / phone frames for covers
     providers/theme-provider.tsx
     ui/                        # button, dropdown-menu, sheet
-  features/                    # hero, services, ... — reserved for future packs
+  features/                    # one folder per section
+    hero/ services/ projects/ process/ about/ faq/ contact/ legal/
   lib/
     brand.ts                   # SSOT for identity
     nav.ts                     # nav items registry
-    env.ts utils.ts
+    legal.ts                   # legal entity details, isLegalComplete
+    server-env.ts              # Zod-validated lead channel config
+    og/ seo/                   # OG renderer, JSON-LD
+    env.ts utils.ts urls.ts deep-merge.ts
   db/
     schema.ts client.ts        # Drizzle + Neon
   i18n/
     routing.ts request.ts
+  types/                       # next-intl typing, service ids, asset modules
   middleware.ts                # i18n locale routing
 messages/
   en.json de.json uk.json ru.json
+public/
+  images/                      # portrait
+  projects/<slug>/             # project covers and gallery (WebP)
+scripts/
+  check-contact.ts             # lead-channel health check
+docs/                          # roadmap, status audit, contact setup, dev log, screenshots
 ```
 
 ## Branding rules
 
 This is a **hybrid** product — solo developer wrapped as a studio. Never present as a multi-person team. Copy is first-person ("I"). Studio name is a brand wrapper only. Configured centrally in `src/lib/brand.ts`.
+
+> **The brand is not licensed.** The names "Ivan Sytnik", "Sytnik Studio" and "Ivan Sytnik — Independent Web Studio", the `IS` monogram and logo (`src/app/icon.svg`, `brand-mark.tsx`), the portrait, project images and site copy are excluded from any permission. See [LICENSE](LICENSE).
 
 ## Scripts
 
@@ -165,24 +150,40 @@ This is a **hybrid** product — solo developer wrapped as a studio. Never prese
 | `npm run dev`        | Dev server                  |
 | `npm run build`      | Production build            |
 | `npm run start`      | Serve production build      |
-| `npm run lint`       | ESLint                      |
+| `npm run lint`       | ESLint (`--max-warnings 0`) |
 | `npm run typecheck`  | `tsc --noEmit`              |
 | `npm run format`     | Prettier write              |
+| `npm run format:check` | Prettier check (no writes) |
+| `npm run db:generate` | Generate SQL migrations into `drizzle/` |
 | `npm run db:push`    | Push schema to Neon         |
 | `npm run db:studio`  | Open Drizzle Studio         |
 
-Pack #14 — Launch prep:
+CI (`.github/workflows/ci.yml`) runs `typecheck`, `lint` and `build` on every push and pull request to `main`.
 
-- Localized `title`/`description` per locale (`messages/*.json → meta`), canonical + hreflang on every page
-- Open Graph images generated at build time with `next/og` (home per locale, every case study); Inter with Cyrillic bundled in `src/assets/fonts`
-- Homepage JSON-LD (`Person` + `ProfessionalService`, Graz address)
-- Localized 404 (`[locale]/not-found.tsx` + catch-all route)
-- Lint: ESLint CLI with flat config (`eslint.config.mjs`), `next lint` removed
-- Lighthouse (mobile, local): Performance 90+, Accessibility 100, Best Practices 96; SEO is 100 once indexing is enabled
+Lead-channel health check (not an npm script; `tsx` is not a dependency, so `npx` downloads it):
 
-Pack #15 — Business set up as a Ukrainian sole proprietorship (FOP):
+```bash
+npx tsx scripts/check-contact.ts
+```
 
-- `src/lib/legal.ts` holds the FOP details (register number, address, tax group); `isLegalComplete` must be true before enabling indexing
-- Legal notice (`/impressum`) and privacy policy in Ukrainian, German and English; Russian shows English
-- Copy no longer names a city: "remote, Europe"; invoices in EUR/USD, reverse charge for EU B2B mentioned in the FAQ
-- Visitors from Ukraine (Vercel `x-vercel-ip-country`) get `/uk` by default on first visit (Law "On the State Language", art. 27)
+It sends one real Telegram message and one real email, and inserts and then deletes one row in `contact_submissions`.
+
+## Deployment
+
+The production site, <https://sytnik-studio.com>, is hosted on Vercel.
+
+Vercel deploys every push to `main` to Production and creates a Preview deployment for every pull request.
+
+1. Set the environment variables from the table in [Setup](#setup) under **Vercel → Project → Settings → Environment Variables** (Production + Preview), then redeploy. Set `NEXT_PUBLIC_SITE_URL` to the production domain; keep it in sync with `brand.url` in `src/lib/brand.ts`.
+2. Database: create a Neon database from **Vercel → Storage**, which adds `DATABASE_URL`, then apply the schema with `npm run db:push`. Run `db:push` again after any change to `src/db/schema.ts`. Details: [`docs/CONTACT_SETUP.md`](docs/CONTACT_SETUP.md).
+3. Indexing: set `NEXT_PUBLIC_ALLOW_INDEXING=true` **on Production only**, and only once `isLegalComplete` in `src/lib/legal.ts` is true. Previews and local builds stay `noindex`.
+
+The middleware reads Vercel's `x-vercel-ip-country` header to send first-time visitors from Ukraine to `/uk`. This only works on Vercel.
+
+## Development log
+
+The pack-by-pack history ("Current state — Pack …") and the "Verifying Pack #2" checklist are in [`docs/DEVELOPMENT_LOG.md`](docs/DEVELOPMENT_LOG.md). The plan and audits are in [`docs/ROADMAP.md`](docs/ROADMAP.md) and [`docs/STATUS.md`](docs/STATUS.md).
+
+## License
+
+**View-only, all rights reserved.** You may read the code and fork it on GitHub to look at it. You may not reuse, redistribute or deploy it without written permission. The brand, logo, photos and content are not licensed for any use. See [LICENSE](LICENSE).
