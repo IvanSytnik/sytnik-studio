@@ -172,6 +172,8 @@ It sends one real Telegram message and one real email, and inserts and then dele
 
 The production site, <https://sytnik-studio.com>, is hosted on Vercel.
 
+Vercel deploys every push to `main` to Production and creates a Preview deployment for every pull request.
+
 1. Set the environment variables from the table in [Setup](#setup) under **Vercel → Project → Settings → Environment Variables** (Production + Preview), then redeploy. Set `NEXT_PUBLIC_SITE_URL` to the production domain; keep it in sync with `brand.url` in `src/lib/brand.ts`.
 2. Database: create a Neon database from **Vercel → Storage**, which adds `DATABASE_URL`, then apply the schema with `npm run db:push`. Run `db:push` again after any change to `src/db/schema.ts`. Details: [`docs/CONTACT_SETUP.md`](docs/CONTACT_SETUP.md).
 3. Indexing: set `NEXT_PUBLIC_ALLOW_INDEXING=true` **on Production only**, and only once `isLegalComplete` in `src/lib/legal.ts` is true. Previews and local builds stay `noindex`.
